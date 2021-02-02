@@ -22,7 +22,7 @@ copyright = '2021, SunFounder'
 author = 'SunFounder'
 
 # The full version, including alpha/beta/rc tags
-release = '\\'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
