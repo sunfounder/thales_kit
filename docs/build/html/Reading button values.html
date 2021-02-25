@@ -211,7 +211,7 @@
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>当按键被按下时，电流会从3V3流经电阻器和开关流入GP14，换而言之GPI14将会读取到高电平信号‘1’；反之，则会读取到低电平信号‘0’。</p>
+<p>当按键被按下时，电流会从3V3流经开关流入GP14，换而言之GP14将会读取到高电平信号‘1’；反之，则会读取到低电平信号‘0’。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>

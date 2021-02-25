@@ -61,7 +61,7 @@ Code
         led.toggle()
         utime.sleep(1)
 
-因为``toggle()`` 可以让引脚在高电平和低电平之间切换，你能看到LED闪烁。
+因为 ``toggle()`` 可以让引脚在高电平和低电平之间切换，你能看到LED闪烁。
 
 Also see reference here:
 
