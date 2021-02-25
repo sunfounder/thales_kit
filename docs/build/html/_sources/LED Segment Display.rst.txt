@@ -27,6 +27,10 @@ Wiring
 #. 将74HC595上的VCC引脚（16引脚）和MR引脚（10引脚）连接至正极电源总线。
 #. 将74HC595上的GND引脚（8引脚）和CE引脚（13引脚）连接至负极电源总线。
 #. 将LED Segment Display插入面包板，将GND引脚串联一个220Ω电阻接入负极电源总线。
+
+    .. note::
+        220欧姆的电阻器色环颜色为红红黑黑棕。
+
 #. 按照下表在74hc595与LED Segment Display之间连线。
 
     .. list-table:: Wiring

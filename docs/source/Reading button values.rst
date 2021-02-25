@@ -1,4 +1,4 @@
-Reading button values
+Reading Button Value
 ==============================================
 
 从GPIO（General-purpose input/output）的名字中我们可以看出，引脚应当具有输入和输出两种使用方法。在LED中我们使用了输出，在这章我们借助按键来使用输入。
@@ -62,6 +62,6 @@ What more?
             utime.sleep(1)
     
 
-Also see the reference here: 
+Also see the reference here:  
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Hello, Transistor! &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  <title>Two Kinds of Transistors &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
   
 
   
@@ -93,12 +93,12 @@
 <li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lesson</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">First program! Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">Hello, LED!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading button values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading Button Value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic light</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello, Transistor!</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Two Kinds of Transistors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
 </ul>
@@ -167,7 +167,7 @@
         
           <li><a href="Lesson.html">Lesson</a> &raquo;</li>
         
-      <li>Hello, Transistor!</li>
+      <li>Two Kinds of Transistors</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -186,8 +186,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="hello-transistor">
-<h1>Hello, Transistor!<a class="headerlink" href="#hello-transistor" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="two-kinds-of-transistors">
+<h1>Two Kinds of Transistors<a class="headerlink" href="#two-kinds-of-transistors" title="Permalink to this headline">¶</a></h1>
 <p>三极管是一种通过电流控制电流的半导体器件。它的功能是将微弱的信号放大为较大的幅度信号，也可作为非接触式开关使用。是电子电路的核心元件。</p>
 <p>这听起来有点复杂。用简单的话说，某些元器件的使用功率较大（如Buzzer），如果直接由GPIO引脚的电信号供能，则有可能功率不足，或者损坏元器件。
 那么，晶体管在这里便起到了一个“大坝”的作用。三极管接收来自GPIO引脚的微弱电信号，来控制大电流（从VCC到GND）的导通与断开。
@@ -229,6 +229,13 @@
 </dd>
 </dl>
 </li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>220欧姆的电阻器色环颜色为红红黑黑棕。
+1kΩ电阻器的色环颜色为棕黑黑棕棕。</p>
+</div>
+<ol class="arabic">
 <li><dl>
 <dt>连接PNP(S8550)三极管的方式</dt><dd><img alt="_images/wiring_transistor_s8550.png" src="_images/wiring_transistor_s8550.png" />
 <ol class="arabic simple">

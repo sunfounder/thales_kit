@@ -22,6 +22,7 @@ Wiring
 
 .. note::
     In this experiment, a thermistor and a 10k pull-up resistor are used. Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius.
+    10kΩ电阻器的色环颜色为棕黑黑红棕。
 
 .. code-block:: python
 

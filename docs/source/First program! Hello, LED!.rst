@@ -1,4 +1,4 @@
-First program! Hello, LED! 
+Hello, LED! 
 =======================================
 
 正如同打印一句“Hello，world！”是学习编程的第一步一样，让LED亮起来正是学习physical programming的传统入门。

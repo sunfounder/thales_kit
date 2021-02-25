@@ -6,7 +6,7 @@ Before you can start to program Pico with MicroPython, 你需要一个integrated
 网页下载
 -------------
 
-可以通过访问Thonny网站: https://thonny.org/来进行下载。进入页面之后，您会在右上角看到一个浅灰色的框，单击适用于您的操作系统的链接。
+可以通过访问Thonny网站: https://thonny.org/ 来进行下载。进入页面之后，您会在右上角看到一个浅灰色的框，单击适用于您的操作系统的链接。
 
     .. image:: img/download_thonny.png
 

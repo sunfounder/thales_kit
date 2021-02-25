@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reading button values" href="Reading button values.html" />
-    <link rel="prev" title="First program! Hello, LED!" href="First program! Hello, LED!.html" /> 
+    <link rel="next" title="Reading Button Value" href="Reading button values.html" />
+    <link rel="prev" title="Hello, LED!" href="First program! Hello, LED!.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,16 +93,16 @@
 <li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lesson</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">First program! Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">Hello, LED!</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hello, Breadboard!</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading button values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading Button Value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic light</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Hello, Transistor!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Two Kinds of Transistors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Intruder Alarm.html">Intruder Alarm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Fading LED.html">Fading LED</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Colorful Light.html">Colorful Light</a></li>
@@ -212,7 +212,14 @@
 <p>让我们顺着电流的方向来搭建电路吧！</p>
 <ol class="arabic">
 <li><p>在这里我们使用Pico板的GP15引脚发出的电信号让LED工作，电路从这开始。</p></li>
-<li><p>电流需要先经过一个220欧姆电阻器（用来保护LED）。将电阻器的一端（任意一端）插入与Pico GP15引脚相同的行(在我的电路中是row 20)，将另一端插入面包板的free row（在我的电路是row 24）。</p></li>
+<li><p>电流需要先经过一个220欧姆电阻器（用来保护LED）。将电阻器的一端（任意一端）插入与Pico GP15引脚相同的行(在我的电路中是row 20)，将另一端插入面包板的free row（在我的电路是row 24）。</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>220欧姆的电阻器色环颜色为红红黑黑棕。</p>
+</div>
+</div></blockquote>
+</li>
 <li><p>拿起LED，你会看到它的其中一根lead比另一根要长。将较长的lead插入与电阻器末端相同的行，将较短的lead跨过面包板中间间隙，接到相同的行中。</p>
 <blockquote>
 <div><div class="admonition note">
@@ -238,6 +245,11 @@
     <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>因为``toggle()`` 可以让引脚在高电平和低电平之间切换，你能看到LED闪烁。</p>
+<p>Also see reference here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.micropython.org/en/latest/library/machine.Pin.html">machine.Pin</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -247,8 +259,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Reading button values.html" class="btn btn-neutral float-right" title="Reading button values" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="First program! Hello, LED!.html" class="btn btn-neutral float-left" title="First program! Hello, LED!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reading button values.html" class="btn btn-neutral float-right" title="Reading Button Value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="First program! Hello, LED!.html" class="btn btn-neutral float-left" title="Hello, LED!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

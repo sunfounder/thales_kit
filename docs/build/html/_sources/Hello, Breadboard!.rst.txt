@@ -32,6 +32,10 @@ Wiring
 
 1. 在这里我们使用Pico板的GP15引脚发出的电信号让LED工作，电路从这开始。
 #. 电流需要先经过一个220欧姆电阻器（用来保护LED）。将电阻器的一端（任意一端）插入与Pico GP15引脚相同的行(在我的电路中是row 20)，将另一端插入面包板的free row（在我的电路是row 24）。
+
+    .. note::
+        220欧姆的电阻器色环颜色为红红黑黑棕。
+
 #. 拿起LED，你会看到它的其中一根lead比另一根要长。将较长的lead插入与电阻器末端相同的行，将较短的lead跨过面包板中间间隙，接到相同的行中。
     
     .. note::
@@ -56,3 +60,9 @@ Code
     while True:
         led.toggle()
         utime.sleep(1)
+
+因为``toggle()`` 可以让引脚在高电平和低电平之间切换，你能看到LED闪烁。
+
+Also see reference here:
+
+* `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_

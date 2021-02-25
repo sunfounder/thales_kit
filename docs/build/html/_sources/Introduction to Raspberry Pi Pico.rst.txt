@@ -8,21 +8,26 @@ The Raspberry Pi Pico is a microcontroller board based on the Raspberry Pi RP204
 
 Whether you want to learn the MicroPython programming language, take the first step in physical computing, or want to build a hardware project, Raspberry Pi Pico--and its amazing community--will support you every step of the way. In the project, it can control anything, from LEDs and buttons to sensors, motors, and even other items. Other microcontrollers.
 
-Key Features
+Features
 --------------
-* RP2040 microcontroller chip designed by Raspberry Pi in the United Kingdom
-* Dual-core Arm Cortex M0+ processor, flexible clock running up to 133 MHz
-* 264KB of SRAM, and 2MB of on-board Flash memory
-* Castellated module allows soldering direct to carrier boards
-* USB 1.1 with device and host support
-* Low-power sleep and dormant modes
-* Drag-and-drop programming using mass storage over USB
-* 26 × multi-function GPIO pins
-* 2 × SPI, 2 × I2C, 2 × UART, 3 × 12-bit ADC, 16 × controllable PWM channels
-* Accurate clock and timer on-chip
-* Temperature sensor
-* Accelerated floating-point libraries on-chip
+
+* 21 mm × 51 mm form factor
+* RP2040 microcontroller chip designed by Raspberry Pi in the UK
+* Dual-core Arm Cortex-M0+ processor, flexible clock running up to 133 MHz
+* 264KB on-chip SRAM
+* 2MB on-board QSPI Flash
+* 26 multifunction GPIO pins, including 3 analogue inputs
+* 2 × UART, 2 × SPI controllers, 2 × I2C controllers, 16 × PWM channels
+* 1 × USB 1.1 controller and PHY, with host and device support
 * 8 × Programmable I/O (PIO) state machines for custom peripheral support
+* Supported input power 1.8–5.5V DC
+* Operating temperature -20°C to +85°C
+* Castellated module allows soldering direct to carrier boards
+* Drag-and-drop programming using mass storage over USB
+* Low-power sleep and dormant modes
+* Accurate on-chip clock
+* Temperature sensor
+* Accelerated integer and floating-point libraries on-chip
 
 Pico's Pins
 ------------
@@ -71,10 +76,14 @@ Pico's Pins
 The best place to find everything you need to get started with your Raspberry Pi Pico is `here <https://www.raspberrypi.org/documentation/pico/getting-started/>`_
 
 Or you can click on the links below: 
-
-* `Raspberry Pi Pico Datasheet <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>`_
-* `RP2040 Datasheet <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>`_
-* `Hardware design with RP2040 <https://datasheets.raspberrypi.org/rp2040/hardware-design-with-rp2040.pdf>`_
-* `Getting started with Raspberry Pi Pico <https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf>`_
+  
+* `Raspberry Pi Pico product brief <https://datasheets.raspberrypi.org/pico/pico-product-brief.pdf>`_
+* `Raspberry Pi Pico datasheet <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>`_
+* `Getting started with Raspberry Pi Pico: C/C++ development <https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf>`_
 * `Raspberry Pi Pico C/C++ SDK <https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf>`_
+* `API-level Doxygen documentation for the Raspberry Pi Pico C/C++ SDK <https://raspberrypi.github.io/pico-sdk-doxygen/>`_
 * `Raspberry Pi Pico Python SDK <https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-python-sdk.pdf>`_
+* `Raspberry Pi RP2040 datasheet <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>`_
+* `Hardware design with RP2040 <https://datasheets.raspberrypi.org/rp2040/hardware-design-with-rp2040.pdf>`_
+* `Raspberry Pi Pico design files <https://datasheets.raspberrypi.org/pico/RPi-Pico-R3-PUBLIC-20200119.zip>`_
+* `Raspberry Pi Pico STEP file <https://datasheets.raspberrypi.org/pico/Pico-R3-step.zip>`_
