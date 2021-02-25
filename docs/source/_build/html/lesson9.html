@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Traffic light &mdash; Picasso 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hello, Transistor!" href="lesson10.html" />
+    <link rel="prev" title="Reaction Game" href="lesson8.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Picasso
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lesson5.html">First program! Hello, LED! RST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson6.html">Hello, Breadboard!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson7.html">Reading button values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson8.html">Reaction Game</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Traffic light</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-it-works">How it works?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lesson10.html">Hello, Transistor!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lessen - Copy (5).html">First program! Hello, LED! MD</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Picasso</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Traffic light</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/lesson9.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="traffic-light">
+<h1>Traffic light<a class="headerlink" href="#traffic-light" title="Permalink to this headline">¶</a></h1>
+<p>除了家庭的电子设备，在社会环境中也可以找到许多微控制器，其中就包括交通信号灯。
+交通信号灯是指挥交通运行的信号灯，一般由红灯、绿灯、黄灯组成。
+构建一个庞大的交通管理系统是一项相当高级的项目，但用Pico驱动一个微型的交通信号灯却是我们可以尝试的项目。</p>
+<p>让我们用几个LED和按键制作一个迷你pedestrian crossing系统吧！</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/pic11.png" src="_images/pic11.png" />
+<ol class="arabic simple">
+<li><p>将Pico的3V3和GND连接至面包板电源总线。</p></li>
+<li><p>将红、黄、绿三个LED插在面包板上。</p></li>
+<li><p>GP13、GP14、GP15各自连接一个电阻器后接续至LED的阳极。</p></li>
+<li><p>将LED们的阴极连接至面包板负极电源总线。</p></li>
+<li><p>插入Button，将其一侧连接至GP16，另一侧连接至正极电源总线。</p></li>
+</ol>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>当程序启动时，交通信号灯会以红5秒，黄2秒，绿5秒，黄2秒的顺序循环切换。
+如果我们（行人）按下按键，下一次红灯将会延长至15秒，这将会使我们有更长的时间过马路。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">_thread</span>
+
+<span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">led_green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="k">global</span> <span class="n">button_status</span>
+<span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">button_thread</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">button_status</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">button_status</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">button_thread</span><span class="p">,</span> <span class="p">())</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+        <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">global</span> <span class="n">button_status</span>
+    <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">led_red</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+<span class="n">led_yellow</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">led_yellow</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+<span class="n">led_green</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">led_green</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+<span class="n">led_yellow</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">led_yellow</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>在前面的章节，我们已经掌握了让LED闪烁的方法，换而言之编写一段让交通灯循环切换颜色的代码对我们来说完全不在话下，我们需要做的就是增加一个对按键状态的判断。
+但是如果我们直接将读取按键值的语句写在主程序中，却会发现放在哪里都不合适，即便写进去也基本无法读取到值。
+这是因为程序在执行```utime.sleep()```时是停滞的，这时候并没有在执行读取按键值的语句。</p>
+<p>当然，我们可以通过上节课的IRQs来实现按键值的读取。但这次我们采取另外的方法 —— 多线程。</p>
+<p>多线程可以简单理解为将一件事情分开成多个部分，交由不同的人（或处理器）来执行。
+就像主厨在煎牛排的时候，副厨师会在旁边调酱汁，这样才能把刚调好的酱汁淋在处理得恰到好处的牛扒上，做出最佳的料理。</p>
+<p>请看这几行：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">machine</span>
+ <span class="kn">import</span> <span class="nn">utime</span>
+<span class="hll"> <span class="kn">import</span> <span class="nn">_thread</span>
+</span>
+ <span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">led_green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+ <span class="k">global</span> <span class="n">button_status</span>
+ <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="hll"> <span class="k">def</span> <span class="nf">button_thread</span><span class="p">():</span>
+</span>     <span class="k">global</span> <span class="n">button_status</span>
+     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+             <span class="n">button_status</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="hll"> <span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">button_thread</span><span class="p">,</span> <span class="p">())</span>
+</span>
+ <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+     <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+         <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+         <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+     <span class="k">global</span> <span class="n">button_status</span>
+     <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+
+ <span class="n">PASS</span>
+ <span class="c1"># PASS means not to do anything.</span>
+ <span class="c1"># Used here to temporarily replace the unnecessary part.</span>
+</pre></div>
+</div>
+<p>在这里，首先 import 了```_thread``` 库。This module implements multithreading support.
+然后定义一个线程```button_thread()```，它独立于主线程。在这里用来读取按键的状态。
+最后用```_thread.start_new_thread(button_thread, ())```来开始线程。</p>
+<p>让我们通过以下代码来更好的理解多线程：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">machine</span>
+ <span class="kn">import</span> <span class="nn">utime</span>
+<span class="hll"> <span class="kn">import</span> <span class="nn">_thread</span>
+</span>
+ <span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+ <span class="k">def</span> <span class="nf">led_yellow_thread</span><span class="p">():</span>
+     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+         <span class="n">led_yellow</span><span class="o">.</span><span class="n">toggle</span><span class="p">()</span>
+         <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="hll">
+</span> <span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">led_yellow_thread</span><span class="p">,</span> <span class="p">())</span>
+
+ <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+     <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+         <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="hll">     <span class="k">elif</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span>         <span class="n">led_red</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>在主线程中，我们可以用按钮来控制红色LED亮灭。在新线程，黄色LED会每2秒变换一次。两个线程相互独立工作。</p>
+<p>让我们回到交通信号灯程序。我们让主线程变换信号灯，让新线程读取按键值。但是，线程之间是相互独立的，我们需要一种使新线程将信息传递回主线程的方法，这便需要使用全局变量。</p>
+<p>我们之前使用过的变量是局部变量，仅在程序中的一个部分起作用（在主函数中声明的变量无法在子函数中使用，在主线程声明的变量无法在新线程使用）。
+而全局变量可以在任何地方使用，我们在一个线程中改变它，另一个也能得到它更新后的值。</p>
+<p>全局变量在这里：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">machine</span>
+ <span class="kn">import</span> <span class="nn">utime</span>
+ <span class="kn">import</span> <span class="nn">_thread</span>
+
+ <span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">led_green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+ <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="hll"> <span class="k">global</span> <span class="n">button_status</span>
+</span><span class="hll"> <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+</span>
+ <span class="k">def</span> <span class="nf">button_thread</span><span class="p">():</span>
+<span class="hll">     <span class="k">global</span> <span class="n">button_status</span>
+</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="hll">             <span class="n">button_status</span> <span class="o">=</span> <span class="mi">1</span>
+</span>
+ <span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">button_thread</span><span class="p">,</span> <span class="p">())</span>
+
+ <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">     <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span>         <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+         <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="hll">     <span class="k">global</span> <span class="n">button_status</span>
+</span><span class="hll">     <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+</span>
+ <span class="n">PASS</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>在程序刚运行时，<code class="docutils literal notranslate"><span class="pre">`button_status`</span></code> 被赋值为0，代表着按键未被按下。</p></li>
+<li><p>在新线程中，当程序检测到按键被按下了，<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>button_status```被赋值为1。</p></li>
+<li><p>在主线程的循环里，每个交通信号灯变化周期前```button_status```都会被检测一次，如果状态为1，则执行一段额外的红灯时间，随后切换为0，等待下一次按键按下。</p></li>
+</ul>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a>global button_status```的作用是告诉程序我们将要修改这个全局变量的值。如果我们想读取变量的值，不需要这行；如果想要修改变量的值，则必须加上它，否则将无法修改变量。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="lesson10.html" class="btn btn-neutral float-right" title="Hello, Transistor!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lesson8.html" class="btn btn-neutral float-left" title="Reaction Game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jimmy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

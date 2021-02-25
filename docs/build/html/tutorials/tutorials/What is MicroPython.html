@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>What is MicroPython? &mdash; Picasso 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Picasso
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson5.html">First program! Hello, LED!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson6.html">Hello, Breadboard!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson7.html">Reading button values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson8.html">Reaction Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson9.html">Traffic light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson10.html">Hello, Transistor!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson11.html">Intruder Alarm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson12.html">Fading LED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson13.html">Colorful Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson14.html">Custom tone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson15.html">Servo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson16.html">Turn the knob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson17.html">Light Theremin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson18.html">Thermistor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson19.html">Microchip - 74HC595</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson20.html">LED Segment Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson21.html">Liquid Crystal Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson22.html">RGB LED Strip</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Picasso</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>What is MicroPython?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/tutorials/tutorials/What is MicroPython.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="what-is-micropython">
+<h1>What is MicroPython?<a class="headerlink" href="#what-is-micropython" title="Permalink to this headline">¶</a></h1>
+<p>MicroPython is a full Python compiler and runtime that runs on the microcontroller’s hardware like Raspberry Pi Pico.
+The user is presented with an interactive prompt (the REPL) to execute supported commands immediately. Included are a selection of core Python libraries; MicroPython includes modules which give the programmer access to low-level hardware.</p>
+<div class="section" id="id1">
+<h2>故事从这里开始了<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>2013年，达米安·乔治（Damien George）发起了众筹活动（Kickstarter）时，一切都改变了。Damien是剑桥大学的一名本科生，是一名狂热的机器人程序员。他想将Python的世界从容量在千兆字节的机器降到千字节。他的Kickstarter竞选活动是为了支持他的发展，同时他将其概念证明转化为完成的实现。
+MicroPython得到了不同的Pythonista社区的支持，他们对看到该项目的成功有着浓厚的兴趣。除了测试和支持代码库本身之外，开发人员还提供了教程，代码库和硬件端口，使该项目远远超出了Damien单独完成的工作。</p>
+</div>
+<div class="section" id="why-micropython">
+<h2>Why MicroPython？<a class="headerlink" href="#why-micropython" title="Permalink to this headline">¶</a></h2>
+<p>虽然最初的Kickstarter活动以带有STM32F4的开发板“ pyboard”发布了MicroPython，但MicroPython支持许多基于ARM的产品建筑。主线支持的端口是ARM Cortex-M（许多STM32板，TI CC3200 / WiPy，Teensy板，Nordic nRF系列，SAMD21和SAMD51），ESP8266，ESP32、16bit PIC，Unix，Windows，Zephyr和JavaScript。
+其次，MicroPython允许快速反馈。这是因为您可以使用REPL交互式地输入命令并获得响应。您甚至可以调整代码并立即运行它，而不是遍历代码-编译-上传-执行周期。</p>
+<p>虽然Python同样有以上的优点，但对于一些Microcontroller boards像RasPberry Pi Pico，它们很小，很简单并且只有少量内存，根本无法运行Python语言。这就是MicroPython能够发展起来的原因，它保留了Python主要的特性，同时增加了一系列新的特性，以便适用于这些Microcontroller boards.
+接下来将学习install MicroPython into the Raspberry Pi Pico。</p>
+</div>
+<div class="section" id="installing-micropython">
+<h2>Installing MicroPython<a class="headerlink" href="#installing-micropython" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Plug the Pico to your PC with a Micro USB cable.</p></li>
+<li><p>Push and hold the <strong>BOOTSEL</strong> button and plug the other end of the Micro USB cable into the computer. Release the BOOTSEL button after your Pico is mount as a Mass Storage Device called RPI-RP2.</p>
+<blockquote>
+<div><img alt="tutorials\tutorials\《bootsel图片》" src="tutorials\tutorials\《bootsel图片》" />
+</div></blockquote>
+</li>
+<li><p>Open the drive, you’ll see two files on your Pico:<strong>INDEW.HTM</strong> and <strong>INFO_UF2.TXT</strong>. Double click the first file, INDEX.HTM, to open it in your browser.</p>
+<ul class="simple">
+<li><p><strong>INDEW.HTM</strong>: This is a welcome page telling you all about your Pico.</p></li>
+<li><p><strong>INFO_UF2.TXT</strong>: Contains the version of the bootloader it’s currently running.</p></li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/index_htm.png" src="../../_images/index_htm.png" />
+</div></blockquote>
+</li>
+<li><p>When the browser opens, click <strong>Getting started with MicroPython</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/welcome_pico.png" src="../../_images/welcome_pico.png" />
+</div></blockquote>
+</li>
+<li><p>Download the MicroPython firmware by clicking the <strong>Download UF2 file</strong> button.</p>
+<blockquote>
+<div><img alt="../../_images/download_uf2.png" src="../../_images/download_uf2.png" />
+</div></blockquote>
+</li>
+<li><p>Open the <strong>Downloads</strong> folder and find the file you just downloaded – it will be called ‘pico_micropython_xxxxxxxx.uf2’, then drag it to <strong>RPI-RP2</strong> storage drive. Your Pico will reboot and disappear from the File Manager.</p>
+<blockquote>
+<div><img alt="../../_images/move_uf2.png" src="../../_images/move_uf2.png" />
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please ignore the warning that a drive was removed without being ejected, that’s supposed to happen!</p>
+<p>When you dragged the MicroPython firmware file onto your Pico, you told it to flash the firmware onto its internal storage. To do that, your Pico switches out of the special mode you put it in with the ‘BOOTSEL’ button, flashes the new firmware, and then loads it – meaning that your Pico is now running MicroPython.</p>
+</div>
+<p>Congratulations: you’re now ready to get started with MicroPython on your Raspberry Pi Pico!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jimmy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

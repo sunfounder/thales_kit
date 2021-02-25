@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>7-segment Display &mdash; Picasso 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Picasso
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson5.html">First program! Hello, LED!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson6.html">Hello, Breadboard!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson7.html">Reading button values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson8.html">Reaction Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson9.html">Traffic light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson10.html">Hello, Transistor!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson11.html">Intruder Alarm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson12.html">Fading LED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson13.html">Colorful Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson14.html">Custom tone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson15.html">Servo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson16.html">Turn the knob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson17.html">Light Theremin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson18.html">Thermistor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson19.html">Microchip - 74HC595</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson20.html">LED Segment Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson21.html">Liquid Crystal Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson22.html">RGB LED Strip</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Picasso</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>7-segment Display</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/tutorials/tutorials/7-segment Display.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="segment-display">
+<h1>7-segment Display<a class="headerlink" href="#segment-display" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/7_segment.png" src="../../_images/7_segment.png" />
+<p>A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.</p>
+<p>There are two types of pin connection: Common Cathode (CC) and Common Anode (CA). As the name suggests, a CC display has all the cathodes of the 7 LEDs connected when a CA display has all the anodes of the 7 segments connected.</p>
+<p>In this kit, we use the Common Cathode 7-segment display, here is the electronic symbol.</p>
+<a class="reference internal image-reference" href="../../_images/segment_cathode.png"><img alt="../../_images/segment_cathode.png" src="../../_images/segment_cathode.png" style="width: 800px;" /></a>
+<p>Each of the LEDs in the display is given a positional segment with one of its connection pins led out from the rectangular plastic package. These LED pins are labeled from “a” through to “g” representing each individual LED. The other LED pins are connected together forming a common pin. So by forward biasing the appropriate pins of the LED segments in a particular order, some segments will brighten and others stay dim, thus showing the corresponding character on the display.</p>
+<p><strong>Display Codes</strong></p>
+<p>To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.</p>
+<img alt="../../_images/segment_code.png" src="../../_images/segment_code.png" />
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jimmy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>RGB LED Strip &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Liquid Crystal Display" href="Liquid Crystal Display.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction to Raspberry Pi Pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What is MicroPython.html">What is MicroPython?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thonny Python IDE.html">Thonny Python IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Your First MicroPython Program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lesson</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">First program! Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading button values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Hello, Transistor!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intruder Alarm.html">Intruder Alarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fading LED.html">Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Colorful Light.html">Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Custom tone.html">Custom tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Swinging Servo.html">Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Turn the knob.html">Turn the knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thermometer.html">Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Light Theremin.html">Light Theremin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Microchip - 74HC595.html">Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED Segment Display.html">LED Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liquid Crystal Display.html">Liquid Crystal Display</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RGB LED Strip</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-more">What more?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Lesson.html">Lesson</a> &raquo;</li>
+        
+      <li>RGB LED Strip</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/RGB LED Strip.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rgb-led-strip">
+<h1>RGB LED Strip<a class="headerlink" href="#rgb-led-strip" title="Permalink to this headline">¶</a></h1>
+<p>WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. It internal include intelligent digital port data latch and signal reshaping amplification drive circuit. Also include a precision internal oscillator and a 12V voltage programmable constant current control part, effectively ensuring the pixel point light color height consistent.</p>
+<p>The data transfer protocol use single NZR communication mode.
+After the pixel power-on reset, the DIN port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch, the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade pixel through the DO port. After transmission for each pixel，the signal to reduce 24bit.
+pixel adopt auto reshaping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend on the speed of signal transmission.</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/wiring_rgb_strip.png" src="_images/wiring_rgb_strip.png" />
+<ol class="arabic simple">
+<li><p>将LED Strip 的VCC连接Pico的VBUS。</p></li>
+<li><p>将LED Strip 的GND连接Pico的GND。</p></li>
+<li><p>将LED Strip 的DIN连接Pico的GP0。</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>您需要注意的一件事是电流。
+虽然Pico中可以使用任意LED灯珠数量的LED Strip，然而其VBUS引脚的功率却是有限的。
+在这里，我们将使用八个LED，这是安全的。
+但是如果您要使用更多的LED，则需要了解限制条件，并可能需要添加单独的电源。</p>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>以下是Sunfounder封装好的ws2812的library。你需要将其存入Pico，将其命名为 <strong>ws2812.py</strong> 作为library使用。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">array</span><span class="o">,</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">rp2</span>
+<span class="kn">from</span> <span class="nn">rp2</span> <span class="kn">import</span> <span class="n">PIO</span><span class="p">,</span> <span class="n">StateMachine</span><span class="p">,</span> <span class="n">asm_pio</span>
+
+<span class="nd">@asm_pio</span><span class="p">(</span><span class="n">sideset_init</span><span class="o">=</span><span class="n">PIO</span><span class="o">.</span><span class="n">OUT_LOW</span><span class="p">,</span> <span class="n">out_shiftdir</span><span class="o">=</span><span class="n">PIO</span><span class="o">.</span><span class="n">SHIFT_LEFT</span><span class="p">,</span> <span class="n">autopull</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pull_thresh</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">ws2812</span><span class="p">():</span>
+    <span class="n">T1</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">T2</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">T3</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">label</span><span class="p">(</span><span class="s2">&quot;bitloop&quot;</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">side</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="n">T3</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">jmp</span><span class="p">(</span><span class="n">not_x</span><span class="p">,</span> <span class="s2">&quot;do_zero&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">side</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="n">T1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">jmp</span><span class="p">(</span><span class="s2">&quot;bitloop&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">side</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="n">T2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">label</span><span class="p">(</span><span class="s2">&quot;do_zero&quot;</span><span class="p">)</span>
+    <span class="n">nop</span><span class="p">()</span><span class="o">.</span><span class="n">side</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="n">T2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">WS2812</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="c1"># Configure the number of WS2812 LEDs.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">led_nums</span> <span class="o">=</span> <span class="n">num</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pin</span> <span class="o">=</span> <span class="n">pin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sm</span> <span class="o">=</span> <span class="n">StateMachine</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ws2812</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">8000000</span><span class="p">,</span> <span class="n">sideset_base</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pin</span><span class="p">)</span>
+        <span class="c1"># Start the StateMachine, it will wait for data on its FIFO.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sm</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">buf</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">led_nums</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sm</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">write_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">led_nums</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">list_to_hex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">c</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">color</span> <span class="o">&amp;</span> <span class="mh">0xFF0000</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">8</span> <span class="o">|</span> <span class="p">(</span><span class="n">color</span> <span class="o">&amp;</span> <span class="mh">0x00FF00</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="p">(</span><span class="n">color</span> <span class="o">&amp;</span> <span class="mh">0x0000FF</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Color must be 24-bit  RGB hex or list of 3 8-bit RGB&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">hex_to_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">color</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">color</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="n">color</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">color</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Color must be 24-bit  RGB hex or list of 3 8-bit RGB&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hex_to_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_to_hex</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>然后，新建一个new file，在这里调用方才储存好的ws2812 library。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">from</span> <span class="nn">ws2812</span> <span class="kn">import</span> <span class="n">WS2812</span>
+
+<span class="n">ws</span> <span class="o">=</span> <span class="n">WS2812</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">ws</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span><span class="mi">154</span><span class="p">,</span><span class="mi">227</span><span class="p">]</span>
+<span class="n">ws</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">128</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">128</span><span class="p">]</span>
+<span class="n">ws</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
+<span class="n">ws</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">ws</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
+<span class="n">ws</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span><span class="mi">199</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ws</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">]</span>
+<span class="n">ws</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>让我们选中一些心仪的颜色，在RGB LED Strip上面显示出来！</p>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>在ws2812 library中，我们将相关功能集成到了WS2812类中。</p>
+<p>你可以通过以下的语句来使用RGB LED Strip</p>
+<p>import ws2812 library</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ws2812</span> <span class="kn">import</span> <span class="n">WS2812</span>
+</pre></div>
+</div>
+<p>声明一个WS2812类型的变量，命名为ws，它连接到”pin”，有”number”个灯珠。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span> <span class="o">=</span> <span class="n">WS2812</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ws是一个array对象，每一个元素对应着一颗灯珠，如ws[0]为第一个，ws[7]为第八个。
+我们可以为每个灯珠赋于颜色值，这些值 must be 24-bit RGB hex or list of 3 8-bit RGB。
+比如说红色的值为”0xFF0000”或者”[255,0,0]”。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_value</span>
+</pre></div>
+</div>
+<p>然后用这个语句为LED Strip写入颜色。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>你也可以直接用以下语句让所有LED亮出相同的颜色。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="o">.</span><span class="n">write_all</span><span class="p">(</span><span class="n">color_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-more">
+<h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
+<p>我们可以随机生成颜色，制作一条colorful flowing light</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">from</span> <span class="nn">ws2812</span> <span class="kn">import</span> <span class="n">WS2812</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="n">ws</span> <span class="o">=</span> <span class="n">WS2812</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">flowing_light</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ws</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ws</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ws</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0xFFFFFF</span><span class="p">))</span>
+    <span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">flowing_light</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ws</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Liquid Crystal Display.html" class="btn btn-neutral float-left" title="Liquid Crystal Display" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

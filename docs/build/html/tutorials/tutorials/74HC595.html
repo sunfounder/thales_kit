@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>74HC595 &mdash; Picasso 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Picasso
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson5.html">First program! Hello, LED!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson6.html">Hello, Breadboard!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson7.html">Reading button values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson8.html">Reaction Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson9.html">Traffic light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson10.html">Hello, Transistor!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson11.html">Intruder Alarm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson12.html">Fading LED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson13.html">Colorful Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson14.html">Custom tone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson15.html">Servo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson16.html">Turn the knob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson17.html">Light Theremin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson18.html">Thermistor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson19.html">Microchip - 74HC595</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson20.html">LED Segment Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson21.html">Liquid Crystal Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lesson22.html">RGB LED Strip</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Picasso</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>74HC595</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/tutorials/tutorials/74HC595.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hc595">
+<h1>74HC595<a class="headerlink" href="#hc595" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/74HC595.png" src="../../_images/74HC595.png" />
+<p>The 74HC595 consists of an 8−bit shift register and a storage register with three−state parallel outputs. It converts serial input into parallel output so you can save IO ports of an MCU.
+When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. The memory register outputs a Bus with a parallel 8-bit and in three states. When OE is enabled (low level), the data in memory register is output to the bus.</p>
+<a class="reference internal image-reference" href="../../_images/74HC595_pin.png"><img alt="../../_images/74HC595_pin.png" src="../../_images/74HC595_pin.png" style="width: 600px;" /></a>
+<p>Pins of 74HC595 and their functions:</p>
+<ul class="simple">
+<li><p><strong>Q0-Q7</strong>: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.</p></li>
+<li><p><strong>Q7’</strong>: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series</p></li>
+<li><p><strong>MR</strong>: Reset pin, active at low level;</p></li>
+<li><p><strong>SHcp</strong>: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.</p></li>
+<li><p><strong>STcp</strong>: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.</p></li>
+<li><p><strong>CE</strong>: Output enable pin, active at low level.</p></li>
+<li><p><strong>DS</strong>: Serial data input pin</p></li>
+<li><p><strong>VCC</strong>: Positive supply voltage.</p></li>
+<li><p><strong>GND</strong>: Ground.</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jimmy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

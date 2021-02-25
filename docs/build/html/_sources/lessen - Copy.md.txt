@@ -1,0 +1,9 @@
+# Setting up your PICO
+
+Raspberry Pi Pico是一个微型奇迹，将支撑从智能家居系统到工业工厂等一切的技术置于掌中。
+
+无论你是想学习MicroPython编程语言，还是想迈出物理计算的第一步，或者想建立一个硬件项目，Raspberry Pi Pico--及其令人惊叹的社区--将支持你的每一步。
+
+Raspberry Pi Pico被称为微控制器开发板，这意味着简单地说，它是一块印刷电路板，里面有一个特殊类型的处理器，设计用于物理计算：微控制器。简单地说，它是一块印刷电路板，里面有一个特殊类型的处理器，设计用于  物理计算：微控制器。口香糖棒大小的Raspberry Pi Pico。由于板子中心的芯片：RP2040微控制器，它的功率惊人。RP2040微控制器.
+
+Raspberry Pi Pico并不是为了取代Raspberry Pi而设计的，Raspberry Pi是一个不同类别的设备。称为单板电脑。而你可能会用你的Raspberry Pi来玩游戏。您的Raspberry Pi Pico是专为物理计算而设计的。项目中，它可以控制任何东西，从LED和按钮到传感器、电机，甚至是其他项目。其他微控制器。

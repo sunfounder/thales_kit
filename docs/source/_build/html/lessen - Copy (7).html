@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Reading button values &mdash; Picasso 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Picasso
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="lesson5.html">First program! Hello, LED! RST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson6.html">Hello, Breadboard!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson7.html">Reading button values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson8.html">Reaction Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson9.html">Traffic light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson10.html">Hello, Transistor!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lessen - Copy (5).html">First program! Hello, LED! MD</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Picasso</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Reading button values</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/lessen - Copy (7).md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reading-button-values">
+<h1>Reading button values<a class="headerlink" href="#reading-button-values" title="Permalink to this headline">¶</a></h1>
+<p>从GPIO（General-purpose input/output）的名字中我们可以看出，引脚应当具有输入和输出两种使用方法。在LED中我们使用了输出，在这章我们借助按键来使用输入。</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<p><img alt="pic" src="wiring" /></p>
+<p>让我们顺着电路方向来搭建电路吧！</p>
+<ol>
+<li><p>将Pico的3V3引脚连接到面包板正极电源总线。</p></li>
+<li><p>将按键插入面包板的中间，使其跨在中央分割线上。</p>
+<blockquote>
+<div><p>我们可以将四足按键看作H形，它的左侧（右侧）两只脚是相连的，这意味着它跨在中央分割线后，会将同一行号的两组半行连接在一起（如在我的电路中，E22与F22已被接通，E24与F24也是如此）。</p>
+</div></blockquote>
+<blockquote>
+<div><p>在按下按键之前，左右两侧是相互独立的，电流并不能从一侧流向另一侧。</p>
+</div></blockquote>
+</li>
+<li><p>用跳线将电源正极总线与按键的一个脚连接（我的是右上方的脚）。</p></li>
+<li><p>用跳线将另一侧的脚（左上方或左下方）连接到GP14。</p></li>
+</ol>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>当按键被按下时，电流会从3V3流经电阻器和开关流入GP14，换而言之GPI14将会读取到高电平信号‘1’；反之，则会读取到低电平信号‘0’。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">machine</span>
+    <span class="kn">import</span> <span class="nn">utime</span>
+    <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You pressed the button!&quot;</span><span class="p">)</span>
+        <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-more">
+<h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
+<p>按键并不需要外接限流电阻器，但是仍需要一个电阻器 —— 上拉电阻器或者下拉电阻器，取决于电路的工作方式。如果没有上拉或下拉电阻，主控制器将可能接收到‘noisy’ signal which can trigger even when you’re not pushing the button.</p>
+<p>那么为什么我们看不到它们呢？因为它们被集成到了Pico中，就如同Pico集成了板载LED一样。这些电阻是可以被编程的，通常被设置为下拉，这使得GPIO在未连通高电平的时候，输入值为‘0’；如果被设置为上拉，则会让GPIO在未接通低电平的时候获得输入值‘1’。</p>
+<p>接下来是按键在使用上拉的工作方式时的接线和代码，请尝试一下。</p>
+<p><img alt="pic" src="wiring" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">machine</span>
+    <span class="kn">import</span> <span class="nn">utime</span>
+    <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
+    <span class="c1"># The third parameter specifies if the pin has a pull-up/down resistor attached.</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># When the button is pressed, GPIO will be connected to GND.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You pressed the button!&quot;</span><span class="p">)</span>
+        <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Also see the reference here:</p>
+<ul class="simple">
+<li><p><em><a class="reference external" href="https://docs.micropython.org/en/latest/library/machine.Pin.html">machine.Pin</a></em></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jimmy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

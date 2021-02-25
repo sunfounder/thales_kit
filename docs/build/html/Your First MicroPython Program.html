@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Your First MicroPython Program &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MicroPython Basic Syntax" href="MicroPython Basic Syntax.html" />
+    <link rel="prev" title="Thonny Python IDE" href="Thonny Python IDE.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction to Raspberry Pi Pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What is MicroPython.html">What is MicroPython?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thonny Python IDE.html">Thonny Python IDE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Your First MicroPython Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-mode">Interactive Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#script-mode">Script Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lesson.html">Lesson</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Your First MicroPython Program</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Your First MicroPython Program.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="your-first-micropython-program">
+<h1>Your First MicroPython Program<a class="headerlink" href="#your-first-micropython-program" title="Permalink to this headline">¶</a></h1>
+<p>In MicroPython, there are two options/methods for running code:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#interactive-mode"><span class="std std-ref">Interactive Mode</span></a></p></li>
+<li><p><a class="reference internal" href="#script-mode"><span class="std std-ref">Script Mode</span></a></p></li>
+</ul>
+</div></blockquote>
+<p>The interactive mode involves running your codes directly on the Python shell which can be accessed from the terminal of the operating system. In the script mode, you have to create a file, save it a name with a .py the extension then runs your code. The interactive mode is suitable when running a few lines of code. The script mode is recommended when you need to create large applications and save them for the next use.</p>
+<div class="section" id="interactive-mode">
+<h2>Interactive Mode<a class="headerlink" href="#interactive-mode" title="Permalink to this headline">¶</a></h2>
+<p>Interactive mode, also known as the REPL provides us with a quick way of running blocks or a single line of Python code. The code executes via the Python shell, which comes with Python installation. Interactive mode is handy when you just want to execute basic Python commands or you are new to Python programming and just want to get your hands dirty with this beautiful language.</p>
+<p>点击Python Shell区域，在&gt;&gt;&gt;之后输入以下指令，然后点击Enter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>print(“Hello, World!”)
+</pre></div>
+</div>
+<img alt="_images/hello_shell.png" src="_images/hello_shell.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果您的程序不运行，而是打印一个“语法错误”消息到Shell区域，那么在您所写的内容中有一个错误。 MicroPython需要以一种非常具体的方式编写它的指令：错过括号或引号，拼写“打印”错误，或者给它一个大写P，或者在指令中的某个地方添加额外的符号，它就不会运行。 再次尝试键入该指令，并确保它与本书中的版本匹配，然后按Enter键。</p>
+</div>
+<p>您将会发现在Shell区域将会立即打印出信息“hello world”。</p>
+</div>
+<div class="section" id="script-mode">
+<h2>Script Mode<a class="headerlink" href="#script-mode" title="Permalink to this headline">¶</a></h2>
+<p>If you need to write a long piece of Python code or your Python script spans multiple files, interactive mode is not recommended. Script mode is the way to go in such cases. In script mode, You write your code in a text file then save it with a .py extension which stands for “Python”.</p>
+<p>在script area输入同样的指令“print(“Hello, World!”)”，当你按下ENTER键之后，程序不会运行，只会在script area区域多一行空行。</p>
+<blockquote>
+<div><img alt="_images/hello_world_script.png" src="_images/hello_world_script.png" />
+</div></blockquote>
+<p>You need click “Run Current Script” or simply press F5 to run it. 如果你的代码没有保存过，将会弹出一个窗口询问保存到This computer or Raspberry Pi Pico？</p>
+<blockquote>
+<div><img alt="_images/where_save.png" src="_images/where_save.png" />
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当您告诉Thonny将您的程序保存在Raspberry Pi Pico上，这意味着程序存储在Pico本身上。 如果你拔掉你的Pico，把它带到你朋友的家里，一个学校活动，或者一个编码俱乐部，然后把它插入他们的电脑中，你的程序仍然是你保存它们的地方-就在你自己的Pico上。</p>
+</div>
+<p>选择你要存储的位置，然后输入文件名hello_world及拓展名’.py’，然后点击OK。</p>
+<blockquote>
+<div><img alt="_images/hello_world_save.png" src="_images/hello_world_save.png" />
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>你可以将你的代码保存成任意的名字，但是最好能描述这是一个怎样的代码，不要命名成特殊的名字boot.py or main.py等。</p>
+</div>
+<p>当你的程序保存后，将会自动运行，你将看到2行信息在Shell区域</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
+Hello, World!
+</pre></div>
+</div>
+<p>The first of these lines is an instruction from Thonny telling the MicroPython interpreter on your Pico to run the contents of the script area – the‘EDITOR_CONTENT’. The second is the output of the program – the message you told MicroPython to print.</p>
+<p>在Script mode下，你要再次打开以前保存过的代码也是一件很简单的事情, 但Interactive Mode中输入的代码将不会被保存，只能重新输入。
+点击打开图标在Thonny工具栏，就像你保存程序时，你会被问到你是想把它保存到“This Computer”还是“Raspberry Pi Pico”-例如点击“Raspberry Pi Pico”，你会看到你保存到你的Pico的所有程序的列表。 在列表中找到hello_world.py-如果您的Pico是新的，它将是那里唯一的文件-然后单击它选择它，然后单击OK。 您的程序将加载到Thonny，准备编辑或为您再次运行它。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="MicroPython Basic Syntax.html" class="btn btn-neutral float-right" title="MicroPython Basic Syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Thonny Python IDE.html" class="btn btn-neutral float-left" title="Thonny Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

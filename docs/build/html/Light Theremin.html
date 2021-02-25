@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Light Theremin &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Microchip - 74HC595" href="Microchip - 74HC595.html" />
+    <link rel="prev" title="Thermometer" href="Thermometer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction to Raspberry Pi Pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What is MicroPython.html">What is MicroPython?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thonny Python IDE.html">Thonny Python IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Your First MicroPython Program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lesson</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">First program! Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading button values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Hello, Transistor!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intruder Alarm.html">Intruder Alarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fading LED.html">Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Colorful Light.html">Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Custom tone.html">Custom tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Swinging Servo.html">Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Turn the knob.html">Turn the knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thermometer.html">Thermometer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Light Theremin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Microchip - 74HC595.html">Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED Segment Display.html">LED Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liquid Crystal Display.html">Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB LED Strip.html">RGB LED Strip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Lesson.html">Lesson</a> &raquo;</li>
+        
+      <li>Light Theremin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Light Theremin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="light-theremin">
+<h1>Light Theremin<a class="headerlink" href="#light-theremin" title="Permalink to this headline">¶</a></h1>
+<p>特雷门琴是一种不需要身体接触的电子乐器，它通过感应演奏家的手部位置来发出不同的音调。
+特雷门琴利用两个感应人体与大地的分布电容的LC 振荡器工作单元分别产生震荡的频率与大小变化而工作。
+我们无法通过Pico复刻出相同的乐器，但是可以借助photoresistor和passive buzzer来实现相似的玩法。</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/wiring_light_theremin.png" src="_images/wiring_light_theremin.png" />
+<ol class="arabic simple">
+<li><p>将 Pico 的3V3和 GND 连接至面包板的电源总线。</p></li>
+<li><p>将photoresistor的一端接入负极电源总线，另一端串联一个10kΩ电阻器接入正极电源总线。</p></li>
+<li><p>用一根跳线从两个电阻器中间接入GP28。</p></li>
+<li><p>将LED插入面包板上，它的阳极pin串联一个220Ω电阻器接入GP16，阴极pin接入负极电源总线。</p></li>
+<li><p>将无源蜂鸣器和S8050三极管插入面包板。蜂鸣器阳极pin连接至正极电源总线，阴极pin连接至三极管的 <strong>collector</strong> lead，三极管的 <strong>base</strong> lead 经由 1kΩ 电阻器连接至 GP15 引脚。<strong>emitter</strong> lead 连接负极电源总线。</p></li>
+</ol>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">photoresistor</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span>
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="n">light_low</span><span class="o">=</span><span class="mi">65535</span>
+<span class="n">light_high</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">interval_mapping</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">in_min</span><span class="p">,</span> <span class="n">in_max</span><span class="p">,</span> <span class="n">out_min</span><span class="p">,</span> <span class="n">out_max</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">out_max</span> <span class="o">-</span> <span class="n">out_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">in_max</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">+</span> <span class="n">out_min</span>
+
+<span class="k">def</span> <span class="nf">tone</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">frequency</span><span class="p">,</span><span class="n">duration</span><span class="p">):</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">30000</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># calibrate the photoresistor max &amp; min values.</span>
+<span class="n">timer_init_start</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span>
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">timer_init_start</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">5000</span><span class="p">:</span>
+    <span class="n">light_value</span> <span class="o">=</span> <span class="n">photoresistor</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">light_value</span> <span class="o">&gt;</span> <span class="n">light_high</span><span class="p">:</span>
+        <span class="n">light_high</span> <span class="o">=</span> <span class="n">light_value</span>
+    <span class="k">if</span> <span class="n">light_value</span> <span class="o">&lt;</span> <span class="n">light_low</span><span class="p">:</span>
+        <span class="n">light_low</span> <span class="o">=</span> <span class="n">light_value</span>
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># play</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">light_value</span>  <span class="o">=</span> <span class="n">photoresistor</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="n">pitch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval_mapping</span><span class="p">(</span><span class="n">light_value</span><span class="p">,</span><span class="n">light_low</span><span class="p">,</span><span class="n">light_high</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">6000</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">pitch</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">pitch</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>当程序运行后，LED会点亮，我们会有五秒的时间校准photoresistor的检测范围。这是因为在每次使用时，我们可能处于不同的光线环境（如正午和黄昏的光照强度并不相同）。
+在此时我们需要用手在photoresistor上方上下摆动，手的移动范围将会被校准为这个乐器的演奏范围。
+五秒过后，LED会熄灭，我们可以在photoresistor上摆手进行演奏。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Microchip - 74HC595.html" class="btn btn-neutral float-right" title="Microchip - 74HC595" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Thermometer.html" class="btn btn-neutral float-left" title="Thermometer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
