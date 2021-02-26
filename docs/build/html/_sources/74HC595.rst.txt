@@ -20,3 +20,8 @@ Pins of 74HC595 and their functions:
 * **DS**: Serial data input pin
 * **VCC**: Positive supply voltage.
 * **GND**: Ground.
+
+Example
+-------------------
+
+:ref:`Microchip - 74HC595`

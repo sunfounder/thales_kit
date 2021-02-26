@@ -50,7 +50,7 @@ How it works?
 MicroPython 中断请求也是相同的工作方式，它允许某些操作中断主程序，它是通过以下两个语句实现的:
 
 .. code-block:: python
-   :emphasize-lines: 8,17
+    :emphasize-lines: 8,17
 
     import machine
     import utime
@@ -103,7 +103,7 @@ MicroPython 中断请求也是相同的工作方式，它允许某些操作中�
 回到原示例。我们需要让LED在5到10秒的随机时间内熄灭，这是通过以下两行实现的：
 
 .. code-block:: python
-   :emphasize-lines: 3,14
+    :emphasize-lines: 3,14
 
     import machine
     import utime
@@ -141,7 +141,7 @@ MicroPython 中断请求也是相同的工作方式，它允许某些操作中�
 最后你需要了解的两个语句是 ``utime.ticks_ms()`` 和 ``utime.ticks_diff()``。
 
 .. code-block:: python
-   :emphasize-lines: 10,16
+    :emphasize-lines: 10,16
 
     import machine
     import utime

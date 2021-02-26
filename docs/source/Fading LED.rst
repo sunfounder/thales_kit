@@ -56,9 +56,10 @@ Code
     led = machine.PWM(machine.Pin(15))
     led.freq(1000)
 
-    for brightness in range(0,1023):
+    for brightness in range(0,65535,50):
         led.duty_u16(brightness)
-        utime.sleep(10)
+        utime.sleep_ms(10)
+    led.duty_u16(0)
 
 How it works?
 -----------------------------------------------
@@ -66,7 +67,7 @@ How it works?
 在这里，我们通过改变GP15的PWM输出的占空比来改变LED的亮度，让我们来看看这几行。
 
 .. code-block:: python
-   :emphasize-lines: 4,5,8
+    :emphasize-lines: 4,5,8
 
     import machine
     import utime
@@ -74,9 +75,10 @@ How it works?
     led = machine.PWM(machine.Pin(15))
     led.freq(1000)
 
-    for brightness in range(0,1023):
+    for brightness in range(0,65535,50):
         led.duty_u16(brightness)
-        utime.sleep(10)
+        utime.sleep_ms(10)
+    led.duty_u16(0)
 
 * ``led = machine.PWM(machine.Pin(15))`` 将GP15引脚设置为PWM输出。
 

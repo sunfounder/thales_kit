@@ -18,3 +18,10 @@ The following is the electrical symbol of a buzzer. It has two pins with positiv
     :width: 150
 
 You can check the pins of the buzzer, the longer one is the anode and the shorter one is the cathode. Please don’t mix them up when connecting, otherwise the buzzer will not make sound. 
+
+Example
+-------------------
+
+:ref:`Intruder Alarm`
+
+:ref:`Custom Tone`

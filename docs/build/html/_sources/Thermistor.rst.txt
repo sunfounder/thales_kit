@@ -32,3 +32,8 @@ Here is the relation between the resistance and temperature:
 Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius.
 
 This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
+
+Example
+-------------------
+
+:ref:`Thermometer`

@@ -1,5 +1,3 @@
-.. _reading_button_value:
-
 Reading Button Value
 ==============================================
 

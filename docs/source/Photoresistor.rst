@@ -12,3 +12,9 @@ Here is the electronic symbol of photoresistor.
 
 .. image:: img/photoresistor_symbol.png
     :width: 200
+
+
+Example
+-------------------
+
+:ref:`Light Theremin`

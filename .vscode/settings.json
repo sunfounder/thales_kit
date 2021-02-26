@@ -1,3 +1,5 @@
 {
-    "restructuredtext.linter.disabled": true
+    "restructuredtext.linter.disabled": true,
+    "restructuredtext.confPath": "",
+    "python.pythonPath": "C:\\Program Files (x86)\\Python37-32\\python.exe"
 }

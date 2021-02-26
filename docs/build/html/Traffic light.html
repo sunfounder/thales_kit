@@ -95,7 +95,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lessons</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">Hello, LED!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading_button_values.html">Reading Button Value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Traffic Light</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
@@ -234,26 +234,26 @@
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+        <span class="n">led_red</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
     <span class="k">global</span> <span class="n">button_status</span>
     <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">led_red</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+    <span class="n">led_red</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">led_red</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">led_yellow</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">led_yellow</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+    <span class="n">led_yellow</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">led_yellow</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">led_green</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">led_green</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+    <span class="n">led_green</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">led_green</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">led_yellow</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">led_yellow</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+    <span class="n">led_yellow</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">led_yellow</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -266,36 +266,36 @@
 <p>多线程可以简单理解为将一件事情分开成多个部分，交由不同的人（或处理器）来执行。
 就像主厨在煎牛排的时候，副厨师会在旁边调酱汁，这样才能把刚调好的酱汁淋在处理得恰到好处的牛扒上，做出最佳的料理。</p>
 <p>请看这几行：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">machine</span>
- <span class="kn">import</span> <span class="nn">utime</span>
-<span class="hll"> <span class="kn">import</span> <span class="nn">_thread</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="hll"><span class="kn">import</span> <span class="nn">_thread</span>
 </span>
- <span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
- <span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
- <span class="n">led_green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
- <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">led_green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
 
- <span class="k">global</span> <span class="n">button_status</span>
- <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">global</span> <span class="n">button_status</span>
+<span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="hll"> <span class="k">def</span> <span class="nf">button_thread</span><span class="p">():</span>
-</span>     <span class="k">global</span> <span class="n">button_status</span>
-     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-         <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-             <span class="n">button_status</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="hll"><span class="k">def</span> <span class="nf">button_thread</span><span class="p">():</span>
+</span>    <span class="k">global</span> <span class="n">button_status</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">button_status</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="hll"> <span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">button_thread</span><span class="p">,</span> <span class="p">())</span>
+<span class="hll"><span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">button_thread</span><span class="p">,</span> <span class="p">())</span>
 </span>
- <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-     <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-         <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-         <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-     <span class="k">global</span> <span class="n">button_status</span>
-     <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">led_red</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">global</span> <span class="n">button_status</span>
+    <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
 
- <span class="n">PASS</span>
- <span class="c1"># PASS means not to do anything.</span>
- <span class="c1"># Used here to temporarily replace the unnecessary part.</span>
+    <span class="n">PASS</span>
+    <span class="c1"># PASS means not to do anything.</span>
+    <span class="c1"># Used here to temporarily replace the unnecessary part.</span>
 </pre></div>
 </div>
 <p>在这里，首先 import 了 <code class="docutils literal notranslate"><span class="pre">_thread</span></code> 库。This module implements multithreading support.
@@ -319,9 +319,9 @@
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+        <span class="n">led_red</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">led_red</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+        <span class="n">led_red</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>在主线程中，我们可以用按钮来控制红色LED亮灭。在新线程，黄色LED会每2秒变换一次。两个线程相互独立工作。</p>
@@ -329,34 +329,34 @@
 <p>我们之前使用过的变量是局部变量，仅在程序中的一个部分起作用（在主函数中声明的变量无法在子函数中使用，在主线程声明的变量无法在新线程使用）。
 而全局变量可以在任何地方使用，我们在一个线程中改变它，另一个也能得到它更新后的值。</p>
 <p>全局变量在这里：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">machine</span>
- <span class="kn">import</span> <span class="nn">utime</span>
- <span class="kn">import</span> <span class="nn">_thread</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">_thread</span>
 
- <span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
- <span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
- <span class="n">led_green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
- <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">led_red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">led_yellow</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">led_green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
 
-<span class="hll"> <span class="k">global</span> <span class="n">button_status</span>
-</span><span class="hll"> <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="hll"><span class="k">global</span> <span class="n">button_status</span>
+</span><span class="hll"><span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
 </span>
- <span class="k">def</span> <span class="nf">button_thread</span><span class="p">():</span>
-<span class="hll">     <span class="k">global</span> <span class="n">button_status</span>
-</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-         <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="hll">             <span class="n">button_status</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">def</span> <span class="nf">button_thread</span><span class="p">():</span>
+<span class="hll">    <span class="k">global</span> <span class="n">button_status</span>
+</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="hll">            <span class="n">button_status</span> <span class="o">=</span> <span class="mi">1</span>
 </span>
- <span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">button_thread</span><span class="p">,</span> <span class="p">())</span>
+<span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">button_thread</span><span class="p">,</span> <span class="p">())</span>
 
- <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="hll">     <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span>         <span class="n">led_red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-         <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="hll">     <span class="k">global</span> <span class="n">button_status</span>
-</span><span class="hll">     <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">    <span class="k">if</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span>        <span class="n">led_red</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="hll">    <span class="k">global</span> <span class="n">button_status</span>
+</span><span class="hll">    <span class="n">button_status</span> <span class="o">=</span> <span class="mi">0</span>
 </span>
- <span class="n">PASS</span>
+    <span class="n">PASS</span>
 </pre></div>
 </div>
 <ul class="simple">

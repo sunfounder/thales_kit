@@ -100,7 +100,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading_button_values.html">Reading Button Value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic Light</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Two Kinds of Transistors</a></li>
@@ -286,31 +286,16 @@ Pin函数拥有两个参数：第一个参数（25）意味着你要设置的引
 <li><p><a class="reference external" href="https://docs.micropython.org/en/latest/library/machine.Pin.html">machine.Pin</a></p></li>
 <li><p><a class="reference external" href="https://docs.micropython.org/en/latest/library/utime.html">utime</a></p></li>
 </ul>
-<p>下面是另外两种让LED闪烁的示例，请尝试翻阅API文件，读懂它们吧！</p>
-<ol class="arabic">
-<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<p>下面是也是个让LED闪烁的示例，请尝试翻阅API文件，读懂它吧！</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 
 <span class="n">led_onboard</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-   <span class="n">led_onboard</span><span class="o">.</span><span class="n">toggle</span><span class="p">()</span>
-   <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">led_onboard</span><span class="o">.</span><span class="n">toggle</span><span class="p">()</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
-<span class="kn">import</span> <span class="nn">utime</span>
-
-<span class="n">led_onboard</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-   <span class="n">led_onboard</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-   <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-   <span class="n">led_onboard</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
-   <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 

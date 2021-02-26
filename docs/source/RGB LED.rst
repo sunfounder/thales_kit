@@ -1,5 +1,5 @@
 RGB LED
------------
+=================
 
 .. image:: img/rgb_led.png
     :width: 100
@@ -20,3 +20,8 @@ An RGB LED has 4 pins: the longest one is GND; the others are Red, Green and Blu
 
 .. image:: img/rgb_pin.jpg
     :width: 200
+
+Example
+-------------------
+
+:ref:`Colorful Light`

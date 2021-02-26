@@ -43,3 +43,7 @@ LED with low driving voltage, environmental protection and energy saving, high b
 e is large, good consistency, low power, long life and other advantages. The control chip integrated in LED
 above becoming more simple circuit, small volume, convenient installation.
 
+Example
+-------------------
+
+:ref:`RGB LED Strip`

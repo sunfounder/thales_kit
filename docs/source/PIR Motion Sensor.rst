@@ -26,3 +26,8 @@ Choosing different modes by using the jumper cap.
 
 * **H**: Repeatable trigger mode, after sensing the human body, the module outputs high level. During the subsequent delay period, if somebody enters the sensing range,the output will keep being the high level.
 * **L**：Non-repeatable trigger mode, outputs high level when it senses the human body. After the delay, the output will change from high level into low level automatically. 
+
+Example
+-------------------
+
+:ref:`Intruder Alarm`

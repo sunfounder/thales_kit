@@ -16,7 +16,11 @@ Although these holes on the breadboard appear to be independent of each other, t
 .. image:: img/breadboard_internal.png
     :width: 600
 
-If you want to know more about breadboard, refer to: https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd%3E%60_
+If you want to know more about breadboard, refer to: `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
+
+Example
+-------------------
+:ref:`Hello, Breadboard!`
 
 
 

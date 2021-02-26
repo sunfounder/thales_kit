@@ -106,7 +106,10 @@
 <li class="toctree-l2"><a class="reference internal" href="Slide Switch.html">Slide Switch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PIR Motion Sensor.html">PIR Motion Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Buzzer.html">Buzzer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Servo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Servo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="WS2812 RGB 8 LEDs Strip.html">WS2812 RGB 8 LEDs Strip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="74HC595.html">74HC595</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7-segment Display.html">7-segment Display</a></li>
@@ -192,6 +195,10 @@
 <p>The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the motor turns. For example, a 1.5ms pulse will make the motor turn to the 90 degree position (neutral position).
 When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point. When the pulse is wider than 1.5 ms the opposite occurs. The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo. Generally the minimum pulse will be about 0.5 ms wide and the maximum pulse will be 2.5 ms wide.</p>
 <a class="reference internal image-reference" href="_images/servo_duty.png"><img alt="_images/servo_duty.png" src="_images/servo_duty.png" style="width: 600px;" /></a>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="Swinging Servo.html#swinging-servo"><span class="std std-ref">Swinging Servo</span></a></p>
+</div>
 </div>
 
 

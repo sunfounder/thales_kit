@@ -20,3 +20,8 @@ Each of the LEDs in the display is given a positional segment with one of its co
 To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.
 
 .. image:: img/segment_code.png
+
+Example
+-------------------
+
+:ref:`LED Segment Display`

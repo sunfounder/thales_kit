@@ -13,3 +13,9 @@ The following is the internal structure of a button. The symbol on the right bel
     :width: 400
 
 Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+
+
+Examples
+-------------------
+
+:ref:`Reading Button Value`

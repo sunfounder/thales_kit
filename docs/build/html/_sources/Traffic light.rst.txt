@@ -51,26 +51,26 @@ Code
 
     while True:
         if button_status == 1:
-            led_red.on()
+            led_red.value(1)
             utime.sleep(10)
         global button_status
         button_status = 0
 
-    led_red.on()
-    utime.sleep(5)
-    led_red.off()  
+        led_red.value(1)
+        utime.sleep(5)
+        led_red.value(0)  
 
-    led_yellow.on()
-    utime.sleep(2)
-    led_yellow.off()
+        led_yellow.value(1)
+        utime.sleep(2)
+        led_yellow.value(0)
 
-    led_green.on()
-    utime.sleep(5)
-    led_green.off()
+        led_green.value(1)
+        utime.sleep(5)
+        led_green.value(0)
 
-    led_yellow.on()
-    utime.sleep(2)
-    led_yellow.off()
+        led_yellow.value(1)
+        utime.sleep(2)
+        led_yellow.value(0)
 
 How it works?
 -----------------------------------------------
@@ -90,7 +90,7 @@ How it works?
 请看这几行：
 
 .. code-block:: python
-   :emphasize-lines: 3,13,19
+    :emphasize-lines: 3,13,19
 
     import machine
     import utime
@@ -114,14 +114,14 @@ How it works?
 
     while True:
         if button_status == 1:
-            led_red.on()
+            led_red.value(1)
             utime.sleep(10)
         global button_status
         button_status = 0
 
-    PASS
-    # PASS means not to do anything. 
-    # Used here to temporarily replace the unnecessary part.
+        PASS
+        # PASS means not to do anything. 
+        # Used here to temporarily replace the unnecessary part.
 
 在这里，首先 import 了 ``_thread`` 库。This module implements multithreading support.
 然后定义一个线程 ``button_thread()`` ，它独立于主线程。在这里用来读取按键的状态。
@@ -149,9 +149,9 @@ How it works?
 
     while True:
         if button_status == 1:
-            led_red.on()
+            led_red.value(1)
         elif button_status == 0:
-            led_red.off()
+            led_red.value(0)
 
 在主线程中，我们可以用按钮来控制红色LED亮灭。在新线程，黄色LED会每2秒变换一次。两个线程相互独立工作。
 
@@ -166,7 +166,7 @@ How it works?
 
 
 .. code-block:: python
-   :emphasize-lines: 10,11,14,17,22,25,26
+    :emphasize-lines: 10,11,14,17,22,25,26
 
     import machine
     import utime
@@ -190,12 +190,12 @@ How it works?
 
     while True:
         if button_status == 1:
-            led_red.on()
+            led_red.value(1)
             utime.sleep(10)
         global button_status
         button_status = 0
 
-    PASS
+        PASS
 
 * 在程序刚运行时，``button_status`` 被赋值为0，代表着按键未被按下。
 * 在新线程中，当程序检测到按键被按下了， ``button_status`` 被赋值为1。

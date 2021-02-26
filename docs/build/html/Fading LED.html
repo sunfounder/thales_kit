@@ -95,7 +95,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lessons</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">Hello, LED!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reading button values.html">Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading_button_values.html">Reading Button Value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic Light</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Two Kinds of Transistors</a></li>
@@ -231,24 +231,26 @@
 <span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
 <span class="n">led</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">brightness</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1023</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">brightness</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">65535</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
     <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span>
-    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
 <p>在这里，我们通过改变GP15的PWM输出的占空比来改变LED的亮度，让我们来看看这几行。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">machine</span>
- <span class="kn">import</span> <span class="nn">utime</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
 
-<span class="hll"> <span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
-</span><span class="hll"> <span class="n">led</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="hll"><span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</span><span class="hll"><span class="n">led</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </span>
- <span class="k">for</span> <span class="n">brightness</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1023</span><span class="p">):</span>
-<span class="hll">     <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span>
-</span>     <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">brightness</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">65535</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
+<span class="hll">    <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span>
+</span>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">

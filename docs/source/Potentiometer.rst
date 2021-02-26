@@ -32,4 +32,9 @@ The functions of the potentiometer in the circuit are as follows:
 
     When the potentiometer acts as a current controller, the sliding contact terminal must be connected as one of the output terminals.
 
-If you want to know more about potentiometer, refer to: https://en.wikipedia.org/wiki/Potentiometer#:~:text=A%20potentiometer%20is%20a%20three,a%20variable%20resistor%20or%20rheostat.
+If you want to know more about potentiometer, refer to: `Potentiometer - Wikipedia <https://en.wikipedia.org/wiki/Potentiometer.>`_
+
+Example
+-------------------
+
+:ref:`Turn the Knob`

@@ -14,3 +14,9 @@ When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a
 
 .. image:: img/servo_duty.png
     :width: 600
+
+
+Example
+-------------------
+
+:ref:`Swinging Servo`

@@ -66,4 +66,30 @@ The value should be in this format: 1st Band 2nd Band 3rd Band x 10^Multiplier (
 So the resistance value of this resistor is 2(red) 2(red) 0(black) x 10^0(black) Ω = 220 Ω, 
 and the permissible error is ± 1% (brown). 
 
+.. list-table::Common resistor color band
+    :header-rows: 1
+
+    * - Resistor 
+      - Color Band  
+    * - 10Ω   
+      - brown black black silver brown
+    * - 100Ω   
+      - brown black black black brown
+    * - 220Ω 
+      - red red black black brown
+    * - 330Ω 
+      - orange orange black black brown
+    * - 1kΩ 
+      - brown black black brown brown
+    * - 2kΩ 
+      - red black black brown brown
+    * - 5.1kΩ 
+      - green brown black brown brown
+    * - 10kΩ 
+      - brown black black red brown 
+    * - 100kΩ 
+      - brown black black orange brown 
+    * - 1MΩ 
+      - brown black black green brown 
+
 You can learn more about resistor from Wiki: https://en.wikipedia.org/wiki/Resistor

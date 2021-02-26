@@ -1,3 +1,5 @@
+.. _liquid_crystal_display:
+
 Liquid Crystal Display
 ===============================
 

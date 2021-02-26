@@ -7,7 +7,7 @@ Lessons
 
    First program! Hello, LED!
    Hello, Breadboard!
-   Reading button values
+   reading_button_values.rst
    Reaction Game
    Traffic light
    Hello, Transistor!

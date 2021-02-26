@@ -20,3 +20,9 @@ Based on the semiconductor type, transistors can be divided into two groups, the
     :width: 600
 
 When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+
+
+Example
+-------------------
+
+:ref:`Two Kinds of Transistors`

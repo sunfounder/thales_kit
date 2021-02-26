@@ -47,7 +47,8 @@ You need click "Run Current Script" or simply press F5 to run it. 如果你的�
     .. image:: img/hello_world_save.png
 
 .. note::
-    你可以将你的代码保存成任意的名字，但是最好能描述这是一个怎样的代码，不要命名成特殊的名字boot.py or main.py等。
+    你可以将你的代码保存成任意的名字，但是最好能描述这是一个怎样的代码，不要命名成无意义的名字如abc.py等。
+    需要特别注意的是，如果你将代码文件名保存成 "main.py" ，那么它将会在通电的时候自动运行。 
 
 当你的程序保存后，将会自动运行，你将看到2行信息在Shell区域
 

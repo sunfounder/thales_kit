@@ -136,33 +136,14 @@ What more?
 
 * `utime <https://docs.micropython.org/en/latest/library/utime.html>`_
 
-下面是另外两种让LED闪烁的示例，请尝试翻阅API文件，读懂它们吧！
+下面是也是个让LED闪烁的示例，请尝试翻阅API文件，读懂它吧！
 
-1.
+.. code-block:: python
 
-   .. code-block:: python
+    import machine
+    import utime
 
-      import machine
-      import utime
-
-      led_onboard = machine.Pin(25, machine.Pin.OUT)
-      while True:
-         led_onboard.toggle()
-         utime.sleep(1)
-
-#. 
-
-   .. code-block:: python
-
-      from machine import Pin
-      import utime
-      
-      led_onboard = Pin(25, Pin.OUT)
-      while True:
-         led_onboard.on()
-         utime.sleep_ms(500)
-         led_onboard.off()
-         utime.sleep_ms(500)
-
-
-
+    led_onboard = machine.Pin(25, machine.Pin.OUT)
+    while True:
+        led_onboard.toggle()
+        utime.sleep(1)
