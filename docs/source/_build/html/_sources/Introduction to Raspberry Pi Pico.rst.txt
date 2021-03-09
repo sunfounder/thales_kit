@@ -3,6 +3,7 @@ Introduction to Raspberry Pi Pico
 
 .. image:: img/pico.jpg
     :width: 400
+    :align: center
 
 The Raspberry Pi Pico is a microcontroller board based on the Raspberry Pi RP2040 microcontroller chip.
 
@@ -33,7 +34,7 @@ Pico's Pins
 ------------
 
 .. image:: img/pico_pin.jpg
-    :width: 400
+
 
 .. list-table::
     :widths: 3 5 10
@@ -76,7 +77,7 @@ Pico's Pins
 The best place to find everything you need to get started with your Raspberry Pi Pico is `here <https://www.raspberrypi.org/documentation/pico/getting-started/>`_
 
 Or you can click on the links below: 
-  
+
 * `Raspberry Pi Pico product brief <https://datasheets.raspberrypi.org/pico/pico-product-brief.pdf>`_
 * `Raspberry Pi Pico datasheet <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>`_
 * `Getting started with Raspberry Pi Pico: C/C++ development <https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf>`_
