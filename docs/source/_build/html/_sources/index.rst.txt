@@ -1,37 +1,13 @@
-.. Picasso documentation master file, created by
-   sphinx-quickstart on Thu Jan 28 15:21:51 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+SunFounder Thales Kit for Raspberry Pi Pico 
+===========================================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   lesson5 
-   lesson6
-   lesson7
-   lesson8
-   lesson9
-   lesson10
-   lessen - Copy (5)
-
-Installing Thonny
-
-Programming with MicroPython
-
-Physical computing
-
-First experiment! Lighting up the on-board lights
-
-Using the breadboard
-
-Reading button values
-
-GAME! Press the button first!
-
-Traffic lights
-
-Two different types of triodes
-
-Alarm
-
-Fading
+   Introduction to Raspberry Pi Pico
+   What is MicroPython
+   Thonny Python IDE
+   Your First MicroPython Program
+   MicroPython Basic Syntax
+   Components Introduction
+   Lesson

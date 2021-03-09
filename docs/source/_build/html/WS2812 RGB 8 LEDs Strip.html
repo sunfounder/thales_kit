@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>WS2812 RGB 8 LEDs Strip &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="74HC595" href="74HC595.html" />
+    <link rel="prev" title="Servo" href="Servo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction to Raspberry Pi Pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What is MicroPython.html">What is MicroPython?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thonny Python IDE.html">Thonny Python IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Your First MicroPython Program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Components Introduction.html">Components Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Breadboard.html">Breadboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED.html">LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB LED.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Resistor.html">Resistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Transistor.html">Transistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Capacitor.html">Capacitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tilt Switch.html">Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Slide Switch.html">Slide Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PIR Motion Sensor.html">PIR Motion Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Buzzer.html">Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Servo.html">Servo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">WS2812 RGB 8 LEDs Strip</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="74HC595.html">74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-segment Display.html">7-segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="I2C LCD1602.html">I2C LCD1602</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lesson.html">Lessons</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Components Introduction.html">Components Introduction</a> &raquo;</li>
+        
+      <li>WS2812 RGB 8 LEDs Strip</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/WS2812 RGB 8 LEDs Strip.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ws2812-rgb-8-leds-strip">
+<h1>WS2812 RGB 8 LEDs Strip<a class="headerlink" href="#ws2812-rgb-8-leds-strip" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="_images/ws2812b.png"><img alt="_images/ws2812b.png" src="_images/ws2812b.png" style="width: 800px;" /></a>
+<p>The WS2812 RGB 8 LEDs Strip is composed of 8 RGB LEDs.
+Only one pin is required to control all the LEDs. Each RGB LED has a WS2812 chip, which can be controlled independently.
+It can realize 256-level brightness display and complete true color display of 16,777,216 colors.
+At the same time, the pixel contains an intelligent digital interface data latch signal shaping amplifier drive circuit,
+and a signal shaping circuit is built in to effectively ensure the color height of the pixel point light Consistent.</p>
+<p>It is flexible, can be docked, bent, and cut at will, and the back is equipped with adhesive tape, which can be fixed on the uneven surface at will, and can be installed in a narrow space.</p>
+<p><strong>Features</strong></p>
+<ul class="simple">
+<li><p>Work Voltage: DC5V</p></li>
+<li><p>IC: One IC drives one RGB LED</p></li>
+<li><p>Consumption: 0.3w each LED</p></li>
+<li><p>Working Temperature: -15-50</p></li>
+<li><p>Color: Full color RGB</p></li>
+<li><p>RGB Type：5050RGB（Built-in IC WS2812B）</p></li>
+<li><p>Light Strip Thickness: 2mm</p></li>
+<li><p>Each LED can be controlled individually</p></li>
+</ul>
+<p><strong>WS2812B Introdction</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf">WS2812B datasheet</a></p></li>
+</ul>
+<p>WS2812B is a intelligent control LED light source that the control circuit and RGB chip are integrated in
+a package of 5050 components. It internal include intelligent digital port data latch and signal reshaping ampli
+fication drive circuit. Also include a precision internal oscillator and a 12V voltage programmable constant curr
+e-nt control part, effectively ensuring the pixel point light color height consistent.</p>
+<p>The data transfer protocol use single NZR communication mode. After the pixel power-on reset, the DIN
+port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch,
+the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade
+pixel through the DO port. After transmission for each pixel，the signal to reduce 24bit. pixel adopt auto resha
+-ping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend
+on the speed of signal transmission.</p>
+<p>LED with low driving voltage, environmental protection and energy saving, high brightness, scattering angl
+e is large, good consistency, low power, long life and other advantages. The control chip integrated in LED
+above becoming more simple circuit, small volume, convenient installation.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="RGB LED Strip.html#rgb-led-strip"><span class="std std-ref">RGB LED Strip</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="74HC595.html" class="btn btn-neutral float-right" title="74HC595" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Servo.html" class="btn btn-neutral float-left" title="Servo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

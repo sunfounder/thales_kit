@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Custom Tone &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Swinging Servo" href="Swinging Servo.html" />
+    <link rel="prev" title="Colorful Light" href="Colorful Light.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction to Raspberry Pi Pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What is MicroPython.html">What is MicroPython?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thonny Python IDE.html">Thonny Python IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Your First MicroPython Program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lessons</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading_button_values.html">Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intruder Alarm.html">Intruder Alarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fading LED.html">Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Colorful Light.html">Colorful Light</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Custom Tone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-more">What more？</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Swinging Servo.html">Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Turn the knob.html">Turn the Knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thermometer.html">Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Light Theremin.html">Light Theremin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Microchip - 74HC595.html">Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED Segment Display.html">LED Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liquid Crystal Display.html">Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB LED Strip.html">RGB LED Strip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Lesson.html">Lessons</a> &raquo;</li>
+        
+      <li>Custom Tone</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Custom tone.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="custom-tone">
+<h1>Custom Tone<a class="headerlink" href="#custom-tone" title="Permalink to this headline">¶</a></h1>
+<p>We have used active buzzers in the previous chapters, this time we will use passive buzzers.</p>
+<p>Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that the passive buzzer has one less oscillating circuit, so that it cannot be directly energized to make a sound.
+But this also allows the passive buzzer to adjust its own oscillation frequency and have a wider range, which can emit different syllables such as “doh, re, mi, fa, sol, la, ti”.</p>
+<p>Let the passive buzzer emit a melody!</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/buzzer.png" src="_images/buzzer.png" />
+<p>Two buzzers are included in the kit, and the one we need is the passive one. Reverse the buzzer, the one with the exposed PCB behind it is the one we want.</p>
+<p>The buzzer needs a transistor to work, and here we use S8050.</p>
+<img alt="_images/wiring_custom_tone.png" src="_images/wiring_custom_tone.png" />
+<ol class="arabic simple">
+<li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
+<li><p>Connect the positive pin of the buzzer to the positive power bus.</p></li>
+<li><p>Connect the cathode pin of the buzzer to the <strong>collector</strong> lead of the triode.</p></li>
+<li><p>Connect the <strong>base</strong> lead of the transistor to the GP15 pin through a 1kΩ resistor.</p></li>
+<li><p>Connect the <strong>emitter</strong> lead of the transistor to the negative power bus.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The color ring of the 1k ohm resistor is brown, black, black, brown and brown.</p>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">tone</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">frequency</span><span class="p">,</span><span class="n">duration</span><span class="p">):</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">30000</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="mi">440</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="mi">494</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="mi">523</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>We defined a <a href="#id1"><span class="problematic" id="id2">``</span></a>tone()’’ function to make the buzzer sound.</p>
+<p>The passive buzzer will push the oscillator every time it receives a high level. If it is given a digital signal, the oscillator will be pushed all the time, but it does not oscillate and cannot sound.
+Here we use the PWM method to create oscillations.</p>
+<p>This function has three parameters:</p>
+<ul class="simple">
+<li><p>pin, the GPIO pin that controls the buzzer.</p></li>
+<li><p>frequency, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.</p></li>
+<li><p>Duration, the duration of the tone.</p></li>
+</ul>
+<p>We set the <a href="#id3"><span class="problematic" id="id4">``</span></a>duty_u16()’’ when the buzzer is oscillating to 30000, which is about 50%. It can be another number, and it only needs to generate a discontinuous electrical signal to oscillate.</p>
+</div>
+<div class="section" id="what-more">
+<h2>What more？<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
+<p>We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Piano_key_frequencies">Piano key frequencies - Wikipedia</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+
+<span class="n">NOTE_C4</span> <span class="o">=</span> <span class="mi">262</span>
+<span class="n">NOTE_G3</span> <span class="o">=</span> <span class="mi">196</span>
+<span class="n">NOTE_A3</span> <span class="o">=</span> <span class="mi">220</span>
+<span class="n">NOTE_B3</span> <span class="o">=</span> <span class="mi">247</span>
+
+<span class="n">melody</span> <span class="o">=</span><span class="p">[</span><span class="n">NOTE_C4</span><span class="p">,</span><span class="n">NOTE_G3</span><span class="p">,</span><span class="n">NOTE_G3</span><span class="p">,</span><span class="n">NOTE_A3</span><span class="p">,</span><span class="n">NOTE_G3</span><span class="p">,</span><span class="n">NOTE_B3</span><span class="p">,</span><span class="n">NOTE_C4</span><span class="p">]</span>
+
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">tone</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">frequency</span><span class="p">,</span><span class="n">duration</span><span class="p">):</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">30000</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">melody</span><span class="p">:</span>
+    <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Swinging Servo.html" class="btn btn-neutral float-right" title="Swinging Servo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Colorful Light.html" class="btn btn-neutral float-left" title="Colorful Light" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

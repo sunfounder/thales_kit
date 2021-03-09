@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Thermometer &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Light Theremin" href="Light Theremin.html" />
+    <link rel="prev" title="Turn the Knob" href="Turn the knob.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction to Raspberry Pi Pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What is MicroPython.html">What is MicroPython?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thonny Python IDE.html">Thonny Python IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Your First MicroPython Program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Lesson.html">Lessons</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="First program! Hello, LED!.html">Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading_button_values.html">Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reaction Game.html">Reaction Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Traffic light.html">Traffic Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hello, Transistor!.html">Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intruder Alarm.html">Intruder Alarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fading LED.html">Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Colorful Light.html">Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Custom tone.html">Custom Tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Swinging Servo.html">Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Turn the knob.html">Turn the Knob</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Thermometer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Light Theremin.html">Light Theremin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Microchip - 74HC595.html">Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED Segment Display.html">LED Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liquid Crystal Display.html">Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB LED Strip.html">RGB LED Strip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Lesson.html">Lessons</a> &raquo;</li>
+        
+      <li>Thermometer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Thermometer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="thermometer">
+<h1>Thermometer<a class="headerlink" href="#thermometer" title="Permalink to this headline">¶</a></h1>
+<p>A thermistor is a thermally sensitive resistor that exhibits a precise and predictable change in resistance proportional to small changes in temperature. How much its resistance will change is dependent upon its unique composition. Thermistors are the parts of a larger group of passive components. And unlike their active component counterparts, passive devices are incapable of providing power gain, or amplification to a circuit.</p>
+<p>Thermistor is a sensitive element, and it has two types: Negative Temperature Coefficient (NTC) and Positive Temperature Coefficient (PTC), also known as NTC and PTC. Its resistance varies significantly with temperature. The resistance of PTC thermistor increases with temperature ,while the condition of NTC is opposite to the former In this experiment we use NTC.</p>
+<p>The principle is that the resistance of the NTC thermistor changes with the temperature of the outer environment. It detects the real-time temperature of the environment. When the temperature gets higher, the resistance of the thermistor decreases. Then the voltage data is converted to digital quantities by the A/D adapter.</p>
+<p>The temperature in Celsius or Fahrenheit is output via programming.</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/wiring_thermometer.png" src="_images/wiring_thermometer.png" />
+<ol class="arabic simple">
+<li><p>将 Pico 的3V3和 GND 连接至面包板的电源总线。</p></li>
+<li><p>将Thermistor的一端接入负极电源总线，另一端串联一个10kΩ电阻器接入正极电源总线。</p></li>
+<li><p>用一根跳线从两个电阻器中间接入GP28。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this experiment, a thermistor and a 10k pull-up resistor are used. Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius.
+10kΩ电阻器的色环颜色为棕黑黑红棕。</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">thermistor</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">temperature_value</span> <span class="o">=</span> <span class="n">thermistor</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="n">Vr</span> <span class="o">=</span> <span class="mf">3.3</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">temperature_value</span><span class="p">)</span> <span class="o">/</span> <span class="mi">65535</span>
+    <span class="n">Rt</span> <span class="o">=</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">Vr</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.3</span> <span class="o">-</span> <span class="n">Vr</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(((</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Rt</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">))</span> <span class="o">/</span> <span class="mi">3950</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mf">273.15</span><span class="o">+</span><span class="mi">25</span><span class="p">)))</span>
+    <span class="n">Cel</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="mf">273.15</span>
+    <span class="n">Fah</span> <span class="o">=</span> <span class="n">Cel</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Celsius: </span><span class="si">%.2f</span><span class="s1"> C  Fahrenheit: </span><span class="si">%.2f</span><span class="s1"> F&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Cel</span><span class="p">,</span> <span class="n">Fah</span><span class="p">))</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+<p>There is a numerics library which declares a set of functions to compute common mathematical operations and transformations.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.micropython.org/en/latest/library/math.html">math</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_value</span> <span class="o">=</span> <span class="n">thermistor</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This function is used to read the value of the thermistor.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Vr</span> <span class="o">=</span> <span class="mf">3.3</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">temperature_value</span><span class="p">)</span> <span class="o">/</span> <span class="mi">65535</span>
+<span class="n">Rt</span> <span class="o">=</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">Vr</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.3</span> <span class="o">-</span> <span class="n">Vr</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(((</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Rt</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">))</span> <span class="o">/</span> <span class="mi">3950</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mf">273.15</span><span class="o">+</span><span class="mi">25</span><span class="p">)))</span>
+<span class="n">Cel</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="mf">273.15</span>
+<span class="n">Fah</span> <span class="o">=</span> <span class="n">Cel</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Celsius: </span><span class="si">%.2f</span><span class="s1"> C  Fahrenheit: </span><span class="si">%.2f</span><span class="s1"> F&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Cel</span><span class="p">,</span> <span class="n">Fah</span><span class="p">))</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These calculations convert the thermistor values into centigrade degree and Fahrenheit degree.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Vr</span> <span class="o">=</span> <span class="mf">3.3</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">temperature_value</span><span class="p">)</span> <span class="o">/</span> <span class="mi">65535</span>
+<span class="n">Rt</span> <span class="o">=</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">Vr</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.3</span> <span class="o">-</span> <span class="n">Vr</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These two lines of codes are calculating the voltage distribution with the read value analog so as to get Rt (resistance of thermistor).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(((</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Rt</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">))</span> <span class="o">/</span> <span class="mi">3950</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mf">273.15</span><span class="o">+</span><span class="mi">25</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is the relation between the resistance and temperature:
+<strong>RT =RN expB(1/TK – 1/TN)</strong></p>
+<ul class="simple">
+<li><p>RT is the resistance of the NTC thermistor when the temperature is TK.</p></li>
+<li><p>RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k.</p></li>
+<li><p>TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius.</p></li>
+<li><p>TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.</p></li>
+<li><p>And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950.</p></li>
+<li><p>exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately.</p></li>
+</ul>
+<p>Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius.</p>
+<p>This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.</p>
+</div>
+<p>This code refers to plugging Rt into the formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="mf">273.15</span>
+</pre></div>
+</div>
+<p>Convert Kelvin temperature into centigrade degree.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Fah</span> <span class="o">=</span> <span class="n">Cel</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+</pre></div>
+</div>
+<p>Convert the centigrade degree into Fahrenheit degree.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Celsius: </span><span class="si">%.2f</span><span class="s1"> °C Fahrenheit: </span><span class="si">%.2f</span><span class="s1"> ℉&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Cel</span><span class="p">,</span> <span class="n">Fah</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Print centigrade degree, Fahrenheit degree and their units on the display.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Light Theremin.html" class="btn btn-neutral float-right" title="Light Theremin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Turn the knob.html" class="btn btn-neutral float-left" title="Turn the Knob" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
