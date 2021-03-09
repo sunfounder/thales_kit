@@ -197,21 +197,21 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/wiring_rgb_strip.png" src="_images/wiring_rgb_strip.png" />
 <ol class="arabic simple">
-<li><p>将LED Strip 的VCC连接Pico的VBUS。</p></li>
-<li><p>将LED Strip 的GND连接Pico的GND。</p></li>
-<li><p>将LED Strip 的DIN连接Pico的GP0。</p></li>
+<li><p>Connect the VCC of the LED Strip to the VBUS of the Pico.</p></li>
+<li><p>Connect the GND of the LED Strip to the GND of the Pico.</p></li>
+<li><p>Connect the DIN of the LED Strip to the GP0 of Pico.</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>您需要注意的一件事是电流。
-虽然Pico中可以使用任意LED灯珠数量的LED Strip，然而其VBUS引脚的功率却是有限的。
-在这里，我们将使用八个LED，这是安全的。
-但是如果您要使用更多的LED，则需要了解限制条件，并可能需要添加单独的电源。</p>
+<p>One thing you need to pay attention to is current.
+Although the LED Strip with any number of LEDs can be used in Pico, the power of its VBUS pin is limited.
+Here, we will use eight LEDs, which are safe.
+But if you want to use more LEDs, you need to understand the restrictions and may need to add a separate power supply.</p>
 </div>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>以下是Sunfounder封装好的ws2812的library。你需要将其存入Pico，将其命名为 <strong>ws2812.py</strong> 作为library使用。</p>
+<p>The following is the library of ws2812 packaged by Sunfounder. You need to save it in Pico and name it as <strong>ws2812.py</strong> for use as a library.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">array</span><span class="o">,</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">rp2</span>
 <span class="kn">from</span> <span class="nn">rp2</span> <span class="kn">import</span> <span class="n">PIO</span><span class="p">,</span> <span class="n">StateMachine</span><span class="p">,</span> <span class="n">asm_pio</span>
@@ -277,7 +277,7 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
         <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 </pre></div>
 </div>
-<p>然后，新建一个new file，在这里调用方才储存好的ws2812 library。</p>
+<p>Then, create a new file, and call the stored ws2812 library here.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">from</span> <span class="nn">ws2812</span> <span class="kn">import</span> <span class="n">WS2812</span>
 
@@ -294,38 +294,37 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
 <span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>让我们选中一些心仪的颜色，在RGB LED Strip上面显示出来！</p>
+<p>Let’s select some favorite colors and display them on the RGB LED Strip!</p>
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>在ws2812 library中，我们将相关功能集成到了WS2812类中。</p>
-<p>你可以通过以下的语句来使用RGB LED Strip</p>
-<p>import ws2812 library</p>
+<p>In the ws2812 library, we have integrated related functions into the WS2812 class.</p>
+<p>You can use the RGB LED Strip with the following statement.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ws2812</span> <span class="kn">import</span> <span class="n">WS2812</span>
 </pre></div>
 </div>
-<p>声明一个WS2812类型的变量，命名为ws，它连接到”pin”，有”number”个灯珠。</p>
+<p>Declare a WS2812 type object, named “ws”, it is connected to “pin”, there are “number” lamp beads.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span> <span class="o">=</span> <span class="n">WS2812</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>ws是一个array对象，每一个元素对应着一颗灯珠，如ws[0]为第一个，ws[7]为第八个。
-我们可以为每个灯珠赋于颜色值，这些值 must be 24-bit RGB hex or list of 3 8-bit RGB。
-比如说红色的值为”0xFF0000”或者”[255,0,0]”。</p>
+<p>ws is an array object, each element corresponds to a lamp bead, for example, ws[0] is the first one, ws[7] is the eighth.
+We can assign color values to each lamp bead, these values must be 24-bit RGB hex or list of 3 8-bit RGB.
+For example, the red value is “0xFF0000” or “[255,0,0]”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_value</span>
 </pre></div>
 </div>
-<p>然后用这个语句为LED Strip写入颜色。</p>
+<p>Then use this statement to write the color for the LED Strip and light it up.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>你也可以直接用以下语句让所有LED亮出相同的颜色。</p>
+<p>You can also directly use the following statement to make all LEDs light up the same color.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="o">.</span><span class="n">write_all</span><span class="p">(</span><span class="n">color_value</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="what-more">
 <h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
-<p>我们可以随机生成颜色，制作一条colorful flowing light</p>
+<p>We can randomly generate colors and make a colorful flowing light.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">from</span> <span class="nn">ws2812</span> <span class="kn">import</span> <span class="n">WS2812</span>
 <span class="kn">import</span> <span class="nn">utime</span>

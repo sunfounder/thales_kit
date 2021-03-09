@@ -1,12 +1,12 @@
 Comments
 =============
 
-代码中的注释有助于我们理解代码，让整个代码可更具可阅读性以及可在测试的时候注释掉部分代码，让这部分代码不运行。
+The comments in the code help us understand the code, make the entire code more readable and comment out part of the code during testing, so that this part of the code does not run.
 
-单行注释
----------
+Single-line Comment
+----------------------------
 
-MicroPython中的单行注释以#开头，后面的文字直到行尾都算注释。注释可放在代码前面，也可放在代码后面。
+Single-line comments in MicroPython begin with #, and the following text is considered a comment until the end of the line. Comments can be placed before or after the code.
 
 **Example**
 
@@ -17,7 +17,7 @@ MicroPython中的单行注释以#开头，后面的文字直到行尾都算注�
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-注释不一定都是解释代码的文本，也可以将部分代码注释掉，来阻止micropython运行代码。
+Comments are not necessarily text used to explain the code. You can also comment out part of the code to prevent micropython from running the code.
 
 **Example**
 
@@ -29,10 +29,10 @@ hello world
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-多行注释
----------
+Multi-line comment
+------------------------------
 
- 如果要进行多行的注释，可以使用多个#号。
+If you want to comment on multiple lines, you can use multiple # signs.
 
 **Example**
 
@@ -46,9 +46,9 @@ hello world
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-或者，也可以不按预期使用多行字符串。
+Or, you can use multi-line strings instead of expected.
 
-由于MicroPython会忽略未分配给变量的字符串文字，因此您可以在代码中添加多行字符串（三引号），并将注释放入其中：
+Since MicroPython ignores string literals that are not assigned to variables, you can add multiple lines of strings (triple quotes) to the code and put comments in them:
 
 **Example**
 
@@ -64,4 +64,4 @@ Hello, World!
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-只要未将字符串分配给变量，MicroPython就会读取该代码，但随后将其忽略，并且您已做出多行注释。
+As long as the string is not assigned to a variable, MicroPython will ignore it after reading the code and treat it as if you made a multi-line comment.

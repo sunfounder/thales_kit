@@ -198,25 +198,25 @@
 <p>I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for communication between a master device (or master devices) and a single or multiple slave devices.
 I2C main controller can be used to control IO expander, various sensors, EEPROM, ADC/DAC and so on.
 All of these are controlled only by the two pins of host, the serial data (SDA) line and the serial clock line(SCL).</p>
-<p>这两个Pin这些必须连接到微控制器的特定引脚才可以运行。在Pico中有两对I2C通信接口，被标记为I2C0与I2C1，如下图。</p>
+<p>These two Pins must be connected to specific pins of the microcontroller to operate. There are two pairs of I2C communication interfaces in Pico, which are marked as I2C0 and I2C1, as shown in the figure below.</p>
 <img alt="_images/pin_pic2.png" src="_images/pin_pic2.png" />
-<p>在这里我们将使用I2C0来控制LCD1602，显示文本。</p>
+<p>Here we will use the I2C0 interface to control the LCD1602 and display text.</p>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/wiring_lcd.png" src="_images/wiring_lcd.png" />
 <ol class="arabic simple">
-<li><p>将LCD的VCC连接Pico的VBUS。</p></li>
-<li><p>将LCD的GND连接Pico的GND。</p></li>
-<li><p>将LCD的SDA连接Pico的GP0，也就是I2C0 SDA。</p></li>
-<li><p>将LCD的SCL连接Pico的GP1，也就是I2C0 SCL。</p></li>
+<li><p>Connect VCC of LCD to VBUS of Pico.</p></li>
+<li><p>Connect the GND of LCD to the GND of Pico.</p></li>
+<li><p>Connect SDA of LCD to GP0 of Pico, which is I2C0 SDA.</p></li>
+<li><p>Connect SCL of LCD to GP1 of Pico, which is I2C0 SCL.</p></li>
 </ol>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>每一个I2C设备都拥有独特的地址、需要传入独特的指令来运行。这会需要用户查看其 datasheet 才能完全弄懂。这拥有一定的门槛。</p>
-<p>但是幸运的是，在互联网上有许多人将一些通用的模块封装成library，以便于我们可以直接使用。
-以下是Sunfounder封装好的lcd1602的library。</p>
-<p>你需要将其存入Pico，将其命名为 <strong>lcd1602.py</strong> 作为library使用。</p>
+<p>Every I2C device has a unique address and needs to pass in unique commands to run. This will require users to view their datasheet to fully understand. This has a certain threshold.</p>
+<p>Fortunately, many people on the Internet encapsulate some common modules into libraries so that we can use them directly.
+The following is the library of lcd1602 packaged by Sunfounder.</p>
+<p>You need to save it in Pico, name it <strong>lcd1602.py</strong> and use it as a library.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -314,7 +314,7 @@ All of these are controlled only by the two pins of host, the serial data (SDA) 
                 <span class="bp">self</span><span class="o">.</span><span class="n">send_data</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>然后，新建一个new file，在这个文件里调用方才储存好的lcd1602 library。</p>
+<p>Then, create a new file, and call the lcd1602 library stored in this file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lcd1602</span> <span class="kn">import</span> <span class="n">LCD</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 
@@ -328,32 +328,32 @@ All of these are controlled only by the two pins of host, the serial data (SDA) 
 <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>程序运行后，你将能看到LCD依次出现两行文字，随后消失。</p>
+<p>After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.</p>
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>在lcd1602 library中，我们将lcd1602的相关功能集成到了LCD类中。</p>
-<p>你可以用以下语句来使用lcd1602.</p>
+<p>In the lcd1602 library, we integrate the relevant functions of lcd1602 into the LCD class.</p>
+<p>You can use lcd1602 with the following statement.</p>
 <p>import lcd1602 library</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lcd1602</span> <span class="kn">import</span> <span class="n">LCD</span>
 </pre></div>
 </div>
-<p>声明一个LCD类的对象，命名为lcd。</p>
+<p>Declare an object of the LCD class and name it lcd.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>这句指令会将文字显示在lcd中，需要注意的是，其argument必须是字符串类型，如果我们想要传入integer或者float，必须使用强制转化语句 <code class="docutils literal notranslate"><span class="pre">str()</span></code>。</p>
+<p>This command will display the text in the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement <code class="docutils literal notranslate"><span class="pre">str()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lcd</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>如果多次调用该语句，lcd会将这几次调用的文字叠加，直到超出显示范围。这就需要用到以下语句clear the display。</p>
+<p>If you call this statement multiple times, lcd will superimpose the text of these calls until it exceeds the display range. This requires the use of the following statement to clear the display.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="what-more">
 <h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
-<p>我们可以结合thermistor和LCD1602，制作一个室温计。</p>
+<p>We can combine thermistor and LCD1602 to make a room temperature meter.</p>
 <img alt="_images/wiring_lcd_2.png" src="_images/wiring_lcd_2.png" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lcd1602</span> <span class="kn">import</span> <span class="n">LCD</span>
 <span class="kn">import</span> <span class="nn">machine</span>

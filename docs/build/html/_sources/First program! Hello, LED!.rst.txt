@@ -1,9 +1,9 @@
 Hello, LED! 
 =======================================
 
-正如同打印一句“Hello，world！”是学习编程的第一步一样，让LED亮起来正是学习physical programming的传统入门。
+Just as printing "Hello, world!" is the first step in learning programming, letting the LED light up is the traditional entry to learning physical programming.
 
-在Pico的顶部有一个小小的LED。它与其他的LED一样，会在通电的时候发光，断电时熄灭。
+There is a small LED on the top of the Pico. Like other LEDs, it will glow when power is on and go out when power is off.
 
 
 .. image:: img/led_onboard.png
@@ -11,7 +11,7 @@ Hello, LED!
 Code
 ----------------
 
-让我们把这个代码拷贝入Thonny中运行，让它闪烁！
+Let's copy this code into Thonny and run it to make the LED blink!
 
 .. code-block:: python
 
@@ -28,44 +28,42 @@ Code
 How it works?
 -------------------------------
 
-板载LED连接在了GP25引脚上 —— 如果你仔细观察过Pico的引脚序列，你会发现GP25正是被隐藏起来的几个引脚之一，这意味着我们无法通过这个引脚来使用其他元器件（即便GP25与其他引脚的使用方法完全一致）。这种设计的好处是，即便你没有接入任何外部元器件，也能拥有一个OUTPUT供你测试程序。
+The onboard LED is connected to the GP25 pin-if you carefully observe the Pico pin sequence, you will find that GP25 is one of the hidden pins, which means that we cannot use this pin to use other components (even if GP25 is used in exactly the same way as other pins). The advantage of this design is that even if you don't connect any external components, you can still have an OUTPUT for you to test the program.
 
-使用GPIO需要 machine 库。
+The machine library is required to use GPIO.
 
 .. code-block:: python
 
     import machine
 
+This library contains all the instructions needed to communicate between MicroPython and Pico. Without this line of code, we will not be able to control any GPIO, and we will not be able to light up the onboard LED.
 
-这个library包含了MicroPython与Pico通信所需要的所有指令。如果没有这行代码，我们将无法控制任何一个GPIO，也就无法让板载LED亮起。
-
-接下来需要注意到的是这一行：
+The next thing to notice is this line:
 
 .. code-block:: python
 
     led_onboard = machine.Pin(25, machine.Pin.OUT)
 
+An object named ``led_onboard`` is defined here. Technically, it can be any name, it can be x, y, banana, Micheal_Jackson, or any character-but it is best to use a name that describes the purpose to ensure that the program is easy to read.
 
-这里定义了一个名为 ``led_onboard`` 的对象。从技术上来讲，它可以是任意的名字，可以是x,y, banana, Micheal_Jackson, 或者任意字符 —— 但是最好使用能描述用途的名字，以确保程序能够易于阅读。
+The second part of this line (the part after the equal sign) calls the Pin function in the machine library. It is used to tell Pico's GPIO pins what to do.
+The Pin function has two parameters: the first parameter (25) means the pin you want to set; the second parameter (machine.Pin.OUT) tells that the pin should be used as an output instead of an input.
 
-这一行的第二部分（等于号后面的部分）调用了machine库中的Pin函数。它用来告诉Pico的GPIO引脚应该做什么。
-Pin函数拥有两个参数：第一个参数（25）意味着你要设置的引脚；第二个参数（machine.Pin.OUT）则告诉了该引脚应当作为输出而不是输入使用。
-
-上述代码已经“设置”好了引脚，但是它不会点亮LED。要做到这一点，我们还需要“使用”引脚。如下：
+The above code has "set" the pin, but it will not light up the LED. To do this, we also need to "use" the pin. as follows:
 
 .. code-block:: python
 
     led_onboard.value(1)
 
-我们原先已经将GP25引脚设置好了，并命名为 ``led_onboard`` ，这一句的作用是将 ``led_onboard`` 的值设置为1，也就是turn it on； 如果设置为0，则会关闭它。
+We have previously set the GP25 pin and named it ``led_onboard``. The function of this sentence is to set the value of ``led_onboard`` to 1, which is turn it on; if it is set to 0, it will close it.
 
-总而言之，要使用GPIO，这几个环节是必须的：
+All in all, to use GPIO, these links are necessary:
 
-*   import machine library —— 这是必须的，在整个程序中仅执行一次。 
-*   设置GPIO —— 每一个引脚在使用前都应当先完成设置。
-*   使用 —— 为引脚赋值，每一次赋值都会改变引脚的工作状态。
+* import machine library —— This is necessary, and it is executed only once in the entire program.
+* Set GPIO —— Each pin should be set before use.
+* Use —— Assign a value to the pin, each assignment will change the working state of the pin.
 
-如果我们按照上述的步骤编写示例，那么你将得到这样的代码：
+If we follow the above steps to write an example, then you will get code like this:
 
 .. code-block:: python
 
@@ -73,9 +71,9 @@ Pin函数拥有两个参数：第一个参数（25）意味着你要设置的引
     led_onboard = machine.Pin(25, machine.Pin.OUT)
     led_onboard.value(1)
 
-烧录它，你将能点亮板载LED。
+Burn it and you will be able to light up the onboard LED.
 
-接下来，我们试着加入“熄灭”的语句：
+Next, we try to add the "extinguished" statement:
 
 .. code-block:: python
 
@@ -84,21 +82,21 @@ Pin函数拥有两个参数：第一个参数（25）意味着你要设置的引
     led_onboard.value(1)
     led_onboard.value(0)
 
-从语句上看，这个程序会让板载LED先亮后灭，但是当你使用它时，却发现不是这样，板载LED似乎从未亮过。这是因为两个语句之间执行的速度非常快，远比人眼的反应时间快得多，板载LED亮起的那一刹那并不足以让我们察觉到光明。To fix that,我们需要让程序慢下来。
+According to the code line, this program will make the onboard LED turn on first and then turn off. But when you use it, you will find that this is not the case. The onboard LED never seems to light up. This is because the execution speed between the two lines is very fast, much faster than the reaction time of the human eye. The moment the onboard LED lights up is not enough to make us perceive the light. To fix that, we need to slow down the program.
 
-将以下语句插入到程序的第二行：
+Insert the following statement into the second line of the program:
 
 .. code-block:: python
 
     import utime
 
-和machine一样，这里引入了 ``utime`` 库，这个库处理所有与时间相关的事情，包括我们需要用到的延时。让我们在 ``led_onboard.value(1)`` 与 ``led_onboard.value(0)`` 之间插入一句延时语句，让它们间隔2秒：
+Like machine, the ``utime`` library is introduced here, which handles all time-related things, including the delay we need to use. Let's insert a delay sentence between ``led_onboard.value(1)`` and ``led_onboard.value(0)``, let them be separated by 2 seconds:
 
 .. code-block:: python
 
     utime.sleep(2)
 
-现在，代码看起来应该是这样的。运行它，我们将能看到板载LED先亮后灭：
+Now, the code should look like this. Run it, we will be able to see that the onboard LED turns on first and then turns off:
 
 .. code-block:: python
 
@@ -109,8 +107,7 @@ Pin函数拥有两个参数：第一个参数（25）意味着你要设置的引
     utime.sleep(2)
     led_onboard.value(0)
 
-
-最后，我们该让LED闪烁起来了。创建一个循环，重写程序，它就成了本章节开头处看到的那样。
+Finally, we should make the LED blink. Create a loop, rewrite the program, and it will be what you saw at the beginning of this chapter.
 
 .. code-block:: python
 
@@ -128,15 +125,15 @@ Pin函数拥有两个参数：第一个参数（25）意味着你要设置的引
 What more?
 -------------------------
 
-通常，library都会有相应的API(Application Programming Interface) file。这是一个简明的参考手册，包含了使用这个library所需的所有信息，详细介绍了函数、类、返回类型、参数等，甚至附带有教程。
+Usually, the library will have a corresponding API (Application Programming Interface) file. This is a concise reference manual that contains all the information needed to use this library, detailed introduction to functions, classes, return types, parameters, etc., and even comes with a tutorial.
 
-在本篇我们使用了MicroPython的 ``machine`` 和 ``utime`` 库，我们可以这里找到看到它们更多的使用方法。
+In this article, we used MicroPython's ``machine`` and ``utime`` libraries, we can find more ways to use them here.
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_
 
 * `utime <https://docs.micropython.org/en/latest/library/utime.html>`_
 
-下面是也是个让LED闪烁的示例，请尝试翻阅API文件，读懂它吧！
+The following is also an example of making the LED blink, please try to read the API file to understand it!
 
 .. code-block:: python
 

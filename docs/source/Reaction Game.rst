@@ -1,23 +1,23 @@
 Reaction Game
 ==========================================================
 
-微控制器不仅出现在工业设备中，它还用来控制家庭中的大量电子设备，包括了玩具和游戏。在本章节，我们将使用“按键”和“LED”来搭建一个简单的反应计时游戏。
+Microcontrollers not only appear in industrial equipment, they are also used to control a large number of electronic devices in the home, including toys and games. In this chapter, we will use "button" and "LED" to build a simple reaction timing game.
 
-对反应时间的研究被称为mental chronometry，它是一门硬科学，同时也是许多游戏（包括您将要制作的游戏）的基础。Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus，以毫秒为单位，人的平均反应时间约为200-250毫秒。反应时间短的人在游戏中拥有巨大的优势！
+The study of reaction time is called mental chronometry, it is a hard science, and it is also the basis of many games (including the games you are about to make). Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus, in milliseconds, the average reaction time of a person is about 200-250 milliseconds. People with short reaction time have a huge advantage in the game!
 
 Wiring
 -------------------------------
 
 .. image:: img/wiring_reaction_game.png
 
-1. 总的来说，这个电路就是将上两章节中的电路结合起来。
-#. 再三确认面包板电源总线没有错接或短接！
+1. In general, this circuit is a combination of the circuits in the previous two chapters.
+#. Confirm again that the breadboard power bus is not connected wrongly or short-circuited!
 
 
 Code
 ----------------------------------
 
-当程序启动时，LED会在5~10秒内熄灭。你需要尽可能快的按下按键，程序会告诉你你的反应时间是多少。
+When the program starts, the LED will turn off within 5 to 10 seconds. You need to press the button as fast as possible, and the program will tell you what your reaction time is.
 
 
 .. code-block:: python
@@ -43,11 +43,11 @@ Code
 How it works?
 -----------------------------------------------
 
-在前面的章节中，我们已经在主程序或单独的线程中使用了按钮。这一次，我们采用另一种更灵活的方法：中断请求，或者说是IRQs。
+In the previous chapters, we have used buttons. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.
 
-举个例子，假设您正在一页一页地阅读一本书，就如同程序正在执行线程，此时有人来找您问问题，打断了您的阅读。那么，该人正是在执行中断请求：要求您停止正在做的事情，回答他的问题，结束后再让您返回阅读书本。
+For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.
 
-MicroPython 中断请求也是相同的工作方式，它允许某些操作中断主程序，它是通过以下两个语句实现的:
+MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. It is achieved through the following two statements:
 
 .. code-block:: python
     :emphasize-lines: 8,17
@@ -70,13 +70,13 @@ MicroPython 中断请求也是相同的工作方式，它允许某些操作中�
     timer_light_off = utime.ticks_ms()
     button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_press)
 
-在这里，首先定义了一个中断处理程序，这称为callback function，它是触发中断时运行的代码。
-然后，在主程序中set up an interrupt，它需要包含两个部分：``trigger`` 和 ``handler`` 。
+Here, an interrupt handler is first defined, which is called a callback function, which is the code that runs when an interrupt is triggered.
+Then, set up an interrupt in the main program, it needs to contain two parts: ``trigger`` and ``handler``.
 
-* 在这个程序中，``trigger`` 是 ``IRQ_RISING`` ，这意味着引脚的值从低电平上升到高电平（也就是按下按键）。
-* 而 ``handler`` 是由我们自定义的callback function，在这里是 ``button_press`` 。在这个示例中，你会发现callback function中有一句 ``button.irq(handler=None)`` ，它的可以将callback function设为None，相当于cancel了interrupt。
+* In this program, ``trigger`` is ``IRQ_RISING``, which means that the value of the pin rises from low level to high level (that is, pressing the button).
+* And ``handler`` is a callback function customized by us, here it is ``button_press``. In this example, you will find a sentence ``button.irq(handler=None)'' in the callback function, which can set the callback function to None, which is equivalent to canceling the interrupt.
 
-让我们通过以下代码来更好的理解IRQ吧！(直接使用本章的电路即可)
+Let us use the following code to better understand IRQ! (Just use the circuit in this chapter directly)
 
 .. code-block:: python
 
@@ -97,10 +97,9 @@ MicroPython 中断请求也是相同的工作方式，它允许某些操作中�
         print(count)
         utime.sleep(1)
 
-程序在运行时会循环计数并输出，当我们按下按键，它会暂停主程序中的计数，进入callback function打印"You press the button!"。
+The program will count and output in a loop while it is running. When we press the button, it will pause the count in the main program and enter the callback function to print "You press the button!".
 
-
-回到原示例。我们需要让LED在5到10秒的随机时间内熄灭，这是通过以下两行实现的：
+Go back to the original example. We need to make the LED turn off in a random time of 5 to 10 seconds, which is achieved by the following two lines:
 
 .. code-block:: python
     :emphasize-lines: 3,14
@@ -123,10 +122,9 @@ MicroPython 中断请求也是相同的工作方式，它允许某些操作中�
     timer_light_off = utime.ticks_ms()
     button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_press)
     
+The ``urandom`` library is loaded here. Use the ``urandom.uniform(5,10)'' function to generate a random number, the ‘uniform’ part referring to a uniform distribution between those two numbers.
 
-在这里加载了 ``urandom`` 库。使用其中的 ``urandom.uniform(5,10)`` 函数生成了一个随机数，the ‘uniform’ part referring to a uniform distribution between those two numbers.
-
-如果需要，尝试运行以下生成随机数的示例：
+If needed, try running the following example of random number generation:
 
 .. code-block:: python
 
@@ -138,7 +136,7 @@ MicroPython 中断请求也是相同的工作方式，它允许某些操作中�
         print(urandom.uniform(1, 20))
         utime.sleep(1)
 
-最后你需要了解的两个语句是 ``utime.ticks_ms()`` 和 ``utime.ticks_diff()``。
+The last two statements you need to understand are ``utime.ticks_ms()`` and ``utime.ticks_diff()``.
 
 .. code-block:: python
     :emphasize-lines: 10,16
@@ -161,12 +159,12 @@ MicroPython 中断请求也是相同的工作方式，它允许某些操作中�
     timer_light_off = utime.ticks_ms()
     button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_press)
 
-* ``utime.ticks_ms()`` 函数将输出自 ``utime`` 库开始计数以来经过的毫秒数，在这里它被保存在变量 ``timer_light_off`` 中。
-* ``utime.ticks_diff()`` 用来输出两个时间节点的时间差。在这里函数中的两个参数分别是 ``utime.ticks_ms()`` 当前（按下按键）程序时间与储存在变量 ``timer_light_off`` 的参考时间（灯灭）。
+* The ``utime.ticks_ms()`` function will output the number of milliseconds that have passed since the ``utime`` library started counting, where it is stored in the variable ``timer_light_off``.
+* ``utime.ticks_diff()'' is used to output the time difference between two time nodes. The two parameters in this function are ``utime.ticks_ms()``, the current program time (press the button) and the reference time (light off) stored in the variable ``timer_light_off``.
+  
+These two functions are usually used together to calculate the execution time of the program. Here we use it to calculate the time from when the light turns off to when the button is pressed.
 
-这两个函数通常一起使用，用来计算程序的执行时间。在这里我们用来计算从灯灭到按下按键的时间。
-
-最后，这个时间会被打印出来。
+Finally, this time will be printed out.
 
 .. code-block:: python
 
@@ -181,9 +179,9 @@ Also see the reference here:
 
 What more?
 ------------------------
-和小伙伴一同玩耍会更有乐趣，何不增加按键的数量，看谁能最快按下按键呢？
+Playing with your friends will be more fun, why not add buttons and see who can press the buttons the fastest?
 
-请尝试一下。
+Please try it.
 
 .. image:: img/wiring_reaction_game_2.png
 

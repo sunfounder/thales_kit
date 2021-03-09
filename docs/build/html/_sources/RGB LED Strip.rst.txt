@@ -13,21 +13,21 @@ Wiring
 
 .. image:: img/wiring_rgb_strip.png
 
-1. 将LED Strip 的VCC连接Pico的VBUS。
-#. 将LED Strip 的GND连接Pico的GND。
-#. 将LED Strip 的DIN连接Pico的GP0。
+1. Connect the VCC of the LED Strip to the VBUS of the Pico.
+#. Connect the GND of the LED Strip to the GND of the Pico.
+#. Connect the DIN of the LED Strip to the GP0 of Pico.
 
 .. warning::
-    您需要注意的一件事是电流。
-    虽然Pico中可以使用任意LED灯珠数量的LED Strip，然而其VBUS引脚的功率却是有限的。
-    在这里，我们将使用八个LED，这是安全的。
-    但是如果您要使用更多的LED，则需要了解限制条件，并可能需要添加单独的电源。
+    One thing you need to pay attention to is current.
+    Although the LED Strip with any number of LEDs can be used in Pico, the power of its VBUS pin is limited.
+    Here, we will use eight LEDs, which are safe.
+    But if you want to use more LEDs, you need to understand the restrictions and may need to add a separate power supply.
     
 
 Code
 ---------------------
 
-以下是Sunfounder封装好的ws2812的library。你需要将其存入Pico，将其命名为 **ws2812.py** 作为library使用。
+The following is the library of ws2812 packaged by Sunfounder. You need to save it in Pico and name it as **ws2812.py** for use as a library.
 
 
 .. code-block:: python
@@ -96,7 +96,7 @@ Code
             value = self.list_to_hex(value)
             self.buf[i] = value
 
-然后，新建一个new file，在这里调用方才储存好的ws2812 library。
+Then, create a new file, and call the stored ws2812 library here.
 
 
 .. code-block:: python
@@ -117,42 +117,40 @@ Code
     ws.write()
 
 
-让我们选中一些心仪的颜色，在RGB LED Strip上面显示出来！
+Let's select some favorite colors and display them on the RGB LED Strip!
 
 How it works?
 --------------------------
-在ws2812 library中，我们将相关功能集成到了WS2812类中。
+In the ws2812 library, we have integrated related functions into the WS2812 class.
 
-你可以通过以下的语句来使用RGB LED Strip
-
-import ws2812 library
+You can use the RGB LED Strip with the following statement.
 
 .. code-block:: python
 
     from ws2812 import WS2812
 
-声明一个WS2812类型的变量，命名为ws，它连接到"pin"，有"number"个灯珠。
+Declare a WS2812 type object, named "ws", it is connected to "pin", there are "number" lamp beads.
 
 .. code-block:: python
 
     ws = WS2812(pin,number)
 
-ws是一个array对象，每一个元素对应着一颗灯珠，如ws[0]为第一个，ws[7]为第八个。
-我们可以为每个灯珠赋于颜色值，这些值 must be 24-bit RGB hex or list of 3 8-bit RGB。
-比如说红色的值为"0xFF0000"或者"[255,0,0]"。
+ws is an array object, each element corresponds to a lamp bead, for example, ws[0] is the first one, ws[7] is the eighth.
+We can assign color values to each lamp bead, these values must be 24-bit RGB hex or list of 3 8-bit RGB.
+For example, the red value is "0xFF0000" or "[255,0,0]".
 
 .. code-block:: python
 
     ws[i] = color_value
 
-然后用这个语句为LED Strip写入颜色。
+Then use this statement to write the color for the LED Strip and light it up.
 
 .. code-block:: python
 
     ws.write()
 
 
-你也可以直接用以下语句让所有LED亮出相同的颜色。
+You can also directly use the following statement to make all LEDs light up the same color.
 
 .. code-block:: python
 
@@ -162,7 +160,7 @@ ws是一个array对象，每一个元素对应着一颗灯珠，如ws[0]为第�
 What more?
 --------------------------
 
-我们可以随机生成颜色，制作一条colorful flowing light
+We can randomly generate colors and make a colorful flowing light.
 
 .. code-block:: python
 

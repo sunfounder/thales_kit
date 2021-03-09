@@ -1,11 +1,11 @@
 Indentation
 =============
 
-缩进指的是代码行开头的缩进。
-与标准Python程序一样，MicroPython程序通常从上到下运行：
-它依次遍历每一行，在解释器中运行它，然后继续进行下一行，
-就像您在命令行管理程序中逐行键入它们一样。
-只是逐行浏览指令列表的程序不是很聪明，不过–因此，MicroPython与Python一样，有自己的方法来控制其程序运行的序列：缩进。
+Indentation refers to the indentation at the beginning of a line of code.
+Like standard Python programs, MicroPython programs usually run from top to bottom:
+It traverses each line in turn, runs it in the interpreter, and then continues to the next line,
+Just like you type them line by line in the Shell.
+A program that just browses the instruction list line by line is not very smart, but-therefore, MicroPython, like Python, has its own method to control the sequence of its program execution: indentation.
 
 **Example**
 
@@ -31,7 +31,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2
 SyntaxError: invalid syntax
 
-您必须在同一代码块中使用相同数量的空格，否则同样会出现错误信息"invalid syntax"：
+You must use the same number of spaces in the same code block, otherwise the error message "invalid syntax" will also appear.
 
 **Example**
 

@@ -1,22 +1,22 @@
 Swinging Servo
 ===================
 
-本套件除了LED和无源蜂鸣器，另一个由PWM信号控制的设备是Servo。
+In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
 
-舵机是一种位置（角度）伺服的驱动器，适用于那些需要角度不断变化并可以保持的控制系统。在高档遥控玩具，如飞机、潜艇模型，遥控机器人中已经得到了普遍应用。
+Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.
 
-让舵机摇摆起来吧！
+Now, try to make the servo sway!
 
 Wiring
 -------------------------
 
 .. image:: img/wiring_swing_servo.png
 
-1. 将Servo Arm 按到在Servo的输出轴上。如果有必要，使用螺丝将其固定。
-#. 将 Pico 的 **VBUS** （不是3V3）和 GND 连接至面包板的电源总线。
-#. 让舵机的红色引线用跳线连接至正极电源总线。
-#. 让舵机的黄色引线用跳线连接 GP15 引脚。
-#. 让舵机的黑色引线用跳线连接至负极电源总线。
+1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
+#. Connect **VBUS** (not 3V3) and GND of Pico to the power bus of the breadboard.
+#. Connect the red lead of the servo to the positive power bus with a jumper.
+#. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
+#. Connect the black lead of the servo to the negative power bus with a jumper wire.
 
 
 Code
@@ -47,24 +47,24 @@ Code
             utime.sleep_ms(20)
 
 
-当程序运行时，我们能看到Servo Arm从0°到180°来回摇摆。因为 ``while True`` 循环的原因程序会一直运行，我们需要按下Stop键来结束这个程序。
+            When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. The program will always run because of the ``while True`` loop, we need to press the Stop key to end the program.
 
 How it works?
 --------------------
-我们定义了 ``servo_write()`` 函数来让舵机动起来。
+We defined the ``servo_write()'' function to make the servo run.
 
-这个函数拥有两个parameter:
+This function has two parameters:
 
-* pin，控制舵机的GPIO引脚。 
-* angle，舵机轴输出的角度。 
+* pin, the GPIO pin that controls the servo.
+* Angle, the angle of the shaft output.
 
-在这个函数中调用了 ``interval_mapping()`` 将角度范围 0 ~ 180 映射为pulse width的范围 0.5 ~ 2.5ms。
+In this function, ``interval_mapping()`` is called to map the angle range 0 ~ 180 to the pulse width range 0.5 ~ 2.5ms.
 
 .. code-block:: python
 
     pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
 
-为什么是0.5~2.5呢？这是由舵机的工作方式所决定的。
+Why is it 0.5~2.5? This is determined by the working mode of the steering gear.
 
 .. image:: img/servo1.png
 
@@ -84,10 +84,10 @@ When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a
 When the pulse is wider than 1.5 ms the opposite occurs. The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo. 
 Generally the minimum pulse will be about 0.5 ms wide and the maximum pulse will be 2.5 ms wide.
 
-接下来将pulse width转化从周期转化为duty，由于duty_u16()在使用时不可以有小数（数值不能为float类型），我们使用了 ``int()`` 将duty强制转化为int类型。
+Next, convert the pulse width from period to duty. Since duty_u16() cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
 
 .. code-block:: python
 
     duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
 
-最后将duty值写入duty_u16()即可。
+Finally, write the duty value into duty_u16().

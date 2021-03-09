@@ -1,30 +1,30 @@
 Fading LED
 ==========================================
 
-目前为止，我们接触到的电信号的输出信号只有两种：高电平和低电平（或称之为 1 & 0, ON & OFF）,这被称之为数字输出。
-但是，在实际运用时，许多设备都需要有不同程度的使用，比如说，给电机调速，给台灯调整亮度等等。
-在过去，会使用一个可以调节电阻值的滑动变阻器来达成这个目的，但是这始终是一个不可靠以及缺乏效率的方式。
-因此，一个可靠而有效率的调整方法 —— Pulse-width modulation (PWM) 应运而生，作为这类复杂问题的可行解决方案。
+So far, there are only two output signals of electrical signals that we have come into contact with: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
+However, in actual use, many devices need to be used to varying degrees, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
+In the past, a sliding rheostat that can adjust the resistance value was used to achieve this goal, but this has always been an unreliable and inefficient way.
+Therefore, a reliable and efficient adjustment method-Pulse-width modulation (PWM) has emerged as a feasible solution to such complex problems.
 
-一次打开和关闭的数字输出被称之为脉冲，通过改变引脚打开和关闭的速度，可以调节这些引脚的脉冲宽度。
+A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the opening and closing speed of the pins.
 
-简单的说，当我们在一个很短的周期内（如20ms，大多数人的视觉暂留时间），
-让LED打开，关闭，又打开，我们是不会看到它曾被关过，但是灯亮度会稍弱一些。
-在这段周期内，LED的被打开时间占比越多，我们会感觉到LED的亮度也越高。
-换而言之，在周期中，pulse越宽，微控制器输出的“电信号强度”也就越大。
-这就是PWM控制LED亮度（或者电机转速）的方法。
+Simply put, when we are in a short period (such as 20ms, most people’s visual retention time),
+Let the LED turn on, turn off, and turn on again, we won’t see it has been turned off, but the brightness of the light will be slightly weaker.
+During this period, the more time the LED is turned on, the higher the brightness of the LED.
+In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
+This is how PWM controls LED brightness (or motor speed).
 
 * `Pulse-width modulation - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
 
-Pico 使用PWM时有些需要注意的地方，让我们来看看这张图。
+There are some points to pay attention to when Pico uses PWM. Let's take a look at this picture.
 
 .. image:: img/pin_pic.png
 
-Pico的每个GPIO引脚都支持PWM，但是它其实一共拥有16个独立的PWM输出（而非30个），分布在左侧GP0至GP15之间，右侧GPIO的PWM输出相当于左侧的副本。
+Each GPIO pin of Pico supports PWM, but it actually has a total of 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the PWM output of the right GPIO is equivalent to the left copy.
 
-我们需要注意的，是避免在编程时，为不同的使用目的设置了相同的PWM通道。（如GP0和GP16都是PWM_0A）
+What we need to pay attention to is to avoid setting the same PWM channel for different purposes during programming. (For example, GP0 and GP16 are both PWM_0A)
 
-了解了这些知识之后，让我们来尝试实现Fading LED的效果。
+After understanding this knowledge, let us try to achieve the effect of Fading LED.
 
 
 Wiring
@@ -34,19 +34,19 @@ Wiring
 
 .. https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf
 
-1. 在这里我们使用Pico板的GP15引脚。
-#. 将220欧姆电阻器的一端（任意一端）连接GP15，将另一端插入面包板的free row。
-#. 将LED的阳极lead插入与220Ω电阻器末端相同的行，将阴极lead跨过面包板中间间隙，接到相同的行中。
-#. 将LED阴极连接到面包板的负极电源总线。
-#. 将负极电源总线连接到Pico的GND引脚。
+1. Here we use the GP15 pin of the Pico board.
+#. Connect one end (either end) of the 220 ohm resistor to GP15, and insert the other end into the free row of the breadboard.
+#. Insert the anode lead of the LED into the same row as the end of the 220Ω resistor, and connect the cathode lead across the middle gap of the breadboard to the same row.
+#. Connect the LED cathode to the negative power bus of the breadboard.
+#. Connect the negative power bus to the GND pin of Pico.
 
 .. note::
-    220欧姆的电阻器色环颜色为红红黑黑棕。
+    The color ring of the 220 ohm resistor is red, red, black, black and brown.
 
 Code
 --------------------
 
-当程序运行时，LED会逐渐变亮。
+When the program is running, the LED will gradually brighten.
 
 .. code-block:: python
 
@@ -64,7 +64,7 @@ Code
 How it works?
 -----------------------------------------------
 
-在这里，我们通过改变GP15的PWM输出的占空比来改变LED的亮度，让我们来看看这几行。
+Here, we change the brightness of the LED by changing the duty cycle of the GP15's PWM output. Let's take a look at these lines.
 
 .. code-block:: python
     :emphasize-lines: 4,5,8
@@ -80,10 +80,8 @@ How it works?
         utime.sleep_ms(10)
     led.duty_u16(0)
 
-* ``led = machine.PWM(machine.Pin(15))`` 将GP15引脚设置为PWM输出。
+* ``led = machine.PWM(machine.Pin(15))`` sets the GP15 pin as PWM output.
 
-* ``led.freq(1000)`` 这行涉及到了PWM的一个方面，频率，在这里被设置为了1000hz – one thousand cycles per second. 也就是将1ms为一个周期。PWM的频率是可以调节的，如舵机需要50hz的频率下工作，无源蜂鸣器通过改变pwm频率来改变音调等。但在简单使用LED时并没有限制，我们将其设为1000hz。
+* The line ``led.freq(1000)`` refers to an aspect of PWM, the frequency, here is set to 1000hz-one thousand cycles per second. That is, 1ms is a cycle. The frequency of PWM can be adjusted. For example, the steering gear needs to work at a frequency of 50hz, and the passive buzzer can change the tone by changing the PWM frequency. But there is no limit when simply using LED, we set it to 1000hz.
 
-* ``led.duty_u16()`` 这一行涉及到了PWM的另一个方面，占空比，它是一个16-bit interger。当我们为该函数赋值0时，占空比为0%，每个周期有0%的时间输出高电平，换而言之关闭全部脉冲。当赋值为65535时，则占空比为100%，也就是打开完整脉冲，其结果等同于作为数字输出时的‘1’。如果是32768，则会打开半个脉冲，作用在LED上则是亮度为全开时的一半。
-
-
+* The ``led.duty_u16()`` line relates to another aspect of PWM, the duty cycle, which is a 16-bit interger. When we assign a value of 0 to this function, the duty cycle is 0%, and each cycle has 0% of the time to output a high level, in other words, turn off all pulses. When the value is 65535, the duty cycle is 100%, that is, the complete pulse is turned on, and the result is equal to ‘1’ as a digital output. If it is 32768, it will turn on half a pulse, and the brightness of the LED will be half of that when it is fully turned on.

@@ -1,41 +1,43 @@
 Colorful Light
 ==============================================
 
-如我们所知，光是可以叠加的。比如蓝色光加绿色光将会产生青色光，红色光加绿色光将会产生黄色光。
-这被称之为 "The additive method of color mixing". 
+As we know, light can be superimposed. For example, blue light plus green light will produce cyan light, and red light plus green light will produce yellow light.
+This is called "The additive method of color mixing".
 
 * `Additive color - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
 
-基于这个原理，我们可以利用三原色光按不同的比重混合出任意的颜色的可见光，如橙色可由较多的红色加上较少的绿色产生。
+Based on this method, we can use the three primary colors to mix the visible light of any color according to different specific gravity. For example, orange can be produced by more red and less green.
 
-这个章节，我们将用RGB LED来探索加色混合的奥秘！
+In this chapter, we will use RGB LED to explore the mystery of additive color mixing!
 
-RGB LED相当于将Red LED, Green LED, Blue LED封装在一个灯帽下，让三个LED共用一个阴极引脚。
-为每一个阳极引脚提供电信号，都能显示出对应颜色的光。通过配置每个阳极引脚的电信号强度，便能让它产生各种颜色。
+RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin.
+Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
 
 Wiring
 -----------------------------------------------
 
-将RGB LED平放在桌子上，我们能看到它有4根长短不一的leads。
-找到最长的一根(GND)，将它侧向左边。
-现在，四根leads的顺序从左到右依次是Red, GND, Green, Blue。
+Put the RGB LED flat on the table, we can see that it has 4 leads of different lengths.
+Find the longest one (GND) and turn it sideways to the left.
+Now, the order of the four leads is Red, GND, Green, Blue from left to right.
 
 .. image:: img/wiring_colorful_light.png
 
-1. 将Red lead经由330Ω电阻连接至GP13引脚。使用相同强度供电时，Red LED会较之另外两者亮一些，需要用稍大一些的电阻降低其亮度。
-#. 将Green lead经由220Ω电阻连接至GP14引脚。
-#. 将Blue lead经由220Ω电阻连接至GP15引脚。
-#. 将GND lead连接至负极电源总线。
-#. 将负极电源总线连接至Pico的GND。
+1. Connect the GND pin of the Pico to the negative power bus of the breadboard.
+#. Insert the RGB LED into the breadboard so that its four pins are in different rows.
+#. Connect the red lead to the GP13 pin via a 330Ω resistor. When using the same power supply intensity, the Red LED will be brighter than the other two, and a slightly larger resistor needs to be used to reduce its brightness.
+#. Connect the Green lead to the GP14 pin via a 220Ω resistor.
+#. Connect the Blue lead to the GP15 pin via a 220Ω resistor.
+#. Connect the GND lead to the negative power bus.
+#. Connect the negative power bus to Pico's GND.
 
 .. note::
-    220欧姆的电阻器色环颜色为红红黑黑棕。
-    330Ω电阻器的色环颜色为橙橙黑黑棕。
+    The color ring of the 220Ω resistor is red, red, black, black and brown.
+    The color ring of the 330Ω resistor is orange, orange, black, black and brown.
 
 Code
 -----------------------------------------------
 
-在这里，我们可以在电脑上的画图软件（如 paint）选取自己喜欢的颜色，将其用RGB LED显示出来。
+Here, we can choose our favorite color in drawing software (such as paint) and display it with RGB LED.
 
 .. code-block:: python
 
@@ -53,29 +55,28 @@ Code
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
     def color_to_duty(rgb_value):
-        rgb_value = interval_mapping(rgb_value,0,255,0,65535)
+        rgb_value = int(interval_mapping(rgb_value,0,255,0,65535))
         return rgb_value
 
-    def colorSet(red,blue,green):
-        red.duty_u16(color_to_duty(red))
-        green.duty_u16(color_to_duty(green))
-        blue.duty_u16(color_to_duty(blue))
+    def color_set(red_value,green_value,blue_value):
+        red.duty_u16(color_to_duty(red_value))
+        green.duty_u16(color_to_duty(green_value))
+        blue.duty_u16(color_to_duty(blue_value))
 
-    colorSet(255,128,0)
+    color_set(255,128,0)
 
 .. image:: img/edit_colors.png
 
-选好颜色后，将RGB值写入colorSet()中，你将能看到RGB亮出你先要的颜色
+Write the RGB value into color_set(), you will be able to see the RGB light up the color you want first
 
 
 How it works?
 --------------------
 
-我们定义了一个 ``colorSet()`` 函数让三原色光一同工作。
+We defined a ``color_set()`` function to let the three primary colors work together.
 
-目前, 在电脑硬件中的像素通常采取24bit表示的方法，三种原色光各分到8位元，每一种原色的强度依照8位元的最高值2的8次方，也就是256个值。
-用这种方法可以组合16777216种颜色。
-colorSet函数也遵循了24bit表示法，这样能让我们更容易选出想要的颜色。
+At present, pixels in computer hardware usually adopt a 24-bit representation method. The three primary colors are divided into 8 bits, and the intensity of each primary color is based on the highest value of 8 bits to the 8th power of 2, which is 256 values. 
+16777216 colors can be combined in this way.
+The ``color_set()`` function also follows the 24-bit notation, which makes it easier for us to select the desired color.
 
-而又因为led通过PWM输出时duty_u16值范围为0~65535（而非0~255），为了与RGB值相对应，我们定义了 ``color_to_duty()`` 和 ``interval_mapping()`` 函数，让RGB值映射成duty值。
-
+And because the ``duty_u16()`` value range is 0~65535 (not 0~255) when the LED is output through PWM, in order to correspond to the RGB value, we define ``color_to_duty()`` and ``interval_mapping ()`` function to map the RGB value to the duty value.

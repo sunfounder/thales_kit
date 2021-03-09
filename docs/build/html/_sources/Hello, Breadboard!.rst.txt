@@ -1,55 +1,54 @@
 Hello, Breadboard!
 ==========================================
+To use extended electronic components, a solderless breadboard will be the most powerful partner for novice users.
 
-要使用拓展电子元器件，无焊面包板会是新手用户最得力的伙伴。
-
-面包板是矩形塑料板，其中有一堆小孔。这些孔使我们可以轻松将电子元器件插入并构建出电子电路。面包板并不会永久固定电子元器件，这使得我们在犯了错误时很容易可以修复电路和重新开始。
+The breadboard is a rectangular plastic plate with a bunch of small holes in it. These holes allow us to easily insert electronic components and build electronic circuits. The breadboard does not permanently fix the electronic components, which makes it easy for us to repair the circuit and start over when we make a mistake.
 
 .. note::
-    我们无需使用特殊工具就可以使用面包板，但是许多电子元器件非常的小，一把镊子可以帮助我们更好的拾取小零件。
+    We can use the breadboard without using special tools. But many electronic components are very small. A pair of tweezers can help us pick up small parts better.
 
-在互联网上拥有许多详细的面包板的知识，让我们善加使用。
+There are many detailed breadboard knowledge on the Internet, let us use it wisely.
 
 * `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
 * `What is a BREADBOARD? - Makezine <https://cdn.makezine.com/uploads/2012/10/breadboardworkshop.pdf>`_
 
-对于面包板，你需要明确知道的是：
+For breadboards, what you need to know clearly is:
 
-1. 面包板中间每一组半行（如1行的A-E列或者3行的F-J列）是连通的。这意味着电信号从A1处流入时，可以从B1,C1,D1,E1处流出，但不会从F1或者A2流出。
-#. 面包板的两侧通常用来作为电源总线，它们每一列的孔（大约50个孔）都是连通的。一般来说，靠近红线的孔用于连接正极电源，靠近蓝色的则用于连接负极电源。
-#. 搭建电路时，电流从正极流出，必须先流过用电器才能流入负极。否则将可能发生短路。
+1. Each group of half rows inside the breadboard (such as column A-E in row 1 or column F-J in row 3) is connected. This means that when an electrical signal flows in from A1, it can flow from B1, C1, D1, E1, but not from F1 or A2.
+#. Both sides of the breadboard are usually used as power buses, and the holes in each column (about 50 holes) are connected. Generally speaking, the hole near the red wire is used to connect the positive power supply, and the hole near the blue wire is used to connect the negative power supply.
+#. When building a circuit, the current flows from the positive pole and must first flow through the consumer before it can flow into the negative pole. Otherwise, a short circuit may occur.
 
 
-现在我们对面包板电路应当有了粗略的印象了，何不试着搭建一个 “Hello,LED!”的拓展电路呢？
+Now we should have a rough impression of the breadboard circuit, why not try to build a "Hello, LED!" expansion circuit?
 
 Wiring
 -------------------------
 
 .. image:: img/wiring_hello_breadboard.png
 
-让我们顺着电流的方向来搭建电路吧！
+Let us follow the direction of the current to build the circuit!
 
-1. 在这里我们使用Pico板的GP15引脚发出的电信号让LED工作，电路从这开始。
-#. 电流需要先经过一个220欧姆电阻器（用来保护LED）。将电阻器的一端（任意一端）插入与Pico GP15引脚相同的行(在我的电路中是row 20)，将另一端插入面包板的free row（在我的电路是row 24）。
+1. Here we use the electrical signal from the GP15 pin of the Pico board to make the LED work, and the circuit starts from here.
+#. The current needs to pass through a 220 ohm resistor (used to protect the LED). Insert one end (either end) of the resistor into the same row as the Pico GP15 pin (row 20 in my circuit), and insert the other end into the free row of the breadboard (row 24 in my circuit).
 
     .. note::
-        220欧姆的电阻器色环颜色为红红黑黑棕。
+        The color ring of the 220 ohm resistor is red, red, black, black and brown.
 
-#. 拿起LED，你会看到它的其中一根lead比另一根要长。将较长的lead插入与电阻器末端相同的行，将较短的lead跨过面包板中间间隙，接到相同的行中。
+#. Pick up the LED, you will see that one of its leads is longer than the other. Insert the longer lead into the same row as the end of the resistor, and connect the shorter lead across the middle gap of the breadboard to the same row.
     
     .. note::
         The longer lead is known as the anode, and represents the positive side of the circuit; the shorter lead is the cathode, and represents the negative side. 
 
-        阳极需要通过电阻器连接到GPIO引脚；阴极需要连接到GND引脚。 
+        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
 
-#. 将公对公（M2M）跳线插入与LED短脚相同的行中，然后将其连接到面包板的负极电源总线。
-#. 再用一条跳线将负极电源总线连接到Pico的GND引脚。
+#. Insert the male-to-male (M2M) jumper wire into the same row as the LED short pin, and then connect it to the negative power bus of the breadboard.
+#. Use a jumper to connect the negative power bus to the GND pin of Pico.
 
 Code
 ----------------------------------
 
-控制扩展LED的方法和控制板载LED的方法是一样的，唯一的区别是将操作的引脚改成了15。
+The method of controlling the extended LED is the same as the method of controlling the on-board LED, the only difference is that the operating pin is changed to 15.
 
 .. code-block:: python
 
@@ -61,7 +60,7 @@ Code
         led.toggle()
         utime.sleep(1)
 
-因为 ``toggle()`` 可以让引脚在高电平和低电平之间切换，你能看到LED闪烁。
+``toggle()`` can switch the pin between high level and low level, and you can see the LED blinking.
 
 Also see reference here:
 

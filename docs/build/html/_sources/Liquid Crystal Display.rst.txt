@@ -13,35 +13,31 @@ I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for communi
 I2C main controller can be used to control IO expander, various sensors, EEPROM, ADC/DAC and so on. 
 All of these are controlled only by the two pins of host, the serial data (SDA) line and the serial clock line(SCL). 
 
-这两个Pin这些必须连接到微控制器的特定引脚才可以运行。在Pico中有两对I2C通信接口，被标记为I2C0与I2C1，如下图。
+These two Pins must be connected to specific pins of the microcontroller to operate. There are two pairs of I2C communication interfaces in Pico, which are marked as I2C0 and I2C1, as shown in the figure below.
 
 .. image:: img/pin_pic2.png
 
-在这里我们将使用I2C0来控制LCD1602，显示文本。
+Here we will use the I2C0 interface to control the LCD1602 and display text.
 
 Wiring
 ----------------------------
 
 .. image:: img/wiring_lcd.png
 
-1. 将LCD的VCC连接Pico的VBUS。
-#. 将LCD的GND连接Pico的GND。
-#. 将LCD的SDA连接Pico的GP0，也就是I2C0 SDA。
-#. 将LCD的SCL连接Pico的GP1，也就是I2C0 SCL。
+1. Connect VCC of LCD to VBUS of Pico.
+#. Connect the GND of LCD to the GND of Pico.
+#. Connect SDA of LCD to GP0 of Pico, which is I2C0 SDA.
+#. Connect SCL of LCD to GP1 of Pico, which is I2C0 SCL.
 
 Code
 ----------------------
 
-每一个I2C设备都拥有独特的地址、需要传入独特的指令来运行。这会需要用户查看其 datasheet 才能完全弄懂。这拥有一定的门槛。
+Every I2C device has a unique address and needs to pass in unique commands to run. This will require users to view their datasheet to fully understand. This has a certain threshold.
 
-.. xx 这里是LCD1602的datasheet。
-.. 你需要在互联网上寻求一些帮助来帮你读懂它。
-.. https://create.arduino.cc/projecthub/Arduino_Scuola/how-to-read-datasheets-5f4015
+Fortunately, many people on the Internet encapsulate some common modules into libraries so that we can use them directly.
+The following is the library of lcd1602 packaged by Sunfounder.
 
-但是幸运的是，在互联网上有许多人将一些通用的模块封装成library，以便于我们可以直接使用。
-以下是Sunfounder封装好的lcd1602的library。
-
-你需要将其存入Pico，将其命名为 **lcd1602.py** 作为library使用。
+You need to save it in Pico, name it **lcd1602.py** and use it as a library.
 
 
 .. code-block:: python
@@ -142,7 +138,7 @@ Code
                 else:
                     self.send_data(ord(char))
 
-然后，新建一个new file，在这个文件里调用方才储存好的lcd1602 library。
+Then, create a new file, and call the lcd1602 library stored in this file.
 
 
 .. code-block:: python
@@ -159,14 +155,14 @@ Code
     utime.sleep(2)
     lcd.clear()   
 
-程序运行后，你将能看到LCD依次出现两行文字，随后消失。
+After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
 
 
 How it works?
 --------------------------
-在lcd1602 library中，我们将lcd1602的相关功能集成到了LCD类中。
+In the lcd1602 library, we integrate the relevant functions of lcd1602 into the LCD class.
 
-你可以用以下语句来使用lcd1602.
+You can use lcd1602 with the following statement.
 
 import lcd1602 library
 
@@ -174,20 +170,20 @@ import lcd1602 library
 
     from lcd1602 import LCD    
 
-声明一个LCD类的对象，命名为lcd。
+Declare an object of the LCD class and name it lcd.
 
 .. code-block:: python
 
     lcd = LCD()
 
-这句指令会将文字显示在lcd中，需要注意的是，其argument必须是字符串类型，如果我们想要传入integer或者float，必须使用强制转化语句 ``str()``。
+This command will display the text in the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement ``str()``.
 
 .. code-block:: python
 
     lcd.message(string)
 
 
-如果多次调用该语句，lcd会将这几次调用的文字叠加，直到超出显示范围。这就需要用到以下语句clear the display。
+If you call this statement multiple times, lcd will superimpose the text of these calls until it exceeds the display range. This requires the use of the following statement to clear the display.
 
 .. code-block:: python
 
@@ -197,7 +193,7 @@ import lcd1602 library
 
 What more?
 --------------------------
-我们可以结合thermistor和LCD1602，制作一个室温计。
+We can combine thermistor and LCD1602 to make a room temperature meter.
 
 .. image:: img/wiring_lcd_2.png
 

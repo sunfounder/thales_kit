@@ -1,7 +1,7 @@
 Reading Button Value
 ==============================================
 
-从GPIO（General-purpose input/output）的名字中我们可以看出，引脚应当具有输入和输出两种使用方法。在LED中我们使用了输出，在这章我们借助按键来使用输入。
+From the name of GPIO (General-purpose input/output), we can see that the pin should have two methods of input and output. In the LED, we used the output, in this chapter we use the keys to use the input.
 
 
 Wiring
@@ -10,23 +10,29 @@ Wiring
 .. image:: img/wiring_read_button_value.png
 
 
-让我们顺着电路方向来搭建电路吧！
+Let's follow the direction of the circuit to build the circuit!
 
-1. 将Pico的3V3引脚连接到面包板正极电源总线。
-#. 将按键插入面包板的中间，使其跨在中央分割线上。
+1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
+#. Insert the button into the breadboard and straddle the central dividing line.
 
     .. note::
-        我们可以将四足按键看作H形，它的左侧（右侧）两只脚是相连的，这意味着它跨在中央分割线后，会将同一行号的两组半行连接在一起（如在我的电路中，E22与F22已被接通，E24与F24也是如此）。
+        We can think of the four-legged button as an H-shaped button. Its left (right) two feet are connected, which means that after it straddles the central dividing line, it will connect the two half rows of the same row number together. (For example, in my circuit, E23 and F23 have been connected, as are E25 and F25).
 
-        在按下按键之前，左右两侧是相互独立的，电流并不能从一侧流向另一侧。
+        Before the button is pressed, the left and right sides are independent of each other, and current cannot flow from one side to the other.
 
-#. 用跳线将电源正极总线与按键的一个脚连接（我的是右上方的脚）。
-#. 用跳线将另一侧的脚（左上方或左下方）连接到GP14。
+#. Use a jumper to connect the positive bus of the power supply to a pin of the button (mine is the pin on the upper right).
+#. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
+#. Use a 10kΩ resistor to connect the pin on the side of GP14 to the negative power bus of the breadboard.
+
+    .. note::
+        The color ring of the 10kΩ resistor is brown, black, black, red, brown.
+
+#. Connect the negative power bus of the breadboard to Pico's GND.
 
 Code
 -----------------------------------
 
-当按键被按下时，电流会从3V3流经开关流入GP14，换而言之GP14将会读取到高电平信号‘1’；反之，则会读取到低电平信号‘0’。
+When the button is pressed, the current will flow from 3V3 through the switch to GP14, in other words, GP14 will read a high-level signal ‘1’; otherwise, it will read a low-level signal ‘0’.
 
 .. code-block:: python
 
@@ -41,11 +47,11 @@ Code
 What more?
 ------------------------
 
-按键并不需要外接限流电阻器，但是仍需要一个电阻器 —— 上拉电阻器或者下拉电阻器，取决于电路的工作方式。如果没有上拉或下拉电阻，主控制器将可能接收到‘noisy’ signal which can trigger even when you’re not pushing the button.
+Buttons require pull-up resistors or pull-down resistors. If there is no pull-up or pull-down resistor, the main controller may receive a ‘noisy’ signal which can trigger even when you’re not pushing the button.
 
-那么为什么我们看不到它们呢？因为它们被集成到了Pico中，就如同Pico集成了板载LED一样。这些电阻是可以被编程的，通常被设置为下拉，这使得GPIO在未连通高电平的时候，输入值为‘0’；如果被设置为上拉，则会让GPIO在未接通低电平的时候获得输入值‘1’。
+Set the pull-down resistor so that when the GPIO is not connected to a high level, the input value is stable to ‘0’; if it is set to pull up, it will make the GPIO stable to obtain an input value of 1 when the GPIO is not connected to a low level.
 
-接下来是按键在使用上拉的工作方式时的接线和代码，请尝试一下。
+Next is the wiring and code when the button uses the pull-up working mode, please try it.
 
 .. image:: img/wiring_read_button_value_2.png
 

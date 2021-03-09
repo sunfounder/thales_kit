@@ -1,18 +1,18 @@
 Variables
 ==========
-变量是用于存储数据值得容器。
+Variables are containers used to store data values.
 
-创建一个变量很简单，只需要起个名，给他赋予一个值，在赋值的时候不需要指定变量的数据类型，因为变量是一个引用，它通过赋值来访问不同数据类型的对象。
+Creating a variable is very simple. You only need to name it and assign it a value. You don't need to specify the data type of the variable when assigning it, because the variable is a reference, and it accesses objects of different data types through assignment.
 
-给变量命名必须遵循以下规则：
+Naming variables must follow the following rules:
 
-* 变量名只能包含数字、字母、下划线
-* 变量名的第一个字符必须是字母或下划线
-* 变量名区分大小写
+* Variable names can only contain numbers, letters, and underscores
+* The first character of the variable name must be a letter or underscore
+* Variable names are case sensitive
 
 Create Variable
 ------------------
-MicroPython中没有用于声明变量得命令，变量是在您首次为它分配值时创建的，它不需要使用任何特定类型声明，甚至可以在设置变量后更改类型。
+There is no command for declaring variables in MicroPython. Variables are created when you assign a value to it for the first time. It does not need to use any specific type declaration, and you can even change the type after setting the variable.
 
 **Example**
 
@@ -28,7 +28,7 @@ lily
 
 Casting
 -------------
-如果你想为变量制定数据类型，可通过强制转换来完成。
+If you want to specify the data type for the variable, you can do it by casting.
 
 **Example**
 
@@ -61,7 +61,7 @@ You can get the data type of a variable with the `type()` function.
 Single or Double Quotes?
 ---------------------------
 
-在MicroPython中，可用单引号或者双引号来定义字符串变量。
+In MicroPython, single quotes or double quotes can be used to define string variables.
 
 **Example**
 

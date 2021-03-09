@@ -188,23 +188,23 @@
             
   <div class="section" id="light-theremin">
 <h1>Light Theremin<a class="headerlink" href="#light-theremin" title="Permalink to this headline">¶</a></h1>
-<p>特雷门琴是一种不需要身体接触的电子乐器，它通过感应演奏家的手部位置来发出不同的音调。
-特雷门琴利用两个感应人体与大地的分布电容的LC 振荡器工作单元分别产生震荡的频率与大小变化而工作。
-我们无法通过Pico复刻出相同的乐器，但是可以借助photoresistor和passive buzzer来实现相似的玩法。</p>
+<p>Thereman is an electronic musical instrument that does not require physical contact. It produces different tones by sensing the position of the player’s hand.
+There are two LC oscillator working units that sense the distributed capacitance of the human body and the earth to produce oscillation frequency and size change respectively.
+We cannot reproduce the same instrument through Pico, but we can use photoresistor and passive buzzer to achieve similar gameplay.</p>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/wiring_light_theremin.png" src="_images/wiring_light_theremin.png" />
 <ol class="arabic simple">
-<li><p>将 Pico 的3V3和 GND 连接至面包板的电源总线。</p></li>
-<li><p>将photoresistor的一端接入负极电源总线，另一端串联一个10kΩ电阻器接入正极电源总线。</p></li>
-<li><p>用一根跳线从两个电阻器中间接入GP28。</p></li>
-<li><p>将LED插入面包板上，它的阳极pin串联一个220Ω电阻器接入GP16，阴极pin接入负极电源总线。</p></li>
-<li><p>将无源蜂鸣器和S8050三极管插入面包板。蜂鸣器阳极pin连接至正极电源总线，阴极pin连接至三极管的 <strong>collector</strong> lead，三极管的 <strong>base</strong> lead 经由 1kΩ 电阻器连接至 GP15 引脚。<strong>emitter</strong> lead 连接负极电源总线。</p></li>
+<li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
+<li><p>Connect one end of the photoresistor to the negative power bus, and the other end in series with a 10kΩ resistor to the positive power bus.</p></li>
+<li><p>Use a jumper wire to connect GP28 between the two resistors.</p></li>
+<li><p>Insert the LED into the breadboard, connect its anode pin to the GP16 in series with a 220Ω resistor, and connect its cathode pin to the negative power bus.</p></li>
+<li><p>Insert the passive buzzer and S8050 transistor into the breadboard. The anode pin of the buzzer is connected to the positive power bus, the cathode pin is connected to the <strong>collector</strong> lead of the triode, and the <strong>base</strong> lead of the triode is connected to the GP15 pin through a 1kΩ resistor. <strong>emitter</strong> lead is connected to the negative power bus.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>220欧姆的电阻器色环颜色为红红黑黑棕。
-10kΩ电阻器的色环颜色为棕黑黑红棕。</p>
+<p>The color ring of the 22Ωresistor is red, red, black, black and brown.
+The color ring of the 10kΩ resistor is brown, black, black, red and brown.</p>
 </div>
 </div>
 <div class="section" id="code">
@@ -248,9 +248,9 @@
     <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>当程序运行后，LED会点亮，我们会有五秒的时间校准photoresistor的检测范围。这是因为在每次使用时，我们可能处于不同的光线环境（如正午和黄昏的光照强度并不相同）。
-在此时我们需要用手在photoresistor上方上下摆动，手的移动范围将会被校准为这个乐器的演奏范围。
-五秒过后，LED会熄灭，我们可以在photoresistor上摆手进行演奏。</p>
+<p>When the program runs, the LED will light up, and we will have five seconds to calibrate the detection range of the photoresistor. This is because each time we use it, we may be in a different light environment (such as the light intensity at noon and dusk is not the same).
+At this time, we need to swing our hands up and down above the photoresistor, and the movement range of the hand will be calibrated to the playing range of this instrument.
+After five seconds, the LED will go out and we can wave our hands on the photoresistor to play.</p>
 </div>
 </div>
 

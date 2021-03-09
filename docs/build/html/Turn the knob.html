@@ -189,26 +189,26 @@
             
   <div class="section" id="turn-the-knob">
 <h1>Turn the Knob<a class="headerlink" href="#turn-the-knob" title="Permalink to this headline">¶</a></h1>
-<p>在前面的章节中，我们已经使用了Pico的上的数字输入。
-如按键，可以让引脚从低电平(关闭)变成高电平（开启）。这是一种二进制的工作状态。</p>
-<p>但是，Pico可以接收另一种类型的输入信号：模拟输入。
-它可以是从完全关闭到完全开启的任何状态，有一系列可能的值。
-模拟输入可让微控制器感应物理世界的光照强度、声音强度、温度、湿度等等。</p>
-<p>通常，微控制器实现模拟输入都需要一个额外的硬件 —— the analogue-to-digital converter (ADC).
-但是Pico本身拥有内置的ADC可以供我们直接使用。</p>
+<p>In the previous chapters, we have used the digital input on the Pico.
+For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.</p>
+<p>However, Pico can receive another type of input signal: analog input.
+It can be in any state from fully closed to fully open, and has a range of possible values.
+The analog input allows the microcontroller to sense the light intensity, sound intensity, temperature, humidity, etc. of the physical world.</p>
+<p>Usually, a microcontroller needs an additional hardware to implement analog input-the analogue-to-digital converter (ADC).
+But Pico itself has a built-in ADC for us to use directly.</p>
 <img alt="_images/pin_pic3.png" src="_images/pin_pic3.png" />
-<p>Pico有三个GPIO引脚可以使用模拟输入，GP26、GP27、GP28。也就是模拟通道0、1、2。
-除此之外还有第四个模拟通道，它连接在内置的温度传感器中，在这里不作介绍。</p>
-<p>在本章节，我们借助potentiometer来尝试读取模拟值。</p>
+<p>Pico has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
+In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.</p>
+<p>In this chapter, we use potentiometer to try to read analog values.</p>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/wiring_turn_the_knob.png" src="_images/wiring_turn_the_knob.png" />
 <ol class="arabic simple">
-<li><p>将 Pico 的 3V3 和 GND 连接至面包板的电源总线。</p></li>
-<li><p>将 potentiometer 插入面包板中，它的三个pin应当位于不同的行中。</p></li>
-<li><p>用跳线将 potentiometer 两侧的引脚分别连接至正负极电源总线。</p></li>
-<li><p>用跳线将 potentiometer 的中间引脚连接至GP28。</p></li>
-<li><p>将 led 阳极经由220Ω电阻连接至GP15引脚，阴极连接至负极电源总线。</p></li>
+<li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
+<li><p>Insert the potentiometer into the breadboard, its three pins should be in different rows.</p></li>
+<li><p>Use jumpers to connect the pins on both sides of the potentiometer to the positive and negative power bus.</p></li>
+<li><p>Connect the middle pin of the potentiometer to GP28 with a jumper wire.</p></li>
+<li><p>Connect the anode of the led to the GP15 pin through a 220Ω resistor, and connect the cathode to the negative power bus.</p></li>
 </ol>
 </div>
 <div class="section" id="code">
@@ -225,14 +225,15 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
     <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
     <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+
+    <span class="n">When</span> <span class="n">the</span> <span class="n">program</span> <span class="ow">is</span> <span class="n">running</span><span class="p">,</span> <span class="n">we</span> <span class="n">can</span> <span class="n">see</span> <span class="n">the</span> <span class="n">analog</span> <span class="n">value</span> <span class="n">currently</span> <span class="n">read</span> <span class="n">by</span> <span class="n">the</span> <span class="n">GP28</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">shell</span><span class="o">.</span> <span class="n">Turn</span> <span class="n">the</span> <span class="n">knob</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">value</span> <span class="n">will</span> <span class="n">change</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mf">65535.</span>
+    <span class="n">At</span> <span class="n">the</span> <span class="n">same</span> <span class="n">time</span><span class="p">,</span> <span class="n">the</span> <span class="n">brightness</span> <span class="n">of</span> <span class="n">the</span> <span class="n">LED</span> <span class="n">will</span> <span class="n">increase</span> <span class="k">as</span> <span class="n">the</span> <span class="n">analog</span> <span class="n">value</span> <span class="n">increases</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>当程序运行时，我们能在shell看到GP28引脚当前读取到的模拟值，转动knob，数值将在0~65535之间变化。
-同时，LED的亮度也会根据模拟值增大而增大。</p>
 </div>
 <div class="section" id="what-more">
 <h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
-<p>让我们用potentiometer knob来让servo左右摇摆吧！</p>
+<p>Let’s use the potentiometer knob to make the servo sway left and right!</p>
 <img alt="_images/wiring_turn_the_knob_2.png" src="_images/wiring_turn_the_knob_2.png" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>

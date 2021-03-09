@@ -1,33 +1,33 @@
 Turn the Knob
 ============================
 
-在前面的章节中，我们已经使用了Pico的上的数字输入。
-如按键，可以让引脚从低电平(关闭)变成高电平（开启）。这是一种二进制的工作状态。
+In the previous chapters, we have used the digital input on the Pico.
+For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.
 
-但是，Pico可以接收另一种类型的输入信号：模拟输入。
-它可以是从完全关闭到完全开启的任何状态，有一系列可能的值。
-模拟输入可让微控制器感应物理世界的光照强度、声音强度、温度、湿度等等。
+However, Pico can receive another type of input signal: analog input.
+It can be in any state from fully closed to fully open, and has a range of possible values.
+The analog input allows the microcontroller to sense the light intensity, sound intensity, temperature, humidity, etc. of the physical world.
 
-通常，微控制器实现模拟输入都需要一个额外的硬件 —— the analogue-to-digital converter (ADC).
-但是Pico本身拥有内置的ADC可以供我们直接使用。
+Usually, a microcontroller needs an additional hardware to implement analog input-the analogue-to-digital converter (ADC).
+But Pico itself has a built-in ADC for us to use directly.
 
 .. image:: img/pin_pic3.png
 
-Pico有三个GPIO引脚可以使用模拟输入，GP26、GP27、GP28。也就是模拟通道0、1、2。
-除此之外还有第四个模拟通道，它连接在内置的温度传感器中，在这里不作介绍。
+Pico has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
+In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
 
-在本章节，我们借助potentiometer来尝试读取模拟值。
+In this chapter, we use potentiometer to try to read analog values.
 
 Wiring
 ----------------------------
 
 .. image:: img/wiring_turn_the_knob.png
 
-1. 将 Pico 的 3V3 和 GND 连接至面包板的电源总线。
-#. 将 potentiometer 插入面包板中，它的三个pin应当位于不同的行中。
-#. 用跳线将 potentiometer 两侧的引脚分别连接至正负极电源总线。
-#. 用跳线将 potentiometer 的中间引脚连接至GP28。
-#. 将 led 阳极经由220Ω电阻连接至GP15引脚，阴极连接至负极电源总线。
+1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+#. Insert the potentiometer into the breadboard, its three pins should be in different rows.
+#. Use jumpers to connect the pins on both sides of the potentiometer to the positive and negative power bus.
+#. Connect the middle pin of the potentiometer to GP28 with a jumper wire.
+#. Connect the anode of the led to the GP15 pin through a 220Ω resistor, and connect the cathode to the negative power bus.
 
 
 Code
@@ -48,13 +48,13 @@ Code
         led.duty_u16(value)
         utime.sleep_ms(200)
 
-当程序运行时，我们能在shell看到GP28引脚当前读取到的模拟值，转动knob，数值将在0~65535之间变化。
-同时，LED的亮度也会根据模拟值增大而增大。
+        When the program is running, we can see the analog value currently read by the GP28 pin in the shell. Turn the knob, and the value will change from 0 to 65535.
+        At the same time, the brightness of the LED will increase as the analog value increases.
 
 
 What more?
 ------------------------
-让我们用potentiometer knob来让servo左右摇摆吧！
+Let's use the potentiometer knob to make the servo sway left and right!
 
 .. image:: img/wiring_turn_the_knob_2.png
 

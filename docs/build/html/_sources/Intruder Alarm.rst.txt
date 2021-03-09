@@ -1,49 +1,49 @@
 Intruder Alarm
 ==========================================
 
-在前面的章节，我们使用的都是简单的电子元器件（如LED, button, 三极管）。这次我们将使用传感器模块。
+In the previous chapters, we used simple electronic components (such as LED, button). This time we will use the sensor module.
 
-Passive infrared sensor (PIR sensor) 是一种常见的传感器，可以测量其视场中的对象发出的红外（IR）光。
-简单的说，它会接收到来自生物体内发出的红外辐射，从而检测到人和其他动物的运动。
-更具体的说，它的告诉主控板，有人进入了你的房间。
+Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
+Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
+More specifically, it tells the main control board that someone has entered your room.
 
-PIR的被一个半球形的plastic lens覆盖。这个lens不是必须的，它的作用是提供更宽的 field of vision (FOV)，从而让PIR能检测到整个房间。
+The PIR is covered by a hemispherical plastic lens. This lens is not necessary, its role is to provide a wider field of vision (FOV), so that PIR can detect the entire room.
 
-揭开lens，最中央的是探测头，传感器从这里接收红外辐射。引脚的标签（VCC，OUT，GND）也写在这一面。
+Uncover the lens, the most central is the detection head, the sensor receives infrared radiation from here. The pin labels (VCC, OUT, GND) are also written on this side.
 
-将PIR翻面，除了引脚以外还有两个地方需要注意。
-在与引脚相对的一侧有两个电位器，请你将两个电位器都以逆时针的方向拧到底。
-在电位器不远处的角落有个带有跳线帽的 3-Pin， 请你将跳线帽插在写有L的引脚与中间引脚之上，让写有H的引脚独立出来。
+Turning the PIR upside down, there are two other places to pay attention to besides the pins.
+There are two potentiometers on the side opposite to the pins. Please turn both potentiometers counterclockwise to the end.
+There is a 3-Pin with a jumper cap in the corner not far from the potentiometer. Please insert the jumper cap on the pin with L and the middle pin, so that the pin with H is independent.
 
-这些引脚和电位器是用来调节PIR的工作模式的，目前我们已经将其调节至最适宜初次使用的状态。更具体的细节留到后面慢慢了解。
+These pins and potentiometers are used to adjust the working mode of the PIR. At present, we have adjusted it to the most suitable state for the first use. More specific details will be understood later.
 
-现在，让我们使用PIR和有源蜂鸣器来搭建一个Intruder Alarm。
+Now, let's use PIR and active buzzer to build an Intruder Alarm.
 
 Wiring
 -------------------------------------------
 
-在套件里面包含了两种蜂鸣器，我们需要用的是有源蜂鸣器，将它们反过来，背后是密封的（而非裸露PCB的）是我们所要的那个。
+Two types of buzzers are included in the kit. We need to use active buzzers. Turn them around. The sealed back (not the exposed PCB) is the one we want.
 
 .. image:: img/buzzer.png
 
-蜂鸣器是工作时需要用到三极管，在这里我们使用S8050。
+The buzzer needs to use a triode when working, here we use S8050.
 
 .. image:: img/wiring_intruder_alarm.png
 
-1. 将 Pico 的 3V3 和 GND 连接至面包板的电源总线。
-#. 让蜂鸣器的阳极pin连接至正极电源总线。
-#. 将蜂鸣器的阴极pin连接至三极管的 **collector** lead。
-#. 将三极管的 base lead 经由 1kΩ 电阻器连接至 GP15 引脚。
-#. 将三极管的 **emitter** lead 连接负极电源总线。
-#. 将PIR的OUT连接至 GP14 引脚，VCC连接至正极电源总线，GND连接至负极电源总线。
+1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+#. Connect the positive pin of the buzzer to the positive power bus.
+#. Connect the cathode pin of the buzzer to the **collector** lead of the triode.
+#. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
+#. Connect the **emitter** lead of the transistor to the negative power bus.
+#. Connect the OUT of PIR to the GP14 pin, VCC to the positive power bus, and GND to the negative power bus.
 
 .. note::
-    1kΩ电阻器的色环颜色为棕黑黑棕棕。
+    The color ring of the 1kΩ resistor is brown, black, black, brown and brown.
 
 Code
 --------------------------------------------
 
-当程序被执行后，若有人走入PIR的检测范围，蜂鸣器将会'BEEP BEEP' 5秒!
+When the program is executed, if someone walks into the PIR detection range, the buzzer will be'BEEP BEEP' for 5 seconds!
 
 .. code-block:: python
 
@@ -67,9 +67,9 @@ Code
 What more?
 -------------------------------------
 
-PIR是一个非常敏感的传感器，为了使其能适应使用环境，需要对其进行调节。
+PIR is a very sensitive sensor. In order to adapt it to the environment of use, it needs to be adjusted.
 
-将以下代码拷贝进Thonny然后运行，让我们随着实验结果解析它的调节方法。
+Copy the following code into Thonny and run it, let us analyze its adjustment method along with the experimental results.
 
 .. code-block:: python
 
@@ -101,29 +101,29 @@ PIR是一个非常敏感的传感器，为了使其能适应使用环境，需�
 
 1. Trigger Mode
 
-    我们来看看角落处带跳线帽的引脚。
-    它能让PIR进入Repeatable trigger mode或Non-repeatable trigger mode
+    Let's take a look at the pins with jumper caps at the corners.
+    It allows PIR to enter Repeatable trigger mode or Non-repeatable trigger mode
 
-    目前我们的跳线帽连接了中间Pin与L Pin，这使得PIR处于了non-repeatable trigger mode。
-    在这种模式下，PIR检测到生物体运动时会为主控板发送一个约为2.8秒的高电平信号。
-    我们能在打印的数据中看到，the duration of work 总是会在2800ms左右。
+    At present, our jumper cap connects the middle Pin and L Pin, which makes the PIR in non-repeatable trigger mode.
+    In this mode, when the PIR detects the movement of the organism, it will send a high-level signal for about 2.8 seconds to the main control board.
+    We can see in the printed data that the duration of work will always be around 2800ms.
 
-    接下来我们修改下跳线帽的位置，将其连接中间Pin与H Pin，使PIR处于repeatable trigger mode。
-    在这种模式下，PIR检测到生物体运动（注意是运动，不是静止在传感器面前）时，只要生物体在检测范围内保持运动，PIR就会持续为主控板发送高电平信号。
-    我们能在打印的数据中看到，the duration of work 是一个不确定的数值。
+    Next, we modify the position of the lower jumper cap and connect it to the middle Pin and H Pin to make the PIR in repeatable trigger mode.
+    In this mode, when the PIR detects the movement of the organism (note that it is movement, not static in front of the sensor), as long as the organism keeps moving within the detection range, the PIR will continue to send a high-level signal to the main control board.
+    We can see in the printed data that the duration of work is an uncertain value.
 
 #. Delay Adjustment
 
-    偏向左侧的电位器是用于调整两次工作的间隔时间的。
+    The potentiometer on the left is used to adjust the interval between two jobs.
     
-    目前我们将其逆时针拧到底了，这使得PIR在结束完发送高电平的工作后需要进入约为5秒的休眠时间，在这段时间里PIR不会再检测目标区域内的红外辐射。
-    我们能在打印数据中看到，the dormancy duration 总是不低于5000ms。
+    At present, we screw it counterclockwise to the end, which makes the PIR need to enter a sleep time of about 5 seconds after finishing sending the high level work. During this time, the PIR will no longer detect the infrared radiation in the target area.
+    We can see in the printed data that the dormancy duration is always no less than 5000ms.
 
-    如果我们顺时针拧动电位器，休眠时间也会随之增多，当顺时针拧到底时，休眠时间将会高达300s。
+    If we turn the potentiometer clockwise, the sleep time will also increase. When it is turned clockwise to the end, the sleep time will be as high as 300s.
 
 #. Delay Adjustment
 
-    居中的电位器是用来调整PIR的sensing distance range的。
+    The centered potentiometer is used to adjust the sensing distance range of the PIR.
 
-    顺时针转动距离调节电位器的旋钮，传感距离范围增大，最大传感距离范围约为0-7米。
-    如果逆时针旋转，则传感距离范围缩小，最小传感距离范围约为0-3米。
+    Turn the knob of the distance adjustment potentiometer clockwise to increase the sensing distance range, and the maximum sensing distance range is about 0-7 meters.
+    If it rotates counterclockwise, the sensing distance range is reduced, and the minimum sensing distance range is about 0-3 meters.

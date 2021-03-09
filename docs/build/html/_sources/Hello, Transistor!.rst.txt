@@ -1,32 +1,32 @@
 Two Kinds of Transistors
 ==========================================
 
-三极管是一种通过电流控制电流的半导体器件。它的功能是将微弱的信号放大为较大的幅度信号，也可作为非接触式开关使用。是电子电路的核心元件。
+Transistor is a semiconductor device that controls a large current through a small current. Its function is to amplify weak signals into larger amplitude signals, and can also be used as a non-contact switch. It is the core component of electronic circuits.
 
-这听起来有点复杂。用简单的话说，某些元器件的使用功率较大（如Buzzer），如果直接由GPIO引脚的电信号供能，则有可能功率不足，或者损坏元器件。
-那么，晶体管在这里便起到了一个“大坝”的作用。三极管接收来自GPIO引脚的微弱电信号，来控制大电流（从VCC到GND）的导通与断开。
-这样，电子元器件既由GPIO引脚控制，又由外部提供power，从而能够好好工作。
+This sounds a bit complicated. In simple words, some components use high power (such as Buzzer). If the power is directly supplied by the electrical signal of the GPIO pin, the power may be insufficient or the components may be damaged.
+Then, the transistor has played a "dam" role here. Transistor receives the weak electrical signal from the GPIO pin to control the turn-on and turn-off of the large current (from VCC to GND).
+In this way, the electronic components are not only controlled by the GPIO pins, but also provided with power from the outside, so that they can work well.
 
 * `Transistor - Wikipedia <https://en.wikipedia.org/wiki/Transistor>`_
 
-三极管有两种结构形式：PNP和NPN，它们的核心是PN结。由于两者的PN结的组合方式不同，其工作原理相同，但电源极性相反。
+The triode has two structural forms: PNP and NPN, their core is the PN junction. Because the PN junctions of the two have different combinations, their working principles are the same, but the power polarity is opposite.
 
 * `P–N junction - Wikipedia <https://en.wikipedia.org/wiki/P-n_junction>`_
 
 
-本套件配了S8050和S8550两种三极管，前者是NPN，后者是PNP。它们看起来很相似，我们需要仔细检查才能看清它们的label。
+This kit is equipped with two types of transistors, S8050 and S8550, the former is NPN and the latter is PNP. They look very similar, and we need to check carefully to see their labels.
 
 .. image:: img/NPN&PNP.png
 
-两种三极管的工作原理相同，甚至可以使用同一套代码，但在使用时的电路搭建方式却有些不同。
+The working principle of the two types of transistors is the same, and even the same set of codes can be used, but the circuit construction methods are somewhat different when they are used.
 
-让我们借助LED和button来搞懂如何使用三极管吧！
+Let's use LED and button to understand how to use transistor!
 
 
 Wiring
 ---------------------------------------------------------
 
-将有label的一面朝向我们，引脚朝下，从左到右的引脚分别是emitter(e), base(b), and collector(c)。
+Put the label side facing us and the pins facing down. The pins from left to right are emitter(e), base(b), and collector(c).
 
 .. image:: img/ebc.png
 
@@ -35,39 +35,40 @@ Wiring
     * The collector is the larger electrical supply.
     * The emitter is the outlet for that supply.
 
-1. 连接NPN(S8050)三极管的方式
+1. Way to connect NPN (S8050) transistor.
     .. image:: img/wiring_transistor_s8050.png
 
-    1. 将 Pico 的 3V3 和 GND 连接至面包板的电源总线。
-    #. 让LED的阳极 lead 经由 220Ω 电阻器连接至正极电源总线。
-    #. 将LED的阴极 lead 连接至三极管的 **collector** lead。
-    #. 将三极管的 base lead 经由 1kΩ 电阻器连接至 GP15 引脚。
-    #. 将三极管的 **emitter** lead 连接负极电源总线。
-    #. 将按键的两侧分别连接至 GP14 引脚和正极电源总线。
+    1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+    #. Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.
+    #. Connect the cathode lead of the LED to the **collector** lead of the triode.
+    #. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
+    #. Connect the **emitter** lead of the transistor to the negative power bus.
+    #. Connect one side of the button to the GP14 pin, and connect a 10kΩ resistor in series to the negative power bus, and the other side to the positive power bus.
 
 .. note::
-    220欧姆的电阻器色环颜色为红红黑黑棕。
-    1kΩ电阻器的色环颜色为棕黑黑棕棕。
+    The color ring of 220Ω resistor is red, red, black, black and brown.
+    The color ring of the 1kΩ resistor is brown, black, black, brown and brown.
+    The color ring of the 10kΩ resistor is brown, black, black, red and brown.
 
-#. 连接PNP(S8550)三极管的方式
+#. Way to connect PNP(S8550) transistor.
     .. image:: img/wiring_transistor_s8550.png
 
-    1. 将 Pico 的 3V3 和 GND 连接至面包板的电源总线。
-    #. 让LED的阳极 lead 经由 220Ω 电阻器连接至正极电源总线。
-    #. 将LED的阴极 lead 连接至三极管的 **emitter** lead。
-    #. 将三极管的 base lead 经由 1kΩ 电阻器连接至 GP15 引脚。
-    #. 将三极管的 **collector** lead 连接负极电源总线。
-    #. 将按键的两侧分别连接至 GP14 引脚和正极电源总线。
+    1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+    #. Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.
+    #. Connect the cathode lead of the LED to the **emitter** lead of the triode.
+    #. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
+    #. Connect the **collector** lead of the triode to the negative power bus.
+    #. Connect one side of the button to the GP14 pin, and connect a 10kΩ resistor in series to the negative power bus, and the other side to the positive power bus.
 
 
 
 Code
 ---------------------------------------------------------
 
-两种三极管可以用同一套代码来控制。当我们按下按键时，Pico将为三极管发出高电平信号；松开时则会发送低电平信号。
-我们能看到两个电路发生了截然相反的现象。
-使用NPN三极管的电路会在按下按键时亮灯，这意味着它是接收高电平导通电路的；
-而使用PNP三极管的电路会在松开时亮灯，这意味它是接收低电平导通电路。
+Two kinds of transistors can be controlled with the same code. When we press the button, Pico will send a high-level signal to the transistor; when we release it, it will send a low-level signal.
+We can see that diametrically opposite phenomena have occurred in the two circuits.
+The circuit using the NPN transistor will light up when the button is pressed, which means it is receiving a high-level conduction circuit;
+The circuit that uses the PNP transistor will light up when it is released, which means it is receiving a low-level conduction circuit.
 
 .. code-block:: python
 
@@ -76,7 +77,8 @@ Code
     signal = machine.Pin(15, machine.Pin.OUT)    
 
     while True:
-        if button.value() == 1:
+        button_status = button.value()
+        if button_status== 1:
             signal.value(1)
-        elif button.value() == 0:
+        elif button_status == 0:
             signal.value(0)

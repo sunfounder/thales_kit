@@ -190,26 +190,26 @@
             
   <div class="section" id="custom-tone">
 <h1>Custom Tone<a class="headerlink" href="#custom-tone" title="Permalink to this headline">¶</a></h1>
-<p>在前面的章节我们已经使用过了有源蜂鸣器，这次我们将会使用无源蜂鸣器。</p>
-<p>与有源蜂鸣器相同，无源蜂鸣器也是利用了电磁感应现象工作的，区别在于无源的要少一个震荡电路，以至于不能直接通电发声。
-但这也使得无源蜂鸣器可以调节自己的震动频率，拥有更宽的声音频率范围，可以发出“doh, re, mi, fa, sol, la, ti”等不同音节。</p>
-<p>让无源蜂鸣器来发出一段旋律吧！</p>
+<p>We have used active buzzers in the previous chapters, this time we will use passive buzzers.</p>
+<p>Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that the passive buzzer has one less oscillating circuit, so that it cannot be directly energized to make a sound.
+But this also allows the passive buzzer to adjust its own oscillation frequency and have a wider range, which can emit different syllables such as “doh, re, mi, fa, sol, la, ti”.</p>
+<p>Let the passive buzzer emit a melody!</p>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/buzzer.png" src="_images/buzzer.png" />
-<p>在套件里面包含了两种蜂鸣器，我们需要用的是无源蜂鸣器，将它们反过来，背后是裸露PCB的是我们所要的那个。</p>
-<p>蜂鸣器是工作时需要用到三极管，在这里我们使用S8050。</p>
+<p>Two buzzers are included in the kit, and the one we need is the passive one. Reverse the buzzer, the one with the exposed PCB behind it is the one we want.</p>
+<p>The buzzer needs a transistor to work, and here we use S8050.</p>
 <img alt="_images/wiring_custom_tone.png" src="_images/wiring_custom_tone.png" />
 <ol class="arabic simple">
-<li><p>将 Pico 的 3V3 和 GND 连接至面包板的电源总线。</p></li>
-<li><p>让蜂鸣器的阳极pin连接至正极电源总线。</p></li>
-<li><p>将蜂鸣器的阴极pin连接至三极管的 <strong>collector</strong> lead。</p></li>
-<li><p>将三极管的 <strong>base</strong> lead 经由 1kΩ 电阻器连接至 GP15 引脚。</p></li>
-<li><p>将三极管的 <strong>emitter</strong> lead 连接负极电源总线。</p></li>
+<li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
+<li><p>Connect the positive pin of the buzzer to the positive power bus.</p></li>
+<li><p>Connect the cathode pin of the buzzer to the <strong>collector</strong> lead of the triode.</p></li>
+<li><p>Connect the <strong>base</strong> lead of the transistor to the GP15 pin through a 1kΩ resistor.</p></li>
+<li><p>Connect the <strong>emitter</strong> lead of the transistor to the negative power bus.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>1k欧姆的电阻器色环颜色为棕黑黑棕棕。</p>
+<p>The color ring of the 1k ohm resistor is brown, black, black, brown and brown.</p>
 </div>
 </div>
 <div class="section" id="code">
@@ -218,7 +218,6 @@
 <span class="kn">import</span> <span class="nn">utime</span>
 
 <span class="n">buzzer</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
-<span class="n">buzzer</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">tone</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">frequency</span><span class="p">,</span><span class="n">duration</span><span class="p">):</span>
     <span class="n">pin</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
@@ -236,20 +235,20 @@
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>我们定义了一个 <code class="docutils literal notranslate"><span class="pre">tone()</span></code> 函数让buzzer发出声音。</p>
-<p>无源蜂鸣器在每接收到高电平的时候会推动振荡片，如果给予数字信号，振荡片一直被推动，却没产生振动，无法发声。
-在这里我们使用PWM的方式来制造振动。</p>
-<p>这个函数的拥有三个parameter：</p>
+<p>We defined a <a href="#id1"><span class="problematic" id="id2">``</span></a>tone()’’ function to make the buzzer sound.</p>
+<p>The passive buzzer will push the oscillator every time it receives a high level. If it is given a digital signal, the oscillator will be pushed all the time, but it does not oscillate and cannot sound.
+Here we use the PWM method to create oscillations.</p>
+<p>This function has three parameters:</p>
 <ul class="simple">
-<li><p>pin，控制蜂鸣器的GPIO引脚。</p></li>
-<li><p>frequency，蜂鸣器的音高由频率决定，频率越高，音调也就越高。</p></li>
-<li><p>duration，音调的持续时间。</p></li>
+<li><p>pin, the GPIO pin that controls the buzzer.</p></li>
+<li><p>frequency, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.</p></li>
+<li><p>Duration, the duration of the tone.</p></li>
 </ul>
-<p>我们将蜂鸣器振动时的duty_u16设为30000，约为50%，事实上是多少都可以，只需借助不连续的电信号产生振动即可。</p>
+<p>We set the <a href="#id3"><span class="problematic" id="id4">``</span></a>duty_u16()’’ when the buzzer is oscillating to 30000, which is about 50%. It can be another number, and it only needs to generate a discontinuous electrical signal to oscillate.</p>
 </div>
 <div class="section" id="what-more">
 <h2>What more？<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
-<p>我们可以根据钢琴的基音频率来模拟具体的音调，从而弹奏出一首完整的乐曲。</p>
+<p>We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Piano_key_frequencies">Piano key frequencies - Wikipedia</a></p></li>
 </ul>
