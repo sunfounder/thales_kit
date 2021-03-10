@@ -1,6 +1,7 @@
 While Loops
+====================
 
-The `while` statement is used to execute a program in a loop, that is, to execute a program in a loop under certain conditions to handle the same task that needs to be processed repeatedly. 
+The ``while`` statement is used to execute a program in a loop, that is, to execute a program in a loop under certain conditions to handle the same task that needs to be processed repeatedly. 
 
 Its basic form is:
 
@@ -10,13 +11,13 @@ Its basic form is:
         Body of while
 
 
-In the `while` loop, first check the `test expression`. Only when `test_expression` evaluates to `True`, enter the body of the loop. After one iteration, check the `test expression` again. This process continues until `test expression` evaluates to `False`.
+In the ``while`` loop, first check the ``test expression``. Only when ``test expression`` evaluates to ``True``, enter the body of the while. After one iteration, check the ``test expression`` again. This process continues until ``test expression`` evaluates to ``False``.
 
-In MicroPython, the body of the `while` loop is determined by indentation.
+In MicroPython, the body of the ``while`` loop is determined by indentation.
 
 The body starts with an indentation and ends with the first unindented line.
 
-Python interprets any non-zero value as `True`. None and 0 are interpreted as `False`.
+Python interprets any non-zero value as ``True``. None and 0 are interpreted as ``False``.
 
 **while Loop Flowchart**
 
@@ -69,7 +70,7 @@ With the break statement we can stop the loop even if the while condition is tru
 7
 6
 
-While loop with else
+While Loop with Else
 ----------------------
 Like the `if` loop, the `while` loop can also have an optional `else` block.
 

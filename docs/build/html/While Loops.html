@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Break Statement &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  <title>While Loops &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
   
 
   
@@ -96,8 +96,11 @@
 <li class="toctree-l2"><a class="reference internal" href="Print.html">Print()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Variables.html">Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="If...Else.html">If…Else</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Break Statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#while-loop-with-else">While loop with else</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">While Loops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#break-statement">Break Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#while-loop-with-else">While Loop with Else</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="For Loops.html">For Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Data Types.html">Data Types</a></li>
@@ -157,7 +160,7 @@
         
           <li><a href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a> &raquo;</li>
         
-      <li>Break Statement</li>
+      <li>While Loops</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,17 +179,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>While Loops</p>
-<p>The <cite>while</cite> statement is used to execute a program in a loop, that is, to execute a program in a loop under certain conditions to handle the same task that needs to be processed repeatedly.</p>
+  <div class="section" id="while-loops">
+<h1>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> statement is used to execute a program in a loop, that is, to execute a program in a loop under certain conditions to handle the same task that needs to be processed repeatedly.</p>
 <p>Its basic form is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">test</span> <span class="n">expression</span><span class="p">:</span>
     <span class="n">Body</span> <span class="n">of</span> <span class="k">while</span>
 </pre></div>
 </div>
-<p>In the <cite>while</cite> loop, first check the <cite>test expression</cite>. Only when <cite>test_expression</cite> evaluates to <cite>True</cite>, enter the body of the loop. After one iteration, check the <cite>test expression</cite> again. This process continues until <cite>test expression</cite> evaluates to <cite>False</cite>.</p>
-<p>In MicroPython, the body of the <cite>while</cite> loop is determined by indentation.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, first check the <code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">expression</span></code>. Only when <code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">expression</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, enter the body of the while. After one iteration, check the <code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">expression</span></code> again. This process continues until <code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">expression</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>In MicroPython, the body of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is determined by indentation.</p>
 <p>The body starts with an indentation and ends with the first unindented line.</p>
-<p>Python interprets any non-zero value as <cite>True</cite>. None and 0 are interpreted as <cite>False</cite>.</p>
+<p>Python interprets any non-zero value as <code class="docutils literal notranslate"><span class="pre">True</span></code>. None and 0 are interpreted as <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p><strong>while Loop Flowchart</strong></p>
 <img alt="_images/while_loop.png" src="_images/while_loop.png" />
 <p><strong>Example</strong></p>
@@ -211,7 +215,7 @@
 </pre></div>
 </div>
 <div class="section" id="break-statement">
-<h1>Break Statement<a class="headerlink" href="#break-statement" title="Permalink to this headline">¶</a></h1>
+<h2>Break Statement<a class="headerlink" href="#break-statement" title="Permalink to this headline">¶</a></h2>
 <p>With the break statement we can stop the loop even if the while condition is true:</p>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
@@ -233,7 +237,7 @@
 </div>
 </div>
 <div class="section" id="while-loop-with-else">
-<h1>While loop with else<a class="headerlink" href="#while-loop-with-else" title="Permalink to this headline">¶</a></h1>
+<h2>While Loop with Else<a class="headerlink" href="#while-loop-with-else" title="Permalink to this headline">¶</a></h2>
 <p>Like the <cite>if</cite> loop, the <cite>while</cite> loop can also have an optional <cite>else</cite> block.</p>
 <p>If the condition in the <cite>while</cite> loop is evaluated as <cite>False</cite>, the <cite>else</cite> part is executed.</p>
 <p><strong>Example</strong></p>
@@ -259,6 +263,7 @@
 1
 Game Over
 </pre></div>
+</div>
 </div>
 </div>
 

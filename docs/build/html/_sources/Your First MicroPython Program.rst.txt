@@ -17,7 +17,7 @@ Click the Python Shell area, type the following command after >>>, and then Ente
 
 .. code-block:: python
 
-    print(“Hello, World!”)
+    print("Hello, World!")
 
 .. image:: img/hello_shell.png
 
@@ -36,7 +36,7 @@ Enter the same command "print("Hello, World!")" in the script area, when you pre
 
     .. image:: img/hello_world_script.png
 
-You need click "Run Current Script" or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to This computer or Raspberry Pi Pico?
+You need click "Run Current Script" or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to This computer or Raspberry Pi Pico (if your Pico is already plugged into the computer)? Also you will see MicroPython (Raspberry Pi Pico) displayed in the bottom right corner, this is the interpreter you need to select, if yours is not this one you can click on it to switch.
 
     .. image:: img/where_save.png
 
@@ -59,4 +59,4 @@ When your program is saved, it will run automatically and you will see 2 lines o
 The first of these lines is an instruction from Thonny telling the MicroPython interpreter on your Pico to run the contents of the script area – the‘EDITOR_CONTENT’. The second is the output of the program – the message you told MicroPython to print.
 
 In Script mode, it is very easy for you to open the previously saved code again, but the code entered in Interactive Mode will not be saved and can only be re-entered.
-Click the open icon in the Thonny toolbar, just like when you save the program, you will be asked whether you want to save it to "This Computer" or "Raspberry Pi Pico"-for example, click "Raspberry Pi Pico" and you will see A list of all programs you save to your Pico. Find hello_world.py in the list-if your Pico is new, it will be the only file there-and click it to select it, then click OK. Your program will be loaded into Thonny, ready to edit or run it again for you.
+Click the open icon in the Thonny toolbar, just like when you save the program, you will be asked whether you want to save it to "This Computer" or "Raspberry Pi Pico"-for example, click "Raspberry Pi Pico" and you will see a list of all programs you save to your Pico. Find hello_world.py in the list-if your Pico is new, it will be the only file there-and click it to select it, then click OK. Your program will be loaded into Thonny, ready to edit or run it again for you.

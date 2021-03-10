@@ -32,7 +32,7 @@ Installing MicroPython
 ------------------------------
 
 1. Plug the Pico to your PC with a Micro USB cable.
-#. Rush and hold the **BOOTSEL** button and plug the other end of Micro USB cable into the computer.
+#. Press and hold the **BOOTSEL** button and plug the other end of Micro USB cable into the computer.
 #. Release the BOOTSEL button after your Pico is mount as a Mass Storage Device called RPI-RP2.
 
     .. image:: img/bootsel_onboard.png

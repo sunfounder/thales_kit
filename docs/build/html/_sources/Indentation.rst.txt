@@ -17,7 +17,7 @@ A program that just browses the instruction list line by line is not very smart,
 >>> %Run -c $EDITOR_CONTENT
 Eight is greater than Five!
 
-Python will give you an error message "invalid syntax" if you skip the indentation:
+Python will give you an error message "invalid syntax" if you skip the indentation.
 
 **Example**
 
@@ -31,7 +31,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2
 SyntaxError: invalid syntax
 
-You must use the same number of spaces in the same code block, otherwise the error message "invalid syntax" will also appear.
+You must put at least one space before print(), otherwise an error message "Invalid syntax" will appear. It is usually recommended to standardise spaces by pressing the Tab key uniformly.
 
 **Example**
 

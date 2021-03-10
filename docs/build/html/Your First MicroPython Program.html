@@ -178,7 +178,7 @@
 <h2>Interactive Mode<a class="headerlink" href="#interactive-mode" title="Permalink to this headline">¶</a></h2>
 <p>Interactive mode, also known as the REPL provides us with a quick way of running blocks or a single line of Python code. The code executes via the Python shell, which comes with Python installation. Interactive mode is handy when you just want to execute basic Python commands or you are new to Python programming and just want to get your hands dirty with this beautiful language.</p>
 <p>Click the Python Shell area, type the following command after &gt;&gt;&gt;, and then Enter.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>print(“Hello, World!”)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="_images/hello_shell.png" src="_images/hello_shell.png" />
@@ -196,7 +196,7 @@ MicroPython needs to write its instructions in a very specific way: miss parenth
 <blockquote>
 <div><img alt="_images/hello_world_script.png" src="_images/hello_world_script.png" />
 </div></blockquote>
-<p>You need click “Run Current Script” or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to This computer or Raspberry Pi Pico?</p>
+<p>You need click “Run Current Script” or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to This computer or Raspberry Pi Pico (if your Pico is already plugged into the computer)? Also you will see MicroPython (Raspberry Pi Pico) displayed in the bottom right corner, this is the interpreter you need to select, if yours is not this one you can click on it to switch.</p>
 <blockquote>
 <div><img alt="_images/where_save.png" src="_images/where_save.png" />
 </div></blockquote>
@@ -220,7 +220,7 @@ Hello, World!
 </div>
 <p>The first of these lines is an instruction from Thonny telling the MicroPython interpreter on your Pico to run the contents of the script area – the‘EDITOR_CONTENT’. The second is the output of the program – the message you told MicroPython to print.</p>
 <p>In Script mode, it is very easy for you to open the previously saved code again, but the code entered in Interactive Mode will not be saved and can only be re-entered.
-Click the open icon in the Thonny toolbar, just like when you save the program, you will be asked whether you want to save it to “This Computer” or “Raspberry Pi Pico”-for example, click “Raspberry Pi Pico” and you will see A list of all programs you save to your Pico. Find hello_world.py in the list-if your Pico is new, it will be the only file there-and click it to select it, then click OK. Your program will be loaded into Thonny, ready to edit or run it again for you.</p>
+Click the open icon in the Thonny toolbar, just like when you save the program, you will be asked whether you want to save it to “This Computer” or “Raspberry Pi Pico”-for example, click “Raspberry Pi Pico” and you will see a list of all programs you save to your Pico. Find hello_world.py in the list-if your Pico is new, it will be the only file there-and click it to select it, then click OK. Your program will be loaded into Thonny, ready to edit or run it again for you.</p>
 </div>
 </div>
 
