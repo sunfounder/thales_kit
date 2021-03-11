@@ -75,7 +75,7 @@ Also see the reference here:
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_
 
-What More?
+What more?
 ---------------------
 
 在本套件中有两个component与button的工作原理相同，它们分别是tilt switch和slide switch。这些components可以与button使用相同的代码。它们的接线方法如下：
