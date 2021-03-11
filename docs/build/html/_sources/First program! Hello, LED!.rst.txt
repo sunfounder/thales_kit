@@ -11,7 +11,7 @@ There is a small LED on the top of the Pico. Like other LEDs, it will glow when 
 Code
 ----------------
 
-Let's copy this code into Thonny and run it to make the LED blink!
+Let's copy this code into Thonny and click "Run Current Script" or simply press F5 to run it to make the LED blink!
 
 .. code-block:: python
 
@@ -28,7 +28,7 @@ Let's copy this code into Thonny and run it to make the LED blink!
 How it works?
 -------------------------------
 
-The onboard LED is connected to the GP25 pin-if you carefully observe the Pico pin sequence, you will find that GP25 is one of the hidden pins, which means that we cannot use this pin to use other components (even if GP25 is used in exactly the same way as other pins). The advantage of this design is that even if you don't connect any external components, you can still have an OUTPUT for you to test the program.
+The onboard LED is connected to the GP25 pin, if you carefully observe the Pico pinout, you will find that GP25 is one of the hidden pins, which means that we cannot use this pin (even if GP25 is used in exactly the same way as other pins). The advantage of this design is that even if you don't connect any external components, you can still have an OUTPUT to test the program.
 
 The machine library is required to use GPIO.
 
@@ -36,7 +36,7 @@ The machine library is required to use GPIO.
 
     import machine
 
-This library contains all the instructions needed to communicate between MicroPython and Pico. Without this line of code, we will not be able to control any GPIO, and we will not be able to light up the onboard LED.
+This library contains all the instructions needed to communicate between MicroPython and Pico. Without this line of code, we will not be able to control any GPIOs (Of course including GP25).
 
 The next thing to notice is this line:
 
@@ -44,34 +44,34 @@ The next thing to notice is this line:
 
     led_onboard = machine.Pin(25, machine.Pin.OUT)
 
-An object named ``led_onboard`` is defined here. Technically, it can be any name, it can be x, y, banana, Micheal_Jackson, or any character-but it is best to use a name that describes the purpose to ensure that the program is easy to read.
+An object named ``led_onboard`` is defined here. Technically, it can be any name, it can be x, y, banana, Micheal_Jackson, or any character, but it is best to use a name that describes the purpose to ensure that the program is easy to read.
 
 The second part of this line (the part after the equal sign) calls the Pin function in the machine library. It is used to tell Pico's GPIO pins what to do.
 The Pin function has two parameters: the first parameter (25) means the pin you want to set; the second parameter (machine.Pin.OUT) tells that the pin should be used as an output instead of an input.
 
-The above code has "set" the pin, but it will not light up the LED. To do this, we also need to "use" the pin. as follows:
+The above code has "set" the pin, but it will not light up the LED. To do this, we also need to "use" the pin.
 
 .. code-block:: python
 
     led_onboard.value(1)
 
-We have previously set the GP25 pin and named it ``led_onboard``. The function of this sentence is to set the value of ``led_onboard`` to 1, which is turn it on; if it is set to 0, it will close it.
+We have set up the GP25 pin before and named it led_onboard. The function of this statement is to set the value of ``led_onboard`` to 1 to turn the on-board LED on.
 
-All in all, to use GPIO, these links are necessary:
+All in all, to use GPIO, these steps are necessary:
 
-* import machine library —— This is necessary, and it is executed only once in the entire program.
-* Set GPIO —— Each pin should be set before use.
-* Use —— Assign a value to the pin, each assignment will change the working state of the pin.
+* **import machine library**: This is necessary, and it is only executed once in the entire program.
+* **Set GPIO**: Each pin should be set before use.
+* **Use**: Assign a value to the pin, each assignment will change the working state of the pin.
 
 If we follow the above steps to write an example, then you will get code like this:
 
 .. code-block:: python
 
-    import machine   
+    import machine
     led_onboard = machine.Pin(25, machine.Pin.OUT)
     led_onboard.value(1)
 
-Burn it and you will be able to light up the onboard LED.
+Run it and you will be able to light up the onboard LED.
 
 Next, we try to add the "extinguished" statement:
 
@@ -122,7 +122,7 @@ Finally, we should make the LED blink. Create a loop, rewrite the program, and i
         utime.sleep(2)
 
 
-What more?
+What More?
 -------------------------
 
 Usually, the library will have a corresponding API (Application Programming Interface) file. This is a concise reference manual that contains all the information needed to use this library, detailed introduction to functions, classes, return types, parameters, etc., and even comes with a tutorial.

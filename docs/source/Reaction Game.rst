@@ -3,14 +3,14 @@ Reaction Game
 
 Microcontrollers not only appear in industrial equipment, they are also used to control a large number of electronic devices in the home, including toys and games. In this chapter, we will use "button" and "LED" to build a simple reaction timing game.
 
-The study of reaction time is called mental chronometry, it is a hard science, and it is also the basis of many games (including the games you are about to make). Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus, in milliseconds, the average reaction time of a person is about 200-250 milliseconds. People with short reaction time have a huge advantage in the game!
+The study of reaction time is called mental chronometry, it is a hard science, and it is also the basis of many games (Including the games you are about to make). Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus, in milliseconds, the average reaction time of a person is about 200-250 milliseconds. People with short reaction time have a huge advantage in the game!
 
 Wiring
 -------------------------------
 
 .. image:: img/wiring_reaction_game.png
 
-1. In general, this circuit is a combination of the circuits in the previous two chapters.
+1. In general, this circuit is a combination of the circuits in the previous two lessons.
 #. Confirm again that the breadboard power bus is not connected wrongly or short-circuited!
 
 
@@ -43,11 +43,11 @@ When the program starts, the LED will turn off within 5 to 10 seconds. You need 
 How it works?
 -----------------------------------------------
 
-In the previous chapters, we have used buttons. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.
+In the previous lesson, we simply read the button value. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.
 
 For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.
 
-MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. It is achieved through the following two statements:
+MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. It is achieved through the following two statements (the highlighted 2 lines):
 
 .. code-block:: python
     :emphasize-lines: 8,17
@@ -70,13 +70,15 @@ MicroPython interrupt request also works in the same way, it allows certain oper
     timer_light_off = utime.ticks_ms()
     button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_press)
 
-Here, an interrupt handler is first defined, which is called a callback function, which is the code that runs when an interrupt is triggered.
-Then, set up an interrupt in the main program, it needs to contain two parts: ``trigger`` and ``handler``.
+Here, a callback function (button_press) is first defined, which is called an interrupt handler. It will be executed when an interrupt request is triggered.
+Then, set up an interrupt request in the main program, it contains two parts: ``trigger`` and ``handler``.
 
-* In this program, ``trigger`` is ``IRQ_RISING``, which means that the value of the pin rises from low level to high level (that is, pressing the button).
-* And ``handler`` is a callback function customized by us, here it is ``button_press``. In this example, you will find a sentence ``button.irq(handler=None)'' in the callback function, which can set the callback function to None, which is equivalent to canceling the interrupt.
+* In this program, the ``trigger`` is ``IRQ_RISING``, which means that the value of the pin rises from low level to high level (That is, pressing the button).
+* ``handler`` is the callback function ``button_press`` we defined before. 
 
-Let us use the following code to better understand IRQ! (Just use the circuit in this chapter directly)
+In this example, you will find a statement ``button.irq(handler=None)'' in the callback function, which is equivalent to canceling the interrupt.
+
+In order to better understand the interrupt request, we change the above code to the following (Use the same circuit):
 
 .. code-block:: python
 
@@ -97,7 +99,7 @@ Let us use the following code to better understand IRQ! (Just use the circuit in
         print(count)
         utime.sleep(1)
 
-The program will count and output in a loop while it is running. When we press the button, it will pause the count in the main program and enter the callback function to print "You press the button!".
+When the program runs, it will start counting and print the numbers in the shell. When we press the button, it will stop counting and enter the callback function to print "You press the button!".
 
 Go back to the original example. We need to make the LED turn off in a random time of 5 to 10 seconds, which is achieved by the following two lines:
 
@@ -159,8 +161,8 @@ The last two statements you need to understand are ``utime.ticks_ms()`` and ``ut
     timer_light_off = utime.ticks_ms()
     button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_press)
 
-* The ``utime.ticks_ms()`` function will output the number of milliseconds that have passed since the ``utime`` library started counting, where it is stored in the variable ``timer_light_off``.
-* ``utime.ticks_diff()'' is used to output the time difference between two time nodes. The two parameters in this function are ``utime.ticks_ms()``, the current program time (press the button) and the reference time (light off) stored in the variable ``timer_light_off``.
+* The ``utime.ticks_ms()`` function will output the number of milliseconds that have passed since the ``utime`` library started counting and store it in the variable ``timer_light_off``.
+* ``utime.ticks_diff()'' is used to output the time difference between two time nodes. The two time nodes in this function are ``utime.ticks_ms()``, the current program time (press the button) and the reference time (light off) stored in the variable ``timer_light_off``.
   
 These two functions are usually used together to calculate the execution time of the program. Here we use it to calculate the time from when the light turns off to when the button is pressed.
 

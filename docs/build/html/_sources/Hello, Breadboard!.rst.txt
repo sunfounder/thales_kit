@@ -20,7 +20,7 @@ For breadboards, what you need to know clearly is:
 #. When building a circuit, the current flows from the positive pole and must first flow through the consumer before it can flow into the negative pole. Otherwise, a short circuit may occur.
 
 
-Now we should have a rough impression of the breadboard circuit, why not try to build a "Hello, LED!" expansion circuit?
+Now we should have a general impression of the breadboard circuit, why not try to build a "Hello, LED!" expansion circuit?
 
 Wiring
 -------------------------
