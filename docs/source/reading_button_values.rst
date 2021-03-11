@@ -78,7 +78,7 @@ Also see the reference here:
 What more?
 ---------------------
 
-在本套件中有两个component与button的工作原理相同，它们分别是tilt switch和slide switch。这些components可以与button使用相同的代码。它们的接线方法如下：
+There are two components in this kit that work on the same principle as buttons, they are tilt switch and slide switch. These components can use the same code as the button. Their wiring is as follows:
 
 **Tilt switch**
 
