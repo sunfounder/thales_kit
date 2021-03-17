@@ -173,10 +173,10 @@
 <li><p><a class="reference internal" href="#script-mode"><span class="std std-ref">Script Mode</span></a></p></li>
 </ul>
 </div></blockquote>
-<p>The interactive mode involves running your codes directly on the Python shell which can be accessed from the terminal of the operating system. In the script mode, you have to create a file, save it a name with a .py the extension then runs your code. The interactive mode is suitable when running a few lines of code. The script mode is recommended when you need to create large applications and save them for the next use.</p>
+<p>Interactive mode involves running your code directly from the Python shell, which can be accessed from the operating system’s terminal. In script mode, you must create a file, save it with .py extension, and then run your code. Interactive mode is suitable when you are running a few lines of code. Script mode is recommended when you need to create large codes and save them for next time.</p>
 <div class="section" id="interactive-mode">
 <h2>Interactive Mode<a class="headerlink" href="#interactive-mode" title="Permalink to this headline">¶</a></h2>
-<p>Interactive mode, also known as the REPL provides us with a quick way of running blocks or a single line of Python code. The code executes via the Python shell, which comes with Python installation. Interactive mode is handy when you just want to execute basic Python commands or you are new to Python programming and just want to get your hands dirty with this beautiful language.</p>
+<p>Interactive mode, also known as the REPL provides us with a quick way to run blocks or a single line of MicroPython code via the Python shell.</p>
 <p>Click the Python Shell area, type the following command after &gt;&gt;&gt;, and then Enter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
 </pre></div>
@@ -184,14 +184,14 @@
 <img alt="_images/hello_shell.png" src="_images/hello_shell.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If your program does not run, but prints a “syntax error” message to the Shell area, then there is an error in what you have written.
-MicroPython needs to write its instructions in a very specific way: miss parentheses or quotation marks, spell “print” errors, or give it a capital P, or add extra symbols somewhere in the instruction, and it won’t run . Try to type the command again and make sure it is the same as this one, and then press Enter.</p>
+<p>If your program does not run, but prints a “syntax error” message to the Shell area, then there is an error in what you have written.</p>
+<p>MicroPython needs to write its instructions in a very specific way: miss parentheses or quotation marks, spell “print” errors, or give it a capital P, or add extra symbols somewhere in the instruction, and it won’t run . Try to type the command again and make sure it is the same as this one, and then press Enter.</p>
 </div>
 <p>You will find that the message “hello world” will be printed out immediately in the Shell area.</p>
 </div>
 <div class="section" id="script-mode">
 <h2>Script Mode<a class="headerlink" href="#script-mode" title="Permalink to this headline">¶</a></h2>
-<p>If you need to write a long piece of Python code or your Python script spans multiple files, interactive mode is not recommended. Script mode is the way to go in such cases. In script mode, You write your code in a text file then save it with a .py extension which stands for “Python”.</p>
+<p>Interactive mode is not recommended if you need to write a long piece of Python code, or if your Python script spans multiple files. In this case, script mode can be used. In script mode, you write your code and save it with a .py extension, which stands for “Python”.</p>
 <p>Enter the same command “print(“Hello, World!”)” in the script area, when you press the ENTER key, the program will not run, only one more blank line in the script area.</p>
 <blockquote>
 <div><img alt="_images/hello_world_script.png" src="_images/hello_world_script.png" />
@@ -202,7 +202,7 @@ MicroPython needs to write its instructions in a very specific way: miss parenth
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When you tell Thonny to save your program on the Raspberry Pi Pico, it means that the program is stored on the Pico itself. If you unplug your Pico, take it to your friend’s house, a school event, or a coding club, and plug it into their computer, your programs are still where you saved them-right on yourself On the Pico.</p>
+<p>When you tell Thonny to save your program on the Raspberry Pi Pico, if you unplug the Pico and plug it into someone else’s computer, your program is still saved on the Pico.</p>
 </div>
 <p>Choose the location you want to save, then enter the file name “hello_world” and the extension “.py”, and then click OK.</p>
 <blockquote>
@@ -218,9 +218,9 @@ It is important to note that if you save the code file name as “main.py”, it
 Hello, World!
 </pre></div>
 </div>
-<p>The first of these lines is an instruction from Thonny telling the MicroPython interpreter on your Pico to run the contents of the script area – the‘EDITOR_CONTENT’. The second is the output of the program – the message you told MicroPython to print.</p>
+<p>The first of these lines is an instruction from Thonny telling the MicroPython interpreter on your Pico to run the contents of the script area – the ‘EDITOR_CONTENT’. The second is the output of the program – the message you told MicroPython to print.</p>
 <p>In Script mode, it is very easy for you to open the previously saved code again, but the code entered in Interactive Mode will not be saved and can only be re-entered.
-Click the open icon in the Thonny toolbar, just like when you save the program, you will be asked whether you want to save it to “This Computer” or “Raspberry Pi Pico”-for example, click “Raspberry Pi Pico” and you will see a list of all programs you save to your Pico. Find hello_world.py in the list-if your Pico is new, it will be the only file there-and click it to select it, then click OK. Your program will be loaded into Thonny, ready to edit or run it again for you.</p>
+Click the open icon in the Thonny toolbar, just like when you save the program, you will be asked whether you want to save it to “This Computer” or “Raspberry Pi Pico”, for example, click “Raspberry Pi Pico” and you will see a list of all programs you save to your Pico. Find hello_world.py in the list, if your Pico is new, it will be the only file there, and click it to select it, then click OK. Your program will be loaded into Thonny, ready to edit or run it again for you.</p>
 </div>
 </div>
 

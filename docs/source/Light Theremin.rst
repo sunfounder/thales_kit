@@ -1,25 +1,28 @@
 Light Theremin
 =========================
 
-Thereman is an electronic musical instrument that does not require physical contact. It produces different tones by sensing the position of the player's hand.
-There are two LC oscillator working units that sense the distributed capacitance of the human body and the earth to produce oscillation frequency and size change respectively.
+Theremin is an electronic musical instrument that does not require physical contact. It produces different tones by sensing the position of the player's hand.
+
+The instrument's controlling section usually consists of two metal antennas that sense the relative position of the thereminist's hands and control oscillators for frequency with one hand, and amplitude (volume) with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
+
 We cannot reproduce the same instrument through Pico, but we can use photoresistor and passive buzzer to achieve similar gameplay.
 
+* `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
 Wiring
 --------------------
 
 .. image:: img/wiring_light_theremin.png
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
-#. Connect one end of the photoresistor to the negative power bus, and the other end in series with a 10kΩ resistor to the positive power bus.
-#. Use a jumper wire to connect GP28 between the two resistors.
+#. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+#. Connect one lead of the photoresistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
+#. Connect another lead of photoresistor to the negative power bus.
 #. Insert the LED into the breadboard, connect its anode pin to the GP16 in series with a 220Ω resistor, and connect its cathode pin to the negative power bus.
-#. Insert the passive buzzer and S8050 transistor into the breadboard. The anode pin of the buzzer is connected to the positive power bus, the cathode pin is connected to the **collector** lead of the triode, and the **base** lead of the triode is connected to the GP15 pin through a 1kΩ resistor. **emitter** lead is connected to the negative power bus.
+#. Insert the passive buzzer and S8050 transistor into the breadboard. The anode pin of the buzzer is connected to the positive power bus, the cathode pin is connected to the **collector** lead of the transistor, and the **base** lead of the transistor is connected to the GP15 pin through a 1kΩ resistor. **emitter** lead is connected to the negative power bus.
 
 .. note::
-    The color ring of the 22Ωresistor is red, red, black, black and brown.
-    The color ring of the 10kΩ resistor is brown, black, black, red and brown.
+    * The color ring of the 22Ω resistor is red, red, black, black and brown.
+    * The color ring of the 10kΩ resistor is brown, black, black, red and brown.
 
 Code
 --------------------
@@ -64,8 +67,10 @@ Code
             tone(buzzer,pitch,20)
         utime.sleep_ms(10)
 
-When the program runs, the LED will light up, and we will have five seconds to calibrate the detection range of the photoresistor. This is because each time we use it, we may be in a different light environment (such as the light intensity at noon and dusk is not the same).
-At this time, we need to swing our hands up and down above the photoresistor, and the movement range of the hand will be calibrated to the playing range of this instrument.
+When the program runs, the LED will light up, and we will have five seconds to calibrate the detection range of the photoresistor. This is because we may be in a different light environment each time we use it (e.g. the light intensity is different between midday and dusk).
+
+At this time, we need to swing our hands up and down on top of the photoresistor, and the movement range of the hand will be calibrated to the playing range of this instrument.
+
 After five seconds, the LED will go out and we can wave our hands on the photoresistor to play.
 
 

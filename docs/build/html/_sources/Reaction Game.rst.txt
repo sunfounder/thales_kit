@@ -76,7 +76,7 @@ Then, set up an interrupt request in the main program, it contains two parts: ``
 * In this program, the ``trigger`` is ``IRQ_RISING``, which means that the value of the pin rises from low level to high level (That is, pressing the button).
 * ``handler`` is the callback function ``button_press`` we defined before. 
 
-In this example, you will find a statement ``button.irq(handler=None)'' in the callback function, which is equivalent to canceling the interrupt.
+In this example, you will find a statement ``button.irq(handler=None)`` in the callback function, which is equivalent to canceling the interrupt.
 
 In order to better understand the interrupt request, we change the above code to the following (Use the same circuit):
 
@@ -124,7 +124,7 @@ Go back to the original example. We need to make the LED turn off in a random ti
     timer_light_off = utime.ticks_ms()
     button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_press)
     
-The ``urandom`` library is loaded here. Use the ``urandom.uniform(5,10)'' function to generate a random number, the ‘uniform’ part referring to a uniform distribution between those two numbers.
+The ``urandom`` library is loaded here. Use the ``urandom.uniform(5,10)`` function to generate a random number, the ‘uniform’ part referring to a uniform distribution between those two numbers.
 
 If needed, try running the following example of random number generation:
 
@@ -162,7 +162,7 @@ The last two statements you need to understand are ``utime.ticks_ms()`` and ``ut
     button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_press)
 
 * The ``utime.ticks_ms()`` function will output the number of milliseconds that have passed since the ``utime`` library started counting and store it in the variable ``timer_light_off``.
-* ``utime.ticks_diff()'' is used to output the time difference between two time nodes. The two time nodes in this function are ``utime.ticks_ms()``, the current program time (press the button) and the reference time (light off) stored in the variable ``timer_light_off``.
+* ``utime.ticks_diff()`` is used to output the time difference between two time nodes. The two time nodes in this function are ``utime.ticks_ms()``, the current program time (press the button) and the reference time (light off) stored in the variable ``timer_light_off``.
   
 These two functions are usually used together to calculate the execution time of the program. Here we use it to calculate the time from when the light turns off to when the button is pressed.
 

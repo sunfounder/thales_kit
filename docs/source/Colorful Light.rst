@@ -1,7 +1,7 @@
 Colorful Light
 ==============================================
 
-As we know, light can be superimposed. For example, blue light plus green light will produce cyan light, and red light plus green light will produce yellow light.
+As we know, light can be superimposed. For example, mix blue light and green light give cyan light, red light and green light give yellow light.
 This is called "The additive method of color mixing".
 
 * `Additive color - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
@@ -20,6 +20,9 @@ Put the RGB LED flat on the table, we can see that it has 4 leads of different l
 Find the longest one (GND) and turn it sideways to the left.
 Now, the order of the four leads is Red, GND, Green, Blue from left to right.
 
+.. image:: img/rgb_pin.jpg
+    :width: 200
+
 .. image:: img/wiring_colorful_light.png
 
 1. Connect the GND pin of the Pico to the negative power bus of the breadboard.
@@ -31,8 +34,8 @@ Now, the order of the four leads is Red, GND, Green, Blue from left to right.
 #. Connect the negative power bus to Pico's GND.
 
 .. note::
-    The color ring of the 220Ω resistor is red, red, black, black and brown.
-    The color ring of the 330Ω resistor is orange, orange, black, black and brown.
+    * The color ring of the 220Ω resistor is red, red, black, black and brown.
+    * The color ring of the 330Ω resistor is orange, orange, black, black and brown.
 
 Code
 -----------------------------------------------
@@ -67,7 +70,7 @@ Here, we can choose our favorite color in drawing software (such as paint) and d
 
 .. image:: img/edit_colors.png
 
-Write the RGB value into color_set(), you will be able to see the RGB light up the color you want first
+Write the RGB value into color_set(), you will be able to see the RGB light up the colors you want.
 
 
 How it works?
@@ -75,8 +78,7 @@ How it works?
 
 We defined a ``color_set()`` function to let the three primary colors work together.
 
-At present, pixels in computer hardware usually adopt a 24-bit representation method. The three primary colors are divided into 8 bits, and the intensity of each primary color is based on the highest value of 8 bits to the 8th power of 2, which is 256 values. 
-16777216 colors can be combined in this way.
+At present, pixels in computer hardware usually adopt a 24-bit representation method. The three primary colors are divided into 8 bits, and the color value range is 0 to 255. With 256 possible values for each of the three primary colors (don't forget to count 0!), that 256 x 256 x 256 = 16,777,216 colors can be combined in this way.
 The ``color_set()`` function also follows the 24-bit notation, which makes it easier for us to select the desired color.
 
-And because the ``duty_u16()`` value range is 0~65535 (not 0~255) when the LED is output through PWM, in order to correspond to the RGB value, we define ``color_to_duty()`` and ``interval_mapping ()`` function to map the RGB value to the duty value.
+And since the value range of ``duty_u16()`` is 0~65535 (instead of 0 to 255) when the output signals to RGB LED through PWM, we have defined ``color_to_duty()`` and ``interval_mapping ()`` function to map the color values to the duty values.

@@ -13,7 +13,7 @@ I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for communi
 I2C main controller can be used to control IO expander, various sensors, EEPROM, ADC/DAC and so on. 
 All of these are controlled only by the two pins of host, the serial data (SDA) line and the serial clock line(SCL). 
 
-These two Pins must be connected to specific pins of the microcontroller to operate. There are two pairs of I2C communication interfaces in Pico, which are marked as I2C0 and I2C1, as shown in the figure below.
+These two pins must be connected to specific pins of the microcontroller. There are two pairs of I2C communication interfaces in Pico, which are marked as I2C0 and I2C1, as shown in the figure below.
 
 .. image:: img/pin_pic2.png
 
@@ -32,9 +32,6 @@ Wiring
 Code
 ----------------------
 
-Every I2C device has a unique address and needs to pass in unique commands to run. This will require users to view their datasheet to fully understand. This has a certain threshold.
-
-Fortunately, many people on the Internet encapsulate some common modules into libraries so that we can use them directly.
 The following is the library of lcd1602 packaged by Sunfounder.
 
 You need to save it in Pico, name it **lcd1602.py** and use it as a library.
@@ -138,8 +135,7 @@ You need to save it in Pico, name it **lcd1602.py** and use it as a library.
                 else:
                     self.send_data(ord(char))
 
-Then, create a new file, and call the lcd1602 library stored in this file.
-
+Then, create a new file, and call the lcd1602 library stored before in this file.
 
 .. code-block:: python
 
@@ -162,9 +158,7 @@ How it works?
 --------------------------
 In the lcd1602 library, we integrate the relevant functions of lcd1602 into the LCD class.
 
-You can use lcd1602 with the following statement.
-
-import lcd1602 library
+Import lcd1602 library
 
 .. code-block:: python
 
@@ -176,14 +170,14 @@ Declare an object of the LCD class and name it lcd.
 
     lcd = LCD()
 
-This command will display the text in the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement ``str()``.
+This statement will display the text on the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement ``str()``.
 
 .. code-block:: python
 
     lcd.message(string)
 
 
-If you call this statement multiple times, lcd will superimpose the text of these calls until it exceeds the display range. This requires the use of the following statement to clear the display.
+If you call this statement multiple times, lcd will superimpose the texts. This requires the use of the following statement to clear the display.
 
 .. code-block:: python
 
@@ -193,7 +187,7 @@ If you call this statement multiple times, lcd will superimpose the text of thes
 
 What more?
 --------------------------
-We can combine thermistor and LCD1602 to make a room temperature meter.
+We can combine thermistor and I2C LCD1602 to make a room temperature meter.
 
 .. image:: img/wiring_lcd_2.png
 

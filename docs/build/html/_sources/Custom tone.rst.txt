@@ -2,10 +2,10 @@ Custom Tone
 ==========================================
 
 
-We have used active buzzers in the previous chapters, this time we will use passive buzzers.
+We have used active buzzer in the previous lesson, this time we will use passive buzzer.
 
-Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that the passive buzzer has one less oscillating circuit, so that it cannot be directly energized to make a sound.
-But this also allows the passive buzzer to adjust its own oscillation frequency and have a wider range, which can emit different syllables such as "doh, re, mi, fa, sol, la, ti".
+Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
+But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
 
 Let the passive buzzer emit a melody!
 
@@ -14,7 +14,7 @@ Wiring
 
 .. image:: img/buzzer.png
 
-Two buzzers are included in the kit, and the one we need is the passive one. Reverse the buzzer, the one with the exposed PCB behind it is the one we want.
+Two buzzers are included in the kit, we use the one with exposed PCB behind.
 
 The buzzer needs a transistor to work, and here we use S8050.
 
@@ -22,7 +22,7 @@ The buzzer needs a transistor to work, and here we use S8050.
 
 1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
 #. Connect the positive pin of the buzzer to the positive power bus.
-#. Connect the cathode pin of the buzzer to the **collector** lead of the triode.
+#. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
 #. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
 #. Connect the **emitter** lead of the transistor to the negative power bus.
 
@@ -55,20 +55,17 @@ Code
 How it works?
 --------------------
 
-We defined a ``tone()'' function to make the buzzer sound.
+If the passive buzzer given a digital signal, it can only keep pushing the diaphragm without producing sound.
 
-The passive buzzer will push the oscillator every time it receives a high level. If it is given a digital signal, the oscillator will be pushed all the time, but it does not oscillate and cannot sound.
-Here we use the PWM method to create oscillations.
+Therefore, we use the ``tone()`` function to generate the PWM signal to make the passive buzzer sound.
 
 This function has three parameters:
 
-* pin, the GPIO pin that controls the buzzer.
-* frequency, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
-* Duration, the duration of the tone.
+* **pin**, the GPIO pin that controls the buzzer.
+* **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
+* **Duration**, the duration of the tone.
 
-We set the ``duty_u16()'' when the buzzer is oscillating to 30000, which is about 50%. It can be another number, and it only needs to generate a discontinuous electrical signal to oscillate.
-
-
+We use the ``duty_u16()`` function to set the duty cycle to 30000(about 50%). It can be other numbers, and it only needs to generate a discontinuous electrical signal to oscillate.
 
 What more？
 -----------------------------

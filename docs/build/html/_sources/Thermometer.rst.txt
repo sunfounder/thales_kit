@@ -1,28 +1,22 @@
 Thermometer
 ===========================
 
-A thermistor is a thermally sensitive resistor that exhibits a precise and predictable change in resistance proportional to small changes in temperature. How much its resistance will change is dependent upon its unique composition. Thermistors are the parts of a larger group of passive components. And unlike their active component counterparts, passive devices are incapable of providing power gain, or amplification to a circuit. 
+A thermistor is a type of resistor whose resistance is strongly dependent on temperature, and it has two types: Negative Temperature Coefficient (NTC) and Positive Temperature Coefficient (PTC), also known as NTC and PTC. The resistance of PTC thermistor increases with temperature, while the condition of NTC is opposite to the former.
 
-Thermistor is a sensitive element, and it has two types: Negative Temperature Coefficient (NTC) and Positive Temperature Coefficient (PTC), also known as NTC and PTC. Its resistance varies significantly with temperature. The resistance of PTC thermistor increases with temperature ,while the condition of NTC is opposite to the former In this experiment we use NTC.
-
-The principle is that the resistance of the NTC thermistor changes with the temperature of the outer environment. It detects the real-time temperature of the environment. When the temperature gets higher, the resistance of the thermistor decreases. Then the voltage data is converted to digital quantities by the A/D adapter. 
-
-The temperature in Celsius or Fahrenheit is output via programming. 
-
-
+In this experiment we use an NTC thermistor to make a thermometer.
 
 Wiring
 -------------------
 
 .. image:: img/wiring_thermometer.png
 
-1. 将 Pico 的3V3和 GND 连接至面包板的电源总线。
-#. 将Thermistor的一端接入负极电源总线，另一端串联一个10kΩ电阻器接入正极电源总线。
-#. 用一根跳线从两个电阻器中间接入GP28。
+#. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+#. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
+#. Connect another lead of thermistor to the negative power bus.
 
 .. note::
-    In this experiment, a thermistor and a 10k pull-up resistor are used. Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius.
-    10kΩ电阻器的色环颜色为棕黑黑红棕。
+    * The thermistor is black and marked 103.
+    * The color ring of the 10K ohm resistor is red, black, black, red and brown.
 
 .. code-block:: python
 
@@ -44,6 +38,9 @@ Wiring
 
 How it works?
 --------------------------------------------------------------------
+Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius. When the temperature gets higher, the resistance of the thermistor decreases. Then the voltage data is converted to digital quantities by the A/D adapter. 
+
+The temperature in Celsius or Fahrenheit is output via programming. 
 
 .. code-block:: python
 
@@ -76,14 +73,15 @@ These calculations convert the thermistor values into centigrade degree and Fahr
     Vr = 3.3 * float(temperature_value) / 65535
     Rt = 10000 * Vr / (3.3 - Vr)
 
-These two lines of codes are calculating the voltage distribution with the read value analog so as to get Rt (resistance of thermistor). 
+In the two lines of code above, the voltage is first calculated using the read analoge value, and then get Rt (the resistance of the thermistor).
 
 .. code-block:: python
 
     temp = 1/(((math.log(Rt / 10000)) / 3950) + (1 / (273.15+25))) 
 
 .. note::
-    Here is the relation between the resistance and temperature:   
+    Here is the relation between the resistance and temperature: 
+
     **RT =RN expB(1/TK – 1/TN)** 
 
     * RT is the resistance of the NTC thermistor when the temperature is TK. 
@@ -115,5 +113,5 @@ Convert the centigrade degree into Fahrenheit degree.
 
     print ('Celsius: %.2f °C Fahrenheit: %.2f ℉' % (Cel, Fah)) 
 
-Print centigrade degree, Fahrenheit degree and their units on the display.
+Print centigrade degree, Fahrenheit degree and their units in the shell.
 

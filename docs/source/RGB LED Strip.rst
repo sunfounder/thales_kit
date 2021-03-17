@@ -13,15 +13,16 @@ Wiring
 
 .. image:: img/wiring_rgb_strip.png
 
-1. Connect the VCC of the LED Strip to the VBUS of the Pico.
+1. Connect the +5V of the LED Strip to the VBUS of the Pico.
 #. Connect the GND of the LED Strip to the GND of the Pico.
 #. Connect the DIN of the LED Strip to the GP0 of Pico.
 
 .. warning::
     One thing you need to pay attention to is current.
+
     Although the LED Strip with any number of LEDs can be used in Pico, the power of its VBUS pin is limited.
     Here, we will use eight LEDs, which are safe.
-    But if you want to use more LEDs, you need to understand the restrictions and may need to add a separate power supply.
+    But if you want to use more LEDs, you need to add a separate power supply.
     
 
 Code
@@ -129,19 +130,21 @@ You can use the RGB LED Strip with the following statement.
 
     from ws2812 import WS2812
 
-Declare a WS2812 type object, named "ws", it is connected to "pin", there are "number" lamp beads.
+Declare a WS2812 type object, named "ws", it is connected to "pin", there are "number" RGB LEDs on the WS2812 strip.
 
 .. code-block:: python
 
     ws = WS2812(pin,number)
 
-ws is an array object, each element corresponds to a lamp bead, for example, ws[0] is the first one, ws[7] is the eighth.
-We can assign color values to each lamp bead, these values must be 24-bit RGB hex or list of 3 8-bit RGB.
+ws is an array object, each element corresponds to one RGB LED on the WS2812 strip, for example, ws[0] is the first one, ws[7] is the eighth.
+
+We can assign color values to each RGB LED, these values must be 24-bit color (represented with six hexadecimal digits) or list of 3 8-bit RGB.
+
 For example, the red value is "0xFF0000" or "[255,0,0]".
 
 .. code-block:: python
 
-    ws[i] = color_value
+    ws[i] = color value
 
 Then use this statement to write the color for the LED Strip and light it up.
 
@@ -154,7 +157,7 @@ You can also directly use the following statement to make all LEDs light up the 
 
 .. code-block:: python
 
-    ws.write_all(color_value)
+    ws.write_all(color value)
 
 
 What more?
