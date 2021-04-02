@@ -96,7 +96,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hello, LED!</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-more">What more?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-more">What More?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Hello, Breadboard!.html">Hello, Breadboard!</a></li>
@@ -194,7 +194,7 @@
 <img alt="_images/led_onboard.png" src="_images/led_onboard.png" />
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Let’s copy this code into Thonny and run it to make the LED blink!</p>
+<p>Let’s copy this code into Thonny and click “Run Current Script” or simply press F5 to run it to make the LED blink!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 
@@ -209,29 +209,29 @@
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>The onboard LED is connected to the GP25 pin-if you carefully observe the Pico pin sequence, you will find that GP25 is one of the hidden pins, which means that we cannot use this pin to use other components (even if GP25 is used in exactly the same way as other pins). The advantage of this design is that even if you don’t connect any external components, you can still have an OUTPUT for you to test the program.</p>
+<p>The onboard LED is connected to the GP25 pin, if you carefully observe the Pico pinout, you will find that GP25 is one of the hidden pins, which means that we cannot use this pin (even if GP25 is used in exactly the same way as other pins). The advantage of this design is that even if you don’t connect any external components, you can still have an OUTPUT to test the program.</p>
 <p>The machine library is required to use GPIO.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 </pre></div>
 </div>
-<p>This library contains all the instructions needed to communicate between MicroPython and Pico. Without this line of code, we will not be able to control any GPIO, and we will not be able to light up the onboard LED.</p>
+<p>This library contains all the instructions needed to communicate between MicroPython and Pico. Without this line of code, we will not be able to control any GPIOs (Of course including GP25).</p>
 <p>The next thing to notice is this line:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led_onboard</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>An object named <code class="docutils literal notranslate"><span class="pre">led_onboard</span></code> is defined here. Technically, it can be any name, it can be x, y, banana, Micheal_Jackson, or any character-but it is best to use a name that describes the purpose to ensure that the program is easy to read.</p>
+<p>An object named <code class="docutils literal notranslate"><span class="pre">led_onboard</span></code> is defined here. Technically, it can be any name, it can be x, y, banana, Micheal_Jackson, or any character, but it is best to use a name that describes the purpose to ensure that the program is easy to read.</p>
 <p>The second part of this line (the part after the equal sign) calls the Pin function in the machine library. It is used to tell Pico’s GPIO pins what to do.
 The Pin function has two parameters: the first parameter (25) means the pin you want to set; the second parameter (machine.Pin.OUT) tells that the pin should be used as an output instead of an input.</p>
-<p>The above code has “set” the pin, but it will not light up the LED. To do this, we also need to “use” the pin. as follows:</p>
+<p>The above code has “set” the pin, but it will not light up the LED. To do this, we also need to “use” the pin.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led_onboard</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We have previously set the GP25 pin and named it <code class="docutils literal notranslate"><span class="pre">led_onboard</span></code>. The function of this sentence is to set the value of <code class="docutils literal notranslate"><span class="pre">led_onboard</span></code> to 1, which is turn it on; if it is set to 0, it will close it.</p>
-<p>All in all, to use GPIO, these links are necessary:</p>
+<p>We have set up the GP25 pin before and named it led_onboard. The function of this statement is to set the value of <code class="docutils literal notranslate"><span class="pre">led_onboard</span></code> to 1 to turn the on-board LED on.</p>
+<p>All in all, to use GPIO, these steps are necessary:</p>
 <ul class="simple">
-<li><p>import machine library —— This is necessary, and it is executed only once in the entire program.</p></li>
-<li><p>Set GPIO —— Each pin should be set before use.</p></li>
-<li><p>Use —— Assign a value to the pin, each assignment will change the working state of the pin.</p></li>
+<li><p><strong>import machine library</strong>: This is necessary, and it is only executed once in the entire program.</p></li>
+<li><p><strong>Set GPIO</strong>: Each pin should be set before use.</p></li>
+<li><p><strong>Use</strong>: Assign a value to the pin, each assignment will change the working state of the pin.</p></li>
 </ul>
 <p>If we follow the above steps to write an example, then you will get code like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
@@ -239,7 +239,7 @@ The Pin function has two parameters: the first parameter (25) means the pin you 
 <span class="n">led_onboard</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Burn it and you will be able to light up the onboard LED.</p>
+<p>Run it and you will be able to light up the onboard LED.</p>
 <p>Next, we try to add the “extinguished” statement:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="n">led_onboard</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
@@ -279,7 +279,7 @@ The Pin function has two parameters: the first parameter (25) means the pin you 
 </div>
 </div>
 <div class="section" id="what-more">
-<h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
+<h2>What More?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
 <p>Usually, the library will have a corresponding API (Application Programming Interface) file. This is a concise reference manual that contains all the information needed to use this library, detailed introduction to functions, classes, return types, parameters, etc., and even comes with a tutorial.</p>
 <p>In this article, we used MicroPython’s <code class="docutils literal notranslate"><span class="pre">machine</span></code> and <code class="docutils literal notranslate"><span class="pre">utime</span></code> libraries, we can find more ways to use them here.</p>
 <ul class="simple">

@@ -1,12 +1,12 @@
 Fading LED
 ==========================================
 
-So far, there are only two output signals of electrical signals that we have come into contact with: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
-However, in actual use, many devices need to be used to varying degrees, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-In the past, a sliding rheostat that can adjust the resistance value was used to achieve this goal, but this has always been an unreliable and inefficient way.
-Therefore, a reliable and efficient adjustment method-Pulse-width modulation (PWM) has emerged as a feasible solution to such complex problems.
+So far, we have used only two output signals: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
+However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
+In the past, a slider that can adjust the resistance was used to achieve this goal, but this is always unreliable and inefficient.
+Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
 
-A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the opening and closing speed of the pins.
+A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
 
 Simply put, when we are in a short period (such as 20ms, most people’s visual retention time),
 Let the LED turn on, turn off, and turn on again, we won’t see it has been turned off, but the brightness of the light will be slightly weaker.
@@ -46,7 +46,7 @@ Wiring
 Code
 --------------------
 
-When the program is running, the LED will gradually brighten.
+The LED will gradually become brighter as the program runs.
 
 .. code-block:: python
 
@@ -82,6 +82,6 @@ Here, we change the brightness of the LED by changing the duty cycle of the GP15
 
 * ``led = machine.PWM(machine.Pin(15))`` sets the GP15 pin as PWM output.
 
-* The line ``led.freq(1000)`` refers to an aspect of PWM, the frequency, here is set to 1000hz-one thousand cycles per second. That is, 1ms is a cycle. The frequency of PWM can be adjusted. For example, the steering gear needs to work at a frequency of 50hz, and the passive buzzer can change the tone by changing the PWM frequency. But there is no limit when simply using LED, we set it to 1000hz.
+* The line ``led.freq(1000)`` is used to set the PWM frequency, here it is set to 1000Hz, which means 1ms (1/1000) is a cycle. The PWM frequency can be adjusted, for example, the steering wheel needs to work at 50Hz, the passive buzzer can change the tone by changing the PWM frequency. However, there is no limit when using LEDs alone, we set it to 1000Hz.
 
-* The ``led.duty_u16()`` line relates to another aspect of PWM, the duty cycle, which is a 16-bit interger. When we assign a value of 0 to this function, the duty cycle is 0%, and each cycle has 0% of the time to output a high level, in other words, turn off all pulses. When the value is 65535, the duty cycle is 100%, that is, the complete pulse is turned on, and the result is equal to ‘1’ as a digital output. If it is 32768, it will turn on half a pulse, and the brightness of the LED will be half of that when it is fully turned on.
+* The ``led.duty_u16()`` line is used to set the duty cycle, which is a 16-bit interger(2^16=65536). When we assign a 0 to this function, the duty cycle is 0%, and each cycle has 0% of the time to output a high level, in other words, turn off all pulses. When the value is 65535, the duty cycle is 100%, that is, the complete pulse is turned on, and the result is equal to ‘1’ as a digital output. If it is 32768, it will turn on half a pulse, and the brightness of the LED will be half of that when it is fully turned on.

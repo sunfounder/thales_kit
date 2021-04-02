@@ -188,23 +188,28 @@
             
   <div class="section" id="light-theremin">
 <h1>Light Theremin<a class="headerlink" href="#light-theremin" title="Permalink to this headline">¶</a></h1>
-<p>Thereman is an electronic musical instrument that does not require physical contact. It produces different tones by sensing the position of the player’s hand.
-There are two LC oscillator working units that sense the distributed capacitance of the human body and the earth to produce oscillation frequency and size change respectively.
-We cannot reproduce the same instrument through Pico, but we can use photoresistor and passive buzzer to achieve similar gameplay.</p>
+<p>Theremin is an electronic musical instrument that does not require physical contact. It produces different tones by sensing the position of the player’s hand.</p>
+<p>The instrument’s controlling section usually consists of two metal antennas that sense the relative position of the thereminist’s hands and control oscillators for frequency with one hand, and amplitude (volume) with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.</p>
+<p>We cannot reproduce the same instrument through Pico, but we can use photoresistor and passive buzzer to achieve similar gameplay.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Theremin">Theremin - Wikipedia</a></p></li>
+</ul>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/wiring_light_theremin.png" src="_images/wiring_light_theremin.png" />
 <ol class="arabic simple">
 <li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
-<li><p>Connect one end of the photoresistor to the negative power bus, and the other end in series with a 10kΩ resistor to the positive power bus.</p></li>
-<li><p>Use a jumper wire to connect GP28 between the two resistors.</p></li>
+<li><p>Connect one lead of the photoresistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.</p></li>
+<li><p>Connect another lead of photoresistor to the negative power bus.</p></li>
 <li><p>Insert the LED into the breadboard, connect its anode pin to the GP16 in series with a 220Ω resistor, and connect its cathode pin to the negative power bus.</p></li>
-<li><p>Insert the passive buzzer and S8050 transistor into the breadboard. The anode pin of the buzzer is connected to the positive power bus, the cathode pin is connected to the <strong>collector</strong> lead of the triode, and the <strong>base</strong> lead of the triode is connected to the GP15 pin through a 1kΩ resistor. <strong>emitter</strong> lead is connected to the negative power bus.</p></li>
+<li><p>Insert the passive buzzer and S8050 transistor into the breadboard. The anode pin of the buzzer is connected to the positive power bus, the cathode pin is connected to the <strong>collector</strong> lead of the transistor, and the <strong>base</strong> lead of the transistor is connected to the GP15 pin through a 1kΩ resistor. <strong>emitter</strong> lead is connected to the negative power bus.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The color ring of the 22Ωresistor is red, red, black, black and brown.
-The color ring of the 10kΩ resistor is brown, black, black, red and brown.</p>
+<ul class="simple">
+<li><p>The color ring of the 22Ω resistor is red, red, black, black and brown.</p></li>
+<li><p>The color ring of the 10kΩ resistor is brown, black, black, red and brown.</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="code">
@@ -248,9 +253,9 @@ The color ring of the 10kΩ resistor is brown, black, black, red and brown.</p>
     <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When the program runs, the LED will light up, and we will have five seconds to calibrate the detection range of the photoresistor. This is because each time we use it, we may be in a different light environment (such as the light intensity at noon and dusk is not the same).
-At this time, we need to swing our hands up and down above the photoresistor, and the movement range of the hand will be calibrated to the playing range of this instrument.
-After five seconds, the LED will go out and we can wave our hands on the photoresistor to play.</p>
+<p>When the program runs, the LED will light up, and we will have five seconds to calibrate the detection range of the photoresistor. This is because we may be in a different light environment each time we use it (e.g. the light intensity is different between midday and dusk).</p>
+<p>At this time, we need to swing our hands up and down on top of the photoresistor, and the movement range of the hand will be calibrated to the playing range of this instrument.</p>
+<p>After five seconds, the LED will go out and we can wave our hands on the photoresistor to play.</p>
 </div>
 </div>
 

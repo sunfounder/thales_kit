@@ -195,13 +195,12 @@
 Specifically, it can replace 8 pins for digital signal output by writing an 8-bit binary number.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Binary_number">Binary number - Wikipedia</a></p></li>
+<li><p><a class="reference internal" href="74HC595.html#hc595"><span class="std std-ref">74HC595</span></a></p></li>
 </ul>
 <p>Let’s use it.</p>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
-<p>74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label).
-The ordering rule of the pins is to count from the slot counterclockwise, in other words, the left side of the slot is the first pin.
-With the notch facing upward, the meaning of its pins is shown in the figure below.</p>
+<p>The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.</p>
 <img alt="_images/74hc595_1.png" src="_images/74hc595_1.png" />
 <p>Refer to the figure below to build the circuit.</p>
 <img alt="_images/wiring_microchip_74hc595.png" src="_images/wiring_microchip_74hc595.png" />
@@ -253,8 +252,8 @@ With the notch facing upward, the meaning of its pins is shown in the figure bel
     <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When the program is running, <code class="docutils literal notranslate"><span class="pre">`num`</span></code> will be written into the 74HC595 chip as an eight-bit binary number to control the on and off of the 8 LEDs.
-We can see the current value of <code class="docutils literal notranslate"><span class="pre">`num`</span></code> in the shell.</p>
+<p>When the program is running, <code class="docutils literal notranslate"><span class="pre">num</span></code> will be written into the 74HC595 chip as an eight-bit binary number to control the on and off of the 8 LEDs.
+We can see the current value of <code class="docutils literal notranslate"><span class="pre">num</span></code> in the shell.</p>
 </div>
 </div>
 

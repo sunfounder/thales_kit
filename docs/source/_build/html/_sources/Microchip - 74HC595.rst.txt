@@ -12,14 +12,14 @@ Specifically, it can replace 8 pins for digital signal output by writing an 8-bi
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
+* :ref:`74HC595`
+
 Let's use it.
 
 Wiring
 -------------------
 
-74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label).
-The ordering rule of the pins is to count from the slot counterclockwise, in other words, the left side of the slot is the first pin.
-With the notch facing upward, the meaning of its pins is shown in the figure below.
+The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
 
 .. image:: img/74hc595_1.png
 
@@ -76,5 +76,5 @@ Code
         print("{:0>8b}".format(num))
         time.sleep_ms(200)
 
-When the program is running, ```num``` will be written into the 74HC595 chip as an eight-bit binary number to control the on and off of the 8 LEDs.
-We can see the current value of ```num``` in the shell.
+When the program is running, ``num`` will be written into the 74HC595 chip as an eight-bit binary number to control the on and off of the 8 LEDs.
+We can see the current value of ``num`` in the shell.

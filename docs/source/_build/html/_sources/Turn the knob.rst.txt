@@ -1,7 +1,7 @@
 Turn the Knob
 ============================
 
-In the previous chapters, we have used the digital input on the Pico.
+In the previous lessons, we have used the digital input on the Pico.
 For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.
 
 However, Pico can receive another type of input signal: analog input.
@@ -16,22 +16,25 @@ But Pico itself has a built-in ADC for us to use directly.
 Pico has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
 In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
 
-In this chapter, we use potentiometer to try to read analog values.
+In this lesson, we try to read the analog value of potentiometer.
 
 Wiring
 ----------------------------
 
 .. image:: img/wiring_turn_the_knob.png
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+#. Connect 3V3 and GND of Pico to the power bus of the breadboard.
 #. Insert the potentiometer into the breadboard, its three pins should be in different rows.
-#. Use jumpers to connect the pins on both sides of the potentiometer to the positive and negative power bus.
+#. Use jumper wires to connect the pins on both sides of the potentiometer to the positive and negative power bus respectively.
 #. Connect the middle pin of the potentiometer to GP28 with a jumper wire.
-#. Connect the anode of the led to the GP15 pin through a 220Ω resistor, and connect the cathode to the negative power bus.
+#. Connect the anode of the LED to the GP15 pin through a 220Ω resistor, and connect the cathode to the negative power bus.
 
 
 Code
 --------------------------------
+
+When the program is running, we can see the analog value currently read by the GP28 pin in the shell. Turn the knob, and the value will change from 0 to 65535.
+At the same time, the brightness of the LED will increase as the analog value increases.
 
 .. code-block:: python
 
@@ -48,13 +51,9 @@ Code
         led.duty_u16(value)
         utime.sleep_ms(200)
 
-        When the program is running, we can see the analog value currently read by the GP28 pin in the shell. Turn the knob, and the value will change from 0 to 65535.
-        At the same time, the brightness of the LED will increase as the analog value increases.
-
-
 What more?
 ------------------------
-Let's use the potentiometer knob to make the servo sway left and right!
+Let's use the potentiometer to swing the servo from left to right!
 
 .. image:: img/wiring_turn_the_knob_2.png
 

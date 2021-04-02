@@ -198,7 +198,7 @@
 <p>I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for communication between a master device (or master devices) and a single or multiple slave devices.
 I2C main controller can be used to control IO expander, various sensors, EEPROM, ADC/DAC and so on.
 All of these are controlled only by the two pins of host, the serial data (SDA) line and the serial clock line(SCL).</p>
-<p>These two Pins must be connected to specific pins of the microcontroller to operate. There are two pairs of I2C communication interfaces in Pico, which are marked as I2C0 and I2C1, as shown in the figure below.</p>
+<p>These two pins must be connected to specific pins of the microcontroller. There are two pairs of I2C communication interfaces in Pico, which are marked as I2C0 and I2C1, as shown in the figure below.</p>
 <img alt="_images/pin_pic2.png" src="_images/pin_pic2.png" />
 <p>Here we will use the I2C0 interface to control the LCD1602 and display text.</p>
 <div class="section" id="wiring">
@@ -213,9 +213,7 @@ All of these are controlled only by the two pins of host, the serial data (SDA) 
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Every I2C device has a unique address and needs to pass in unique commands to run. This will require users to view their datasheet to fully understand. This has a certain threshold.</p>
-<p>Fortunately, many people on the Internet encapsulate some common modules into libraries so that we can use them directly.
-The following is the library of lcd1602 packaged by Sunfounder.</p>
+<p>The following is the library of lcd1602 packaged by Sunfounder.</p>
 <p>You need to save it in Pico, name it <strong>lcd1602.py</strong> and use it as a library.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -314,7 +312,7 @@ The following is the library of lcd1602 packaged by Sunfounder.</p>
                 <span class="bp">self</span><span class="o">.</span><span class="n">send_data</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Then, create a new file, and call the lcd1602 library stored in this file.</p>
+<p>Then, create a new file, and call the lcd1602 library stored before in this file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lcd1602</span> <span class="kn">import</span> <span class="n">LCD</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 
@@ -333,8 +331,7 @@ The following is the library of lcd1602 packaged by Sunfounder.</p>
 <div class="section" id="how-it-works">
 <h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
 <p>In the lcd1602 library, we integrate the relevant functions of lcd1602 into the LCD class.</p>
-<p>You can use lcd1602 with the following statement.</p>
-<p>import lcd1602 library</p>
+<p>Import lcd1602 library</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lcd1602</span> <span class="kn">import</span> <span class="n">LCD</span>
 </pre></div>
 </div>
@@ -342,18 +339,18 @@ The following is the library of lcd1602 packaged by Sunfounder.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>This command will display the text in the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement <code class="docutils literal notranslate"><span class="pre">str()</span></code>.</p>
+<p>This statement will display the text on the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement <code class="docutils literal notranslate"><span class="pre">str()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lcd</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you call this statement multiple times, lcd will superimpose the text of these calls until it exceeds the display range. This requires the use of the following statement to clear the display.</p>
+<p>If you call this statement multiple times, lcd will superimpose the texts. This requires the use of the following statement to clear the display.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="what-more">
 <h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
-<p>We can combine thermistor and LCD1602 to make a room temperature meter.</p>
+<p>We can combine thermistor and I2C LCD1602 to make a room temperature meter.</p>
 <img alt="_images/wiring_lcd_2.png" src="_images/wiring_lcd_2.png" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lcd1602</span> <span class="kn">import</span> <span class="n">LCD</span>
 <span class="kn">import</span> <span class="nn">machine</span>

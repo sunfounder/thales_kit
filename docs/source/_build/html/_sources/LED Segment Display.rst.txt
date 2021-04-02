@@ -8,11 +8,7 @@ The LED Segment Display is essentially a device packaged by 8 LEDs, of which 7 s
 
 .. image:: img/led_segment_1.png
 
-This means that it needs to be controlled by 8 digital signals at the same time to fully work.
-
-The LED Segment Display matches well with the 74HC595 we used in the previous chapter.
-One of them needs to receive 8 digital signals to work properly; the other can convert an 8-bit binary number into 8 digital outputs.
-In other words, 74HC595 allows us to write 8-bit binary numbers to control the glyph of the LED Segment Display.
+This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.
 
 Wiring
 ---------------------
@@ -97,9 +93,9 @@ How it works?
 --------------------
 
 ``hc595_shift()`` will make 74HC595 output 8 digital signals.
-It outputs the value of the last number of the binary number to Q0, and the output of the first number to Q7. In other words, writing the binary number "00000001" will make Q0 output high level and Q1~Q7 output low level.
+It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number "00000001" will make Q0 output high level and Q1~Q7 output low level.
 
-Combined with the LED Segment Display, we assume that we want to light up the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
+Suppose that the 7-segment Display display the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
 That is, the binary number "00000110" needs to be written. For readability, we will use hexadecimal notation as "0x06".
 
 * `Hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_
@@ -146,4 +142,4 @@ Similarly, we can also make the LED Segment Display display other numbers in the
         - 01101111	
         - 0x6f
 
-Write these codes into ``hc595_shift()'' to make the LED Segment Display display the corresponding numbers.
+Write these codes into ``hc595_shift()`` to make the LED Segment Display display the corresponding numbers.

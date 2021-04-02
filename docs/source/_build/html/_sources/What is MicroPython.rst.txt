@@ -1,21 +1,24 @@
 What is MicroPython?
 ==============================
 
-MicroPython is a full Python compiler and run time that runs on the microcontroller's hardware like Raspberry Pi Pico. 
+MicroPython is a full Python compiler and runtime that runs on the microcontroller's hardware like Raspberry Pi Pico. 
 The user is presented with an interactive prompt (the REPL) to excute supported commands immediately. 
 Included are a selection of core Python libraries; MicroPython includes modules which give the programmer access to low-level hardware.
+
+* Ref: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
 
 The Story Starts Here
 --------------------------------
 
 Everything changed in 2013 when Damien George launched a crowdfunding campaign (Kickstarter).
 
-Damien is an undergraduate student at Cambridge University and an avid robotics programmer. He wants to reduce the world of Python from a gigabyte machine to a kilobyte. His Kickstarter campaign is to support his development while he translates his proof of concept into a finished implementation.
+Damien was an undergraduate student at Cambridge University and an avid robotics programmer. He wanted to reduce the world of Python from a gigabyte machine to a kilobyte. His Kickstarter campaign was to support his development while he turned his proof of concept into a finished implementation.
 
 MicroPython is supported by a diverse Pythonista community that has a keen interest in seeing the project succeed.
 
 In addition to testing and supporting the code base, the developers provided tutorials, code libraries, and hardware ports, making the project far more than Damien could have done alone.
 
+* Ref: `realpython <https://realpython.com/micropython/>`_
 
 Why MicroPython？
 ------------------
@@ -27,6 +30,8 @@ While Python has the same advantages, for some Microcontroller boards like the R
 
 Next you will learn to install MicroPython into the Raspberry Pi Pico.
 
+* Ref: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
+* Ref: `realpython <https://realpython.com/micropython/>`_
 
 Installing MicroPython
 ------------------------------

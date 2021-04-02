@@ -1,38 +1,30 @@
 Intruder Alarm
 ==========================================
 
-In the previous chapters, we used simple electronic components (such as LED, button). This time we will use the sensor module.
+In the previous chapters, we used simple electronic components (such as LED, button). This time we will use the sensor module - PIR.
 
 Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
 Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
 More specifically, it tells the main control board that someone has entered your room.
 
-The PIR is covered by a hemispherical plastic lens. This lens is not necessary, its role is to provide a wider field of vision (FOV), so that PIR can detect the entire room.
-
-Uncover the lens, the most central is the detection head, the sensor receives infrared radiation from here. The pin labels (VCC, OUT, GND) are also written on this side.
-
-Turning the PIR upside down, there are two other places to pay attention to besides the pins.
-There are two potentiometers on the side opposite to the pins. Please turn both potentiometers counterclockwise to the end.
-There is a 3-Pin with a jumper cap in the corner not far from the potentiometer. Please insert the jumper cap on the pin with L and the middle pin, so that the pin with H is independent.
-
-These pins and potentiometers are used to adjust the working mode of the PIR. At present, we have adjusted it to the most suitable state for the first use. More specific details will be understood later.
+:ref:`PIR Motion Sensor`
 
 Now, let's use PIR and active buzzer to build an Intruder Alarm.
 
 Wiring
 -------------------------------------------
 
-Two types of buzzers are included in the kit. We need to use active buzzers. Turn them around. The sealed back (not the exposed PCB) is the one we want.
+Two types of buzzers are included in the kit. We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
 
 .. image:: img/buzzer.png
 
-The buzzer needs to use a triode when working, here we use S8050.
+The buzzer needs to use a transistor when working, here we use S8050.
 
 .. image:: img/wiring_intruder_alarm.png
 
 1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
 #. Connect the positive pin of the buzzer to the positive power bus.
-#. Connect the cathode pin of the buzzer to the **collector** lead of the triode.
+#. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
 #. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
 #. Connect the **emitter** lead of the transistor to the negative power bus.
 #. Connect the OUT of PIR to the GP14 pin, VCC to the positive power bus, and GND to the negative power bus.
@@ -67,7 +59,7 @@ When the program is executed, if someone walks into the PIR detection range, the
 What more?
 -------------------------------------
 
-PIR is a very sensitive sensor. In order to adapt it to the environment of use, it needs to be adjusted.
+PIR is a very sensitive sensor. In order to adapt it to the environment of use, it needs to be adjusted. Let the side with the 2 potentiometers facing you, turn both potentiometers counterclockwise to the end and insert the jumper cap on the pin with L and the middle pin.
 
 Copy the following code into Thonny and run it, let us analyze its adjustment method along with the experimental results.
 
@@ -98,10 +90,11 @@ Copy the following code into Thonny and run it, let us analyze its adjustment me
 
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=pir_in_high_level) 
 
+.. image:: img/pir_back.png
 
 1. Trigger Mode
 
-    Let's take a look at the pins with jumper caps at the corners.
+    Let's take a look at the pins with jumper cap at the corner.
     It allows PIR to enter Repeatable trigger mode or Non-repeatable trigger mode
 
     At present, our jumper cap connects the middle Pin and L Pin, which makes the PIR in non-repeatable trigger mode.
@@ -121,9 +114,9 @@ Copy the following code into Thonny and run it, let us analyze its adjustment me
 
     If we turn the potentiometer clockwise, the sleep time will also increase. When it is turned clockwise to the end, the sleep time will be as high as 300s.
 
-#. Delay Adjustment
+#. Distance Adjustment
 
     The centered potentiometer is used to adjust the sensing distance range of the PIR.
 
-    Turn the knob of the distance adjustment potentiometer clockwise to increase the sensing distance range, and the maximum sensing distance range is about 0-7 meters.
-    If it rotates counterclockwise, the sensing distance range is reduced, and the minimum sensing distance range is about 0-3 meters.
+    Turn the knob of the distance adjustment potentiometer **clockwise** to increase the sensing distance range, and the maximum sensing distance range is about 0-7 meters.
+    If it rotates **counterclockwise**, the sensing distance range is reduced, and the minimum sensing distance range is about 0-3 meters.

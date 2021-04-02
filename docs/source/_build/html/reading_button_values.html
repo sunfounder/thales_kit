@@ -98,6 +98,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Reading Button Value</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pull-up-working-mode">Pull-up Working Mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#what-more">What more?</a></li>
 </ul>
 </li>
@@ -189,7 +190,7 @@
             
   <div class="section" id="reading-button-value">
 <h1>Reading Button Value<a class="headerlink" href="#reading-button-value" title="Permalink to this headline">¶</a></h1>
-<p>From the name of GPIO (General-purpose input/output), we can see that the pin should have two methods of input and output. In the LED, we used the output, in this chapter we use the keys to use the input.</p>
+<p>From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. In the previous two lessons, we used the output function, in this chapter we will use the input function to input read the button value.</p>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/wiring_read_button_value.png" src="_images/wiring_read_button_value.png" />
@@ -205,13 +206,14 @@
 </div>
 </div></blockquote>
 </li>
-<li><p>Use a jumper to connect the positive bus of the power supply to a pin of the button (mine is the pin on the upper right).</p></li>
+<li><p>Use a jumper wire to connect one of the button pins to the positive bus (mine is the pin on the upper right).</p></li>
 <li><p>Connect the other pin (upper left or lower left) to GP14 with a jumper wire.</p></li>
-<li><p>Use a 10kΩ resistor to connect the pin on the side of GP14 to the negative power bus of the breadboard.</p>
+<li><p>Use a 10K resistor to connect the pin on the upper left corner of the button and the negative bus.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The color ring of the 10kΩ resistor is brown, black, black, red, brown.</p>
+<p>Buttons require pull-up resistors or pull-down resistors. If there is no pull-up or pull-down resistor, the main controller may receive a ‘noisy’ signal which can trigger even when you’re not pushing the button.</p>
 </div>
 </div></blockquote>
 </li>
@@ -220,7 +222,7 @@
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>When the button is pressed, the current will flow from 3V3 through the switch to GP14, in other words, GP14 will read a high-level signal ‘1’; otherwise, it will read a low-level signal ‘0’.</p>
+<p>When the button is pressed, the current will flow from 3V3 through the button to GP14, in other words, GP14 will read a high-level signal ‘1’; otherwise, it will read a low-level signal ‘0’.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 <span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
@@ -231,16 +233,21 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="what-more">
-<h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
-<p>Buttons require pull-up resistors or pull-down resistors. If there is no pull-up or pull-down resistor, the main controller may receive a ‘noisy’ signal which can trigger even when you’re not pushing the button.</p>
-<p>Set the pull-down resistor so that when the GPIO is not connected to a high level, the input value is stable to ‘0’; if it is set to pull up, it will make the GPIO stable to obtain an input value of 1 when the GPIO is not connected to a low level.</p>
-<p>Next is the wiring and code when the button uses the pull-up working mode, please try it.</p>
+<div class="section" id="pull-up-working-mode">
+<h2>Pull-up Working Mode<a class="headerlink" href="#pull-up-working-mode" title="Permalink to this headline">¶</a></h2>
+<p>Next is the wiring and code when the button in the pull-up working mode, please try it.</p>
 <img alt="_images/wiring_read_button_value_2.png" src="_images/wiring_read_button_value_2.png" />
+<ol class="arabic simple">
+<li><p>Connect the 3V3 pin of Pico to the positive power bus of the breadboard.</p></li>
+<li><p>Insert the button into the breadboard and straddle the central dividing line.</p></li>
+<li><p>Use a jumper wire to connect one of the button pins to the <strong>negative</strong> bus (mine is the pin on the upper right).</p></li>
+<li><p>Connect the other pin (upper left or lower left) to GP14 with a jumper wire.</p></li>
+<li><p>Use a 10K resistor to connect the pin on the upper left corner of the button and the <strong>positive</strong> bus.</p></li>
+<li><p>Connect the negative power bus of the breadboard to Pico’s GND.</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
-<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
-<span class="c1"># The third parameter specifies if the pin has a pull-up/down resistor attached.</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># When the button is pressed, GPIO will be connected to GND.</span>
@@ -251,6 +258,41 @@
 <p>Also see the reference here:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.micropython.org/en/latest/library/machine.Pin.html">machine.Pin</a></p></li>
+</ul>
+</div>
+<div class="section" id="what-more">
+<h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
+<p>There are two components in this kit that work on the same principle as buttons, they are tilt switch and slide switch. These components can use the same code as the button. Their wiring is as follows:</p>
+<p><strong>Tilt switch</strong></p>
+<img alt="_images/wiring_read_button_value_4.png" src="_images/wiring_read_button_value_4.png" />
+<ol class="arabic simple">
+<li><p>Connect the 3V3 pin of Pico to the positive power bus of the breadboard.</p></li>
+<li><p>Insert the tilt switch into the breadboard.</p></li>
+<li><p>Use a jumper wire to connect one end of tilt switch pin to the positive bus.</p></li>
+<li><p>Connect the other pin to GP14 with a jumper wire.</p></li>
+<li><p>Use a 10K resistor to connect the second pin (which connected to GP14) and the negative bus.</p></li>
+<li><p>Connect the negative power bus of the breadboard to Pico’s GND.</p></li>
+</ol>
+<p>When you put a flat breadboard, the circuit will be closed. When you tilt the breadboard, the circuit is open.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Tilt Switch.html#tilt-switch"><span class="std std-ref">Tilt Switch</span></a></p></li>
+</ul>
+<p><strong>Slide switch</strong></p>
+<img alt="_images/wiring_read_button_value_3.png" src="_images/wiring_read_button_value_3.png" />
+<ol class="arabic simple">
+<li><p>Connect the 3V3 pin of Pico to the positive power bus of the breadboard.</p></li>
+<li><p>Insert the slide switch into the breadboard.</p></li>
+<li><p>Use a jumper wire to connect one end of slide switch pin to the negative bus.</p></li>
+<li><p>Connect the middle pin to GP14 with a jumper wire.</p></li>
+<li><p>Use a jumper wire to connect last end of slide switch pin to the positive bus</p></li>
+<li><p>Use a 10K resistor to connect the middle pin of the slide switch and the negative bus.</p></li>
+<li><p>Use a 104 capacitor to connect the middle pin of the slide switch and the negative bus to realize debounce that may arise from your toggle of switch.</p></li>
+<li><p>Connect the negative power bus of the breadboard to Pico’s GND.</p></li>
+</ol>
+<p>When you toggle the slide switch, the circuit will switch between closed and open.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Slide Switch.html#slide-switch"><span class="std std-ref">Slide Switch</span></a></p></li>
+<li><p><a class="reference internal" href="Capacitor.html#capacitor"><span class="std std-ref">Capacitor</span></a></p></li>
 </ul>
 </div>
 </div>

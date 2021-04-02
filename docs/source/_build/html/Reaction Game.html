@@ -191,12 +191,12 @@
   <div class="section" id="reaction-game">
 <h1>Reaction Game<a class="headerlink" href="#reaction-game" title="Permalink to this headline">¶</a></h1>
 <p>Microcontrollers not only appear in industrial equipment, they are also used to control a large number of electronic devices in the home, including toys and games. In this chapter, we will use “button” and “LED” to build a simple reaction timing game.</p>
-<p>The study of reaction time is called mental chronometry, it is a hard science, and it is also the basis of many games (including the games you are about to make). Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus, in milliseconds, the average reaction time of a person is about 200-250 milliseconds. People with short reaction time have a huge advantage in the game!</p>
+<p>The study of reaction time is called mental chronometry, it is a hard science, and it is also the basis of many games (Including the games you are about to make). Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus, in milliseconds, the average reaction time of a person is about 200-250 milliseconds. People with short reaction time have a huge advantage in the game!</p>
 <div class="section" id="wiring">
 <h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/wiring_reaction_game.png" src="_images/wiring_reaction_game.png" />
 <ol class="arabic simple">
-<li><p>In general, this circuit is a combination of the circuits in the previous two chapters.</p></li>
+<li><p>In general, this circuit is a combination of the circuits in the previous two lessons.</p></li>
 <li><p>Confirm again that the breadboard power bus is not connected wrongly or short-circuited!</p></li>
 </ol>
 </div>
@@ -225,9 +225,9 @@
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>In the previous chapters, we have used buttons. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.</p>
+<p>In the previous lesson, we simply read the button value. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.</p>
 <p>For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.</p>
-<p>MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. It is achieved through the following two statements:</p>
+<p>MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. It is achieved through the following two statements (the highlighted 2 lines):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 <span class="kn">import</span> <span class="nn">urandom</span>
@@ -247,13 +247,14 @@
 <span class="hll"><span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>Here, an interrupt handler is first defined, which is called a callback function, which is the code that runs when an interrupt is triggered.
-Then, set up an interrupt in the main program, it needs to contain two parts: <code class="docutils literal notranslate"><span class="pre">trigger</span></code> and <code class="docutils literal notranslate"><span class="pre">handler</span></code>.</p>
+<p>Here, a callback function (button_press) is first defined, which is called an interrupt handler. It will be executed when an interrupt request is triggered.
+Then, set up an interrupt request in the main program, it contains two parts: <code class="docutils literal notranslate"><span class="pre">trigger</span></code> and <code class="docutils literal notranslate"><span class="pre">handler</span></code>.</p>
 <ul class="simple">
-<li><p>In this program, <code class="docutils literal notranslate"><span class="pre">trigger</span></code> is <code class="docutils literal notranslate"><span class="pre">IRQ_RISING</span></code>, which means that the value of the pin rises from low level to high level (that is, pressing the button).</p></li>
-<li><p>And <code class="docutils literal notranslate"><span class="pre">handler</span></code> is a callback function customized by us, here it is <code class="docutils literal notranslate"><span class="pre">button_press</span></code>. In this example, you will find a sentence <a href="#id1"><span class="problematic" id="id2">``</span></a>button.irq(handler=None)’’ in the callback function, which can set the callback function to None, which is equivalent to canceling the interrupt.</p></li>
+<li><p>In this program, the <code class="docutils literal notranslate"><span class="pre">trigger</span></code> is <code class="docutils literal notranslate"><span class="pre">IRQ_RISING</span></code>, which means that the value of the pin rises from low level to high level (That is, pressing the button).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">handler</span></code> is the callback function <code class="docutils literal notranslate"><span class="pre">button_press</span></code> we defined before.</p></li>
 </ul>
-<p>Let us use the following code to better understand IRQ! (Just use the circuit in this chapter directly)</p>
+<p>In this example, you will find a statement <code class="docutils literal notranslate"><span class="pre">button.irq(handler=None)</span></code> in the callback function, which is equivalent to canceling the interrupt.</p>
+<p>In order to better understand the interrupt request, we change the above code to the following (Use the same circuit):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
 
@@ -272,7 +273,7 @@ Then, set up an interrupt in the main program, it needs to contain two parts: <c
     <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The program will count and output in a loop while it is running. When we press the button, it will pause the count in the main program and enter the callback function to print “You press the button!”.</p>
+<p>When the program runs, it will start counting and print the numbers in the shell. When we press the button, it will stop counting and enter the callback function to print “You press the button!”.</p>
 <p>Go back to the original example. We need to make the LED turn off in a random time of 5 to 10 seconds, which is achieved by the following two lines:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
@@ -293,7 +294,7 @@ Then, set up an interrupt in the main program, it needs to contain two parts: <c
 <span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">urandom</span></code> library is loaded here. Use the <a href="#id3"><span class="problematic" id="id4">``</span></a>urandom.uniform(5,10)’’ function to generate a random number, the ‘uniform’ part referring to a uniform distribution between those two numbers.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">urandom</span></code> library is loaded here. Use the <code class="docutils literal notranslate"><span class="pre">urandom.uniform(5,10)</span></code> function to generate a random number, the ‘uniform’ part referring to a uniform distribution between those two numbers.</p>
 <p>If needed, try running the following example of random number generation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">utime</span>
@@ -325,8 +326,8 @@ Then, set up an interrupt in the main program, it needs to contain two parts: <c
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">utime.ticks_ms()</span></code> function will output the number of milliseconds that have passed since the <code class="docutils literal notranslate"><span class="pre">utime</span></code> library started counting, where it is stored in the variable <code class="docutils literal notranslate"><span class="pre">timer_light_off</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">utime.ticks_diff()''</span> <span class="pre">is</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">output</span> <span class="pre">the</span> <span class="pre">time</span> <span class="pre">difference</span> <span class="pre">between</span> <span class="pre">two</span> <span class="pre">time</span> <span class="pre">nodes.</span> <span class="pre">The</span> <span class="pre">two</span> <span class="pre">parameters</span> <span class="pre">in</span> <span class="pre">this</span> <span class="pre">function</span> <span class="pre">are</span> <span class="pre">``utime.ticks_ms()</span></code>, the current program time (press the button) and the reference time (light off) stored in the variable <code class="docutils literal notranslate"><span class="pre">timer_light_off</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">utime.ticks_ms()</span></code> function will output the number of milliseconds that have passed since the <code class="docutils literal notranslate"><span class="pre">utime</span></code> library started counting and store it in the variable <code class="docutils literal notranslate"><span class="pre">timer_light_off</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utime.ticks_diff()</span></code> is used to output the time difference between two time nodes. The two time nodes in this function are <code class="docutils literal notranslate"><span class="pre">utime.ticks_ms()</span></code>, the current program time (press the button) and the reference time (light off) stored in the variable <code class="docutils literal notranslate"><span class="pre">timer_light_off</span></code>.</p></li>
 </ul>
 <p>These two functions are usually used together to calculate the execution time of the program. Here we use it to calculate the time from when the light turns off to when the button is pressed.</p>
 <p>Finally, this time will be printed out.</p>

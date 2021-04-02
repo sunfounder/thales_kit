@@ -7,7 +7,8 @@ Introduction to Raspberry Pi Pico
 
 The Raspberry Pi Pico is a microcontroller board based on the Raspberry Pi RP2040 microcontroller chip.
 
-Whether you want to learn the MicroPython programming language, take the first step in physical computing, or want to build a hardware project, Raspberry Pi Pico--and its amazing community--will support you every step of the way. In the project, it can control anything, from LEDs and buttons to sensors, motors, and even other items. Other microcontrollers.
+Whether you want to learn the MicroPython programming language, take the first step in physical computing, or want to build a hardware project, Raspberry Pi Pico – 
+and its amazing community – will support you every step of the way. In the project, it can control anything, from LEDs and buttons to sensors, motors, and even other microcontrollers.
 
 Features
 --------------
@@ -17,7 +18,7 @@ Features
 * Dual-core Arm Cortex-M0+ processor, flexible clock running up to 133 MHz
 * 264KB on-chip SRAM
 * 2MB on-board QSPI Flash
-* 26 multifunction GPIO pins, including 3 analogue inputs
+* 26 multifunction GPIO pins, including 3 analog inputs
 * 2 × UART, 2 × SPI controllers, 2 × I2C controllers, 16 × PWM channels
 * 1 × USB 1.1 controller and PHY, with host and device support
 * 8 × Programmable I/O (PIO) state machines for custom peripheral support
@@ -45,7 +46,7 @@ Pico's Pins
         - Function
     *   - GP0-GP28
         - General-purpose input/output pins
-        - Act as either an input or an output and have no fixed purpose of their own
+        - Act as either input or output and have no fixed purpose of their own
     *   - GND
         - 0 volts ground
         - Several GND pins around Pico to make wiring easier.
@@ -53,13 +54,13 @@ Pico's Pins
         - Enables or diables your Pico
         - Start and stop your Pico from another microcontroller.
     *   - GPxx_ADCx
-        - General-purpose input/output or analogue input
-        - Used as an analogue input as well as a digital input or output – but not both at the same time.
+        - General-purpose input/output or analog input
+        - Used as an analog input as well as a digital input or output – but not both at the same time.
     *   - ADC_VREF
-        - Analogue-to-digital converter (ADC) voltage reference
-        - A special input pin which sets a reference voltage for any analogue inputs.
+        - Analog-to-digital converter (ADC) voltage reference
+        - A special input pin which sets a reference voltage for any analog inputs.
     *   - AGND
-        - Analogue-to-digital converter (ADC) 0 volts ground
+        - Analog-to-digital converter (ADC) 0 volts ground
         - A special ground connection for use with the ADC_VREF pin.
     *   - 3V3(O)
         - 3.3 volts power
@@ -68,7 +69,7 @@ Pico's Pins
         - Enables or disables the power
         - Switch on or off the 3V3(O) power, can also switches your Pico off.
     *   - VSYS
-        - ~2-5 volts power
+        - 2-5 volts power
         - A pin directly connected to your Pico’s internal power supply, which cannot be switched off without also switching Pico off.
     *   - VBUS
         - 5 volts power
