@@ -13,6 +13,7 @@ Here is the electronic symbol of photoresistor.
 .. image:: img/photoresistor_symbol.png
     :width: 200
 
+* `Photoresistor - Wikipedia <https://en.wikipedia.org/wiki/Photoresistor#:~:text=A%20photoresistor%20(also%20known%20as,on%20the%20component's%20sensitive%20surface>`_
 
 Example
 -------------------

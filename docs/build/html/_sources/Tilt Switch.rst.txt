@@ -11,3 +11,5 @@ The principle is very simple. When the switch is tilted in a certain angle, the 
 
 .. image:: img/tilt_symbol.png
     :width: 600
+
+* `SW520D Tilt Switch Datasheet <https://www.tme.com/Document/f1e6cedd8cb7feeb250b353b6213ec6c/SW-520D.pdf>`_

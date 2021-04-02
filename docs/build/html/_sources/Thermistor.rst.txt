@@ -6,6 +6,8 @@ Thermistor
 
 A thermistor is a type of resistor whose resistance is strongly dependent on temperature, more so than in standard resistors. The word is a combination of thermal and resistor. Thermistors are widely used as inrush current limiters, temperature sensors (negative temperature coefficient or NTC type typically), self-resetting overcurrent protectors, and self-regulating heating elements (positive temperature coefficient or PTC type typically).
 
+* `Thermistor - Wikipedia <https://en.wikipedia.org/wiki/Thermistor>`_
+
 Here is the electronic symbol of thermistor.
 
 .. image:: img/thermistor_symbol.png

@@ -11,6 +11,7 @@ SunFounder Thales Kit for Raspberry Pi Pico
    MicroPython Basic Syntax
    Components Introduction
    Lesson
+   about_writing_c_c++_in_pico
 
 
 Copyright Notice

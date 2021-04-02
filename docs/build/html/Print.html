@@ -29,10 +29,9 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -86,26 +85,27 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Introduction to Raspberry Pi Pico.html">Introduction to Raspberry Pi Pico</a></li>
-<li class="toctree-l1"><a class="reference internal" href="What is MicroPython.html">What is MicroPython?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Thonny Python IDE.html">Thonny Python IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Your First MicroPython Program.html">Your First MicroPython Program</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction%20to%20Raspberry%20Pi%20Pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What%C2%A0is%C2%A0MicroPython.html">What is MicroPython?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thonny%20Python%20IDE.html">Thonny Python IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Your%20First%20MicroPython%20Program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="MicroPython%20Basic%20Syntax.html">MicroPython Basic Syntax</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Indentation.html">Indentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Print()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Variables.html">Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="If...Else.html">If…Else</a></li>
-<li class="toctree-l2"><a class="reference internal" href="While Loops.html">While Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="For Loops.html">For Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="While%20Loops.html">While Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="For%20Loops.html">For Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Data Types.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data%20Types.html">Data Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Operators.html">Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lists.html">Lists</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Components Introduction.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20Introduction.html">Components Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lesson.html">Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_writing_c_c%2B%2B_in_pico.html">About Writing C/C++ codes on Raspberry Pi Pico</a></li>
 </ul>
 
             
@@ -154,7 +154,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="MicroPython Basic Syntax.html">MicroPython Basic Syntax</a> &raquo;</li>
+          <li><a href="MicroPython%20Basic%20Syntax.html">MicroPython Basic Syntax</a> &raquo;</li>
         
       <li>Print()</li>
     
@@ -184,7 +184,7 @@ The message can be a string, or any other object, the object will be converted i
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;Enjoy yourself!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
 Welcome! Enjoy yourself!
 </pre></div>
 </div>
@@ -194,7 +194,7 @@ Welcome! Enjoy yourself!
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
 (&#39;pear&#39;, &#39;apple&#39;, &#39;grape&#39;)
 </pre></div>
 </div>
@@ -203,7 +203,7 @@ Welcome! Enjoy yourself!
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;how are you?&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
 Hello---how are you?
 </pre></div>
 </div>
