@@ -10,8 +10,9 @@ but not suitable for beginners.
 
 While Arduino is an excellent option for beginners who would like to write C/C++. But Arduino is still porting Pico for the Arduino IDE.
 
-Luckily Earle F. Philhower, III published an unofficial support! He has developed the `Raspberry Pi Pico Arduino core <https://github.com/earlephilhower/arduino-pico>`_ to 
-add support for the Raspberry Pi Pico to the Arduino IDE.
+Luckily Earle F. Philhower, III published an unofficial support! He has developed the `Raspberry Pi Pico Arduino core <https://arduino-pico.readthedocs.io/en/latest/>`_ to 
+add support for the Raspberry Pi Pico to the Arduino IDE. https://arduino-pico.readthedocs.io/en/latest/
+
 
 And then, using this repository, **tom'sHARDWARE** published a complete tutorial on setting up Arduino IDE for Raspberry Pi Pico on both Windows and Ubuntu. 
 
