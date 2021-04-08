@@ -5,7 +5,7 @@ MicroPython is a full Python compiler and runtime that runs on the microcontroll
 The user is presented with an interactive prompt (the REPL) to excute supported commands immediately. 
 Included are a selection of core Python libraries; MicroPython includes modules which give the programmer access to low-level hardware.
 
-* ref: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
+* Reference: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
 
 The Story Starts Here
 --------------------------------
@@ -18,7 +18,7 @@ MicroPython is supported by a diverse Pythonista community that has a keen inter
 
 In addition to testing and supporting the code base, the developers provided tutorials, code libraries, and hardware ports, making the project far more than Damien could have done alone.
 
-* ref: `realpython <https://realpython.com/micropython/>`_
+* Reference: `realpython <https://realpython.com/micropython/>`_
 
 Why MicroPython？
 ------------------
@@ -30,8 +30,8 @@ While Python has the same advantages, for some Microcontroller boards like the R
 
 Next you will learn to install MicroPython into the Raspberry Pi Pico.
 
-* ref: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
-* ref: `realpython <https://realpython.com/micropython/>`_
+* Reference: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
+* Reference: `realpython <https://realpython.com/micropython/>`_
 
 Installing MicroPython
 ------------------------------
