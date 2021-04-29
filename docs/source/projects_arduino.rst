@@ -15,3 +15,7 @@ Projects
     fading_led_arduino
     warning_light_arduino
     table_lamp_arduino
+
+
+    
+The new projects for Arduino are still being updated continuously.
