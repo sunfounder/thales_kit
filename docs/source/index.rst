@@ -17,7 +17,7 @@ Here is the Email: cs@sunfounder.com.
    :maxdepth: 2
 
    introduction_to_raspberry_pi_pico
-   What_is_included_in_this_kit
+   what_is_included_in_this_kit
    for_micropython_user
    for_arduino_user
    faq
