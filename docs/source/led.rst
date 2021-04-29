@@ -21,10 +21,9 @@ The formula of the resistance value is as follows:
 
 Here is the detailed introduction for the LED: `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
 
-Example
--------------------
+**Example**
 
-* :ref:`Hello, Breadboard!`
-* :ref:`fading_led_micropython`
-* :ref:`fading_led_arduino`
-* :ref:`hello_led_arduino`
+* :ref:`Hello, Breadboard!` (For MicroPython User）
+* :ref:`fading_led_micropython` (For MicroPython User）
+* :ref:`fading_led_arduino` (For C/C++(Arduino) User）
+* :ref:`hello_led_arduino` (For C/C++(Arduino) User）

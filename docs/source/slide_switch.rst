@@ -15,4 +15,7 @@ The circuit symbol of the slide switch is shown as below. The pin2 in the figure
 .. image:: img/slide_symbol.png
     :width: 200
 
-* :ref:`Reading Button Value`
+**Example**
+
+* :ref:`Reading Button Value` (For MicroPython User）
+* :ref:`Warning Light` (For C/C++(Arduino) User）

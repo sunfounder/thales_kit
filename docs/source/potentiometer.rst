@@ -37,4 +37,5 @@ If you want to know more about potentiometer, refer to: `Potentiometer - Wikiped
 Example
 -------------------
 
-:ref:`Turn the Knob`
+* :ref:`Turn the Knob` (For MicroPython User）
+* :ref:`Table Lamp` (For C/C++(Arduino) User）
