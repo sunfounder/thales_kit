@@ -1,3 +1,4 @@
 .vscode/*
 *.ai
 *.indd
+build/*
