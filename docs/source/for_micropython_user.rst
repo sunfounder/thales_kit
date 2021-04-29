@@ -8,8 +8,8 @@ We recommend that you read the chapters in order.
 .. toctree::
     :maxdepth: 2
 
-    getting_started_with_microPython
+    getting_started_with_micropython
     thonny_python_ide
-    your_first_microPython_program
+    your_first_micropython_program
     projects_micropython
-    microPython_basic_syntax
+    micropython_basic_syntax
