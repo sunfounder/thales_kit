@@ -1,17 +1,26 @@
 SunFounder Thales Kit for Raspberry Pi Pico 
 ===========================================================
+SunFounder Thales Kit is a basic learning kit based on Raspberry Pi Pico.
+
+The kit contains various types of components, such as displays, sounds, drivers, controllers, and sensors, allows you to learn electronic devices comprehensively.
+
+we have prepared many interesting and practical projects for you, and collected a lot of authoritative related information, 
+just turn on your computer and you can complete programming learning in one stop.
+
+In addition, we provide 2 programming languages: MicroPython and Arduino (C/C++). You can view different tutorials according to your needs。
+
+If you want to learn another projects which we don’t have, please feel free to send Email and we will update to our online tutorials as soon as possible, any suggestions are welcomed.
+
+Here is the Email: cs@sunfounder.com.
 
 .. toctree::
    :maxdepth: 2
 
-   Introduction to Raspberry Pi Pico
-   What is MicroPython
-   Thonny Python IDE
-   Your First MicroPython Program
-   MicroPython Basic Syntax
-   Components Introduction
-   Lesson
-   about_writing_c_c++_in_pico
+   introduction_to_raspberry_pi_pico
+   What_is_included_in_this_kit
+   for_arduino_user
+   for_micropython_user
+   faq
 
 
 Copyright Notice

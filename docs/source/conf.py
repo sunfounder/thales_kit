@@ -19,7 +19,7 @@
 
 project = 'SunFounder Thales Kit for Raspberry Pi Pico'
 copyright = '2021, SunFounder'
-author = 'SunFounder'
+author = 'Jimmy, SunFounder'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0'

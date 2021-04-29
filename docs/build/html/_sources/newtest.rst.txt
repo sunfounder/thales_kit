@@ -1,7 +1,0 @@
-newtest
-================
-
-
-MicroPython is a full Python compiler and runtime that runs on the microcontroller's hardware like Raspberry Pi Pico. 
-The user is presented with an interactive prompt (the REPL) to execute supported commands immediately. 
-Included are a selection of core Python libraries; MicroPython includes modules which give the programmer access to low-level hardware.

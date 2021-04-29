@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Reaction Game &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Traffic Light" href="traffic_light.html" />
+    <link rel="prev" title="Reading Button Value" href="reading_button_value.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_micropython_user.html">For MicroPython User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting_started_with_microPython.html">Geting Started with MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thonny_python_ide.html">Thonny Python IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="your_first_microPython_program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="projects_micropython.html">Projects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hello_led.html">Hello, LED!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hello_breadboard.html">Hello, Breadboard!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reading_button_value.html">Reading Button Value</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Reaction Game</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it works?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-more">What more?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="traffic_light.html">Traffic Light</a></li>
+<li class="toctree-l3"><a class="reference internal" href="two_kinds_of_transistors.html">Two Kinds of Transistors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intruder_alarm.html">Intruder Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fading_led.html">Fading LED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorful_light.html">Colorful Light</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom_tone.html">Custom Tone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swinging_servo.html">Swinging Servo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turn_the_knob.html">Turn the Knob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermometer.html">Thermometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="light_theremin.html">Light Theremin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="microchip_74hc595.html">Microchip - 74HC595</a></li>
+<li class="toctree-l3"><a class="reference internal" href="led_segment_display.html">LED Segment Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="liquid_crystal_display.html">Liquid Crystal Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rgb_led_strip.html">RGB LED Strip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="microPython_basic_syntax.html">MicroPython Basic Syntax</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="for_micropython_user.html">For MicroPython User</a> &raquo;</li>
+        
+          <li><a href="projects_micropython.html">Projects</a> &raquo;</li>
+        
+      <li>Reaction Game</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/reaction_game.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reaction-game">
+<h1>Reaction Game<a class="headerlink" href="#reaction-game" title="Permalink to this headline">¶</a></h1>
+<p>Microcontrollers not only appear in industrial equipment, they are also used to control a large number of electronic devices in the home, including toys and games. In this chapter, we will use “button” and “LED” to build a simple reaction timing game.</p>
+<p>The study of reaction time is called mental chronometry, it is a hard science, and it is also the basis of many games (Including the games you are about to make).</p>
+<p>Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus, in milliseconds, the average reaction time of a person is about 200-250 milliseconds.
+People with quick reaction time have a huge advantage in the game!</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/wiring_reaction_game.png" src="_images/wiring_reaction_game.png" />
+<ol class="arabic simple">
+<li><p>In general, this circuit is a combination of the circuits in the previous two lessons.</p></li>
+<li><p>Confirm again that the breadboard power bus is not connected wrongly or short-circuited!</p></li>
+</ol>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>When the program starts, the LED will turn off within 5 to 10 seconds. You need to press the button as fast as possible, and the program will tell you what your reaction time is.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">button_press</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">rection_time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">timer_light_off</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your reaction time was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rection_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; milliseconds!&quot;</span><span class="p">)</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">timer_light_off</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span>
+<span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>In the previous lesson, we simply read the button value. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.</p>
+<p>For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.</p>
+<p>MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. It is achieved through the following two statements (the highlighted 2 lines):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span> <span class="nf">button_press</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+</span>    <span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">rection_time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">timer_light_off</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your reaction time was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rection_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; milliseconds!&quot;</span><span class="p">)</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">timer_light_off</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span>
+<span class="hll"><span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Here, a callback function (button_press) is first defined, which is called an interrupt handler. It will be executed when an interrupt request is triggered.
+Then, set up an interrupt request in the main program, it contains two parts: <code class="docutils literal notranslate"><span class="pre">trigger</span></code> and <code class="docutils literal notranslate"><span class="pre">handler</span></code>.</p>
+<ul class="simple">
+<li><p>In this program, the <code class="docutils literal notranslate"><span class="pre">trigger</span></code> is <code class="docutils literal notranslate"><span class="pre">IRQ_RISING</span></code>, which means that the value of the pin rises from low level to high level (That is, pressing the button).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">handler</span></code> is the callback function <code class="docutils literal notranslate"><span class="pre">button_press</span></code> we defined before.</p></li>
+</ul>
+<p>In this example, you will find a statement <code class="docutils literal notranslate"><span class="pre">button.irq(handler=None)</span></code> in the callback function, which is equivalent to canceling the interrupt.</p>
+<p>In order to better understand the interrupt request, we change the above code to the following (Use the same circuit):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">button_press</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You press the button!&quot;</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When the program runs, it will start counting and print the numbers in the shell. When we press the button, it will stop counting and enter the callback function to print “You press the button!”.</p>
+<p>Go back to the original example. We need to make the LED turn off in a random time of 5 to 10 seconds, which is achieved by the following two lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="hll"><span class="kn">import</span> <span class="nn">urandom</span>
+</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">button_press</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">rection_time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">timer_light_off</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your reaction time was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rection_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; milliseconds!&quot;</span><span class="p">)</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="hll"><span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</span><span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">timer_light_off</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span>
+<span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">urandom</span></code> library is loaded here. Use the <code class="docutils literal notranslate"><span class="pre">urandom.uniform(5,10)</span></code> function to generate a random number, the ‘uniform’ part referring to a uniform distribution between those two numbers.</p>
+<p>If needed, try running the following example of random number generation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The last two statements you need to understand are <code class="docutils literal notranslate"><span class="pre">utime.ticks_ms()</span></code> and <code class="docutils literal notranslate"><span class="pre">utime.ticks_diff()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">button_press</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="hll">    <span class="n">rection_time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">timer_light_off</span><span class="p">)</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your reaction time was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rection_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; milliseconds!&quot;</span><span class="p">)</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="hll"><span class="n">timer_light_off</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span>
+</span><span class="n">button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">utime.ticks_ms()</span></code> function will output the number of milliseconds that have passed since the <code class="docutils literal notranslate"><span class="pre">utime</span></code> library started counting and store it in the variable <code class="docutils literal notranslate"><span class="pre">timer_light_off</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utime.ticks_diff()</span></code> is used to output the time difference between two time nodes. The two time nodes in this function are <code class="docutils literal notranslate"><span class="pre">utime.ticks_ms()</span></code>, the current program time (press the button) and the reference time (light off) stored in the variable <code class="docutils literal notranslate"><span class="pre">timer_light_off</span></code>.</p></li>
+</ul>
+<p>These two functions are usually used together to calculate the execution time of the program. Here we use it to calculate the time from when the light turns off to when the button is pressed.</p>
+<p>Finally, this time will be printed out.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your reaction time was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rection_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; milliseconds!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Also see the reference here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.micropython.org/en/latest/library/machine.Pin.html">machine.Pin</a></p></li>
+<li><p><a class="reference external" href="https://www.sutron.com/micropython/html/library/urandom.html">urandom</a></p></li>
+<li><p><a class="reference external" href="https://docs.micropython.org/en/latest/library/utime.html">utime</a></p></li>
+</ul>
+</div>
+<div class="section" id="what-more">
+<h2>What more?<a class="headerlink" href="#what-more" title="Permalink to this headline">¶</a></h2>
+<p>Playing with your friends will be more fun, why not add buttons and see who can press the buttons the fastest?</p>
+<p>Please try it.</p>
+<img alt="_images/wiring_reaction_game_2.png" src="_images/wiring_reaction_game_2.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">utime</span>
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">left_button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">right_button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">button_press</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">left_button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">right_button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">rection_time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">timer_light_off</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pin</span> <span class="o">==</span> <span class="n">left_button</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left player is winner!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">pin</span> <span class="o">==</span> <span class="n">right_button</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Right player is winner!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your reaction time was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rection_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; milliseconds!&quot;</span><span class="p">)</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">timer_light_off</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span>
+<span class="n">right_button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
+<span class="n">left_button</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">button_press</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="traffic_light.html" class="btn btn-neutral float-right" title="Traffic Light" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reading_button_value.html" class="btn btn-neutral float-left" title="Reading Button Value" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

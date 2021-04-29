@@ -92,4 +92,4 @@ and the permissible error is ± 1% (brown).
     * - 1MΩ 
       - brown black black green brown 
 
-You can learn more about resistor from Wiki: https://en.wikipedia.org/wiki/Resistor
+You can learn more about resistor from Wiki: `Resistor - Wikipedia <https://en.wikipedia.org/wiki/Resistor>`_.

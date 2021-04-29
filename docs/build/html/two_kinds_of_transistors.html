@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Two Kinds of Transistors &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Intruder Alarm" href="intruder_alarm.html" />
+    <link rel="prev" title="Traffic Light" href="traffic_light.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_micropython_user.html">For MicroPython User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting_started_with_microPython.html">Geting Started with MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thonny_python_ide.html">Thonny Python IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="your_first_microPython_program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="projects_micropython.html">Projects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hello_led.html">Hello, LED!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hello_breadboard.html">Hello, Breadboard!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reading_button_value.html">Reading Button Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reaction_game.html">Reaction Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="traffic_light.html">Traffic Light</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Two Kinds of Transistors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="intruder_alarm.html">Intruder Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fading_led.html">Fading LED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorful_light.html">Colorful Light</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom_tone.html">Custom Tone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swinging_servo.html">Swinging Servo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turn_the_knob.html">Turn the Knob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermometer.html">Thermometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="light_theremin.html">Light Theremin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="microchip_74hc595.html">Microchip - 74HC595</a></li>
+<li class="toctree-l3"><a class="reference internal" href="led_segment_display.html">LED Segment Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="liquid_crystal_display.html">Liquid Crystal Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rgb_led_strip.html">RGB LED Strip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="microPython_basic_syntax.html">MicroPython Basic Syntax</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="for_micropython_user.html">For MicroPython User</a> &raquo;</li>
+        
+          <li><a href="projects_micropython.html">Projects</a> &raquo;</li>
+        
+      <li>Two Kinds of Transistors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/two_kinds_of_transistors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="two-kinds-of-transistors">
+<h1>Two Kinds of Transistors<a class="headerlink" href="#two-kinds-of-transistors" title="Permalink to this headline">¶</a></h1>
+<p>Transistor is a semiconductor device that controls a large current through a small current. Its function is to amplify weak signals into larger amplitude signals, and can also be used as a non-contact switch. It is the core component of electronic circuits.</p>
+<p>This sounds a bit complicated. In simple words, some components use high-current (such as Buzzer). If the power is directly supplied from the GPIO of the microcontroller, the power may be insufficient or the microcontroller may be damaged.
+Then, the transistor has played a “dam” role here. Transistor receives the weak electrical signal from the GPIO pin to control the turn-on and turn-off of the large current (from VCC to GND).
+In this way, high-current components can be driven and the microcontroller can be protected.</p>
+<p><a class="reference internal" href="transistor.html#transistor"><span class="std std-ref">Transistor</span></a></p>
+<p>This kit is equipped with two types of transistors, S8550 and S8050, the former is PNP and the latter is NPN. They look very similar, and we need to check carefully to see their labels.
+When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.</p>
+<img alt="_images/NPN&amp;PNP.png" src="_images/NPN&amp;PNP.png" />
+<p>Let’s use LED and button to understand how to use transistor!</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<p>Put the label side facing us and the pins facing down. The pins from left to right are emitter(e), base(b), and collector(c).</p>
+<img alt="_images/ebc.png" src="_images/ebc.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The base is the gate controller device for the larger electrical supply.</p></li>
+<li><p>In the NPN transistor, the collector is the larger electrical supply and the emitter is the outlet for that supply, the PNP transistor is just the opposite.</p></li>
+</ul>
+</div>
+<ol class="arabic">
+<li><p>Way to connect NPN (S8050) transistor.</p>
+<blockquote>
+<div><img alt="_images/wiring_transistor_s8050.png" src="_images/wiring_transistor_s8050.png" />
+<ol class="arabic simple">
+<li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
+<li><p>Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.</p></li>
+<li><p>Connect the cathode lead of the LED to the <strong>collector</strong> lead of the transistor.</p></li>
+<li><p>Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.</p></li>
+<li><p>Connect the <strong>emitter</strong> lead of the transistor to the negative power bus.</p></li>
+<li><p>Connect one side of the button to the GP14 pin, and use a 10kΩ resistor connect the same side and negative power bus. The other side to the positive power bus.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The color ring of 220Ω resistor is red, red, black, black and brown.</p></li>
+<li><p>The color ring of the 1kΩ resistor is brown, black, black, brown and brown.</p></li>
+<li><p>The color ring of the 10kΩ resistor is brown, black, black, red and brown.</p></li>
+</ul>
+</div>
+<ol class="arabic">
+<li><p>Way to connect PNP(S8550) transistor.</p>
+<blockquote>
+<div><img alt="_images/wiring_transistor_s8550.png" src="_images/wiring_transistor_s8550.png" />
+<ol class="arabic simple">
+<li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
+<li><p>Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.</p></li>
+<li><p>Connect the cathode lead of the LED to the <strong>emitter</strong> lead of the transistor.</p></li>
+<li><p>Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.</p></li>
+<li><p>Connect the <strong>collector</strong> lead of the transistor to the negative power bus.</p></li>
+<li><p>Connect one side of the button to the GP14 pin, and use a 10kΩ resistor connect the same side and negative power bus. The other side to the positive power bus.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>Two kinds of transistors can be controlled with the same code. When we press the button, Pico will send a high-level signal to the transistor; when we release it, it will send a low-level signal.
+We can see that diametrically opposite phenomena have occurred in the two circuits.
+The circuit using the NPN transistor will light up when the button is pressed, which means it is receiving a high-level conduction circuit;
+The circuit that uses the PNP transistor will light up when it is released, which means it is receiving a low-level conduction circuit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">button_status</span> <span class="o">=</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">button_status</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">button_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="intruder_alarm.html" class="btn btn-neutral float-right" title="Intruder Alarm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="traffic_light.html" class="btn btn-neutral float-left" title="Traffic Light" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

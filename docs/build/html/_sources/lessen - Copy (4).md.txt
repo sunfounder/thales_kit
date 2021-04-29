@@ -1,9 +1,0 @@
-# Physical computing
-First experiment! Lighting up the on-board lights
-Using the breadboard
-Reading button values
-GAME! Press the button first!
-Traffic lights
-Two different types of triodes
-Alarm
-Fading

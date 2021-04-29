@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>LED Segment Display &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Liquid Crystal Display" href="liquid_crystal_display.html" />
+    <link rel="prev" title="Microchip - 74HC595" href="microchip_74hc595.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_micropython_user.html">For MicroPython User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting_started_with_microPython.html">Geting Started with MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thonny_python_ide.html">Thonny Python IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="your_first_microPython_program.html">Your First MicroPython Program</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="projects_micropython.html">Projects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hello_led.html">Hello, LED!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hello_breadboard.html">Hello, Breadboard!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reading_button_value.html">Reading Button Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reaction_game.html">Reaction Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="traffic_light.html">Traffic Light</a></li>
+<li class="toctree-l3"><a class="reference internal" href="two_kinds_of_transistors.html">Two Kinds of Transistors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intruder_alarm.html">Intruder Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fading_led.html">Fading LED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorful_light.html">Colorful Light</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom_tone.html">Custom Tone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swinging_servo.html">Swinging Servo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turn_the_knob.html">Turn the Knob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermometer.html">Thermometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="light_theremin.html">Light Theremin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="microchip_74hc595.html">Microchip - 74HC595</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LED Segment Display</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it works?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="liquid_crystal_display.html">Liquid Crystal Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rgb_led_strip.html">RGB LED Strip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="microPython_basic_syntax.html">MicroPython Basic Syntax</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="for_micropython_user.html">For MicroPython User</a> &raquo;</li>
+        
+          <li><a href="projects_micropython.html">Projects</a> &raquo;</li>
+        
+      <li>LED Segment Display</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/led_segment_display.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="led-segment-display">
+<h1>LED Segment Display<a class="headerlink" href="#led-segment-display" title="Permalink to this headline">¶</a></h1>
+<p>LED Segment Display can be seen everywhere in life.
+For example, on an air conditioner, it can be used to display temperature; on a traffic indicator, it can be used to display a timer.</p>
+<p>The LED Segment Display is essentially a device packaged by 8 LEDs, of which 7 strip-shaped LEDs form an “8” shape, and there is a slightly smaller dotted LED as a decimal point. These LEDs are marked as a, b, c, d, e, f, g, and dp. They have their own anode pins and share cathodes. Their pin locations are shown in the figure below.</p>
+<img alt="_images/led_segment_1.png" src="_images/led_segment_1.png" />
+<p>This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.</p>
+<div class="section" id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/wiring_led_segment_display.png" src="_images/wiring_led_segment_display.png" />
+<ol class="arabic">
+<li><p>Connect 3V3 and GND of Pico to the power bus of the breadboard.</p></li>
+<li><p>Insert 74HC595 across the middle gap into the breadboard.</p></li>
+<li><p>Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.</p></li>
+<li><p>Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.</p></li>
+<li><p>Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.</p></li>
+<li><p>Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.</p></li>
+<li><p>Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.</p></li>
+<li><p>Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The color ring of the 220 ohm resistor is red, red, black, black and brown.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the table below to connect the 74hc595 and LED Segment Display.</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Wiring</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>74HC595</p></th>
+<th class="head"><p>LED Segment Display</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Q0</p></td>
+<td><p>a</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q1</p></td>
+<td><p>b</p></td>
+</tr>
+<tr class="row-even"><td><p>Q2</p></td>
+<td><p>c</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q3</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><td><p>Q4</p></td>
+<td><p>e</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q5</p></td>
+<td><p>f</p></td>
+</tr>
+<tr class="row-even"><td><p>Q6</p></td>
+<td><p>g</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q7</p></td>
+<td><p>dp</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">SEGCODE</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x3f</span><span class="p">,</span><span class="mh">0x06</span><span class="p">,</span><span class="mh">0x5b</span><span class="p">,</span><span class="mh">0x4f</span><span class="p">,</span><span class="mh">0x66</span><span class="p">,</span><span class="mh">0x6d</span><span class="p">,</span><span class="mh">0x7d</span><span class="p">,</span><span class="mh">0x07</span><span class="p">,</span><span class="mh">0x7f</span><span class="p">,</span><span class="mh">0x6f</span><span class="p">]</span>
+
+<span class="n">sdi</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">rclk</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">srclk</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">hc595_shift</span><span class="p">(</span><span class="n">dat</span><span class="p">):</span>
+    <span class="n">rclk</span><span class="o">.</span><span class="n">low</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">srclk</span><span class="o">.</span><span class="n">low</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dat</span> <span class="o">&gt;&gt;</span> <span class="n">bit</span><span class="p">)</span>
+        <span class="n">sdi</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">srclk</span><span class="o">.</span><span class="n">high</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">rclk</span><span class="o">.</span><span class="n">high</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">hc595_shift</span><span class="p">(</span><span class="n">SEGCODE</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When the program is running, you will be able to see the LED Segment Display display 0~9 in sequence.</p>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">hc595_shift()</span></code> will make 74HC595 output 8 digital signals.
+It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number “00000001” will make Q0 output high level and Q1~Q7 output low level.</p>
+<p>Suppose that the 7-segment Display display the number “1”, we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
+That is, the binary number “00000110” needs to be written. For readability, we will use hexadecimal notation as “0x06”.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hexadecimal">Hexadecimal</a></p></li>
+<li><p><a class="reference external" href="https://www.binaryhexconverter.com/binary-to-hex-converter">BinaryHex Converter</a></p></li>
+</ul>
+<p>Similarly, we can also make the LED Segment Display display other numbers in the same way. The following table shows the codes corresponding to these numbers.</p>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Glyph Code</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Numbers</p></th>
+<th class="head"><p>Binary Code</p></th>
+<th class="head"><p>Hex Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>00111111</p></td>
+<td><p>0x3f</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>00000110</p></td>
+<td><p>0x06</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>01011011</p></td>
+<td><p>0x5b</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>01001111</p></td>
+<td><p>0x4f</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>01100110</p></td>
+<td><p>0x66</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>01101101</p></td>
+<td><p>0x6d</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>01111101</p></td>
+<td><p>0x7d</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>00000111</p></td>
+<td><p>0x07</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>01111111</p></td>
+<td><p>0x7f</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>01101111</p></td>
+<td><p>0x6f</p></td>
+</tr>
+</tbody>
+</table>
+<p>Write these codes into <code class="docutils literal notranslate"><span class="pre">hc595_shift()</span></code> to make the LED Segment Display display the corresponding numbers.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="liquid_crystal_display.html" class="btn btn-neutral float-right" title="Liquid Crystal Display" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="microchip_74hc595.html" class="btn btn-neutral float-left" title="Microchip - 74HC595" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

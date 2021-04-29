@@ -24,6 +24,7 @@ Here is the detailed introduction for the LED: `LED - Wikipedia <https://en.wiki
 Example
 -------------------
 
-:ref:`Hello, Breadboard!`
-
-:ref:`Fading LED`
+* :ref:`Hello, Breadboard!`
+* :ref:`fading_led_micropython`
+* :ref:`fading_led_arduino`
+* :ref:`hello_led_arduino`

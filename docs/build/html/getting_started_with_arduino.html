@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting Started with Arduino &mdash; SunFounder Thales Kit for Raspberry Pi Pico 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projects" href="projects_arduino.html" />
+    <link rel="prev" title="For Arduino User" href="for_arduino_user.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Thales Kit for Raspberry Pi Pico
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Started with Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-arduino-ide">Install Arduino IDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-the-raspberry-pi-pico">Setup the Raspberry Pi Pico</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-the-arduino-software-ide">Introduction the Arduino Software (IDE)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="projects_arduino.html">Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Thales Kit for Raspberry Pi Pico</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="for_arduino_user.html">For Arduino User</a> &raquo;</li>
+        
+      <li>Getting Started with Arduino</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/getting_started_with_arduino.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-arduino">
+<h1>Getting Started with Arduino<a class="headerlink" href="#getting-started-with-arduino" title="Permalink to this headline">¶</a></h1>
+<p>Arduino is an open source platform with simple software and hardware.
+You can pick it up in short time even if you are a beginner.
+It provides an integrated development environment (IDE) for code compiling, compatible with multiple control boards. So you can just download the Arduino IDE, upload the sketches (i.e. the code files) to the board, and then you can see relative experimental phenomena.</p>
+<p>For more information, refer to <a class="reference external" href="http://www.arduino.cc">Arduino Website</a>.</p>
+<div class="section" id="install-arduino-ide">
+<h2>Install Arduino IDE<a class="headerlink" href="#install-arduino-ide" title="Permalink to this headline">¶</a></h2>
+<p>Go to <a class="reference external" href="https://www.arduino.cc/en/software">Arduino Software Page</a> to download the Arduino IDE accordingly to your operating system，then follow the instructions to install it.</p>
+<p>Click <a class="reference external" href="https://www.arduino.cc/en/Guide">here</a> to get step-by-step instructions accordingly to your operating system.</p>
+<img alt="_images/arduino_setup1.png" class="align-center" src="_images/arduino_setup1.png" />
+</div>
+<div class="section" id="setup-the-raspberry-pi-pico">
+<h2>Setup the Raspberry Pi Pico<a class="headerlink" href="#setup-the-raspberry-pi-pico" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Open the Boards Manager by clicking Tools -&gt; Board -&gt; Boards Manager.</p></li>
+</ol>
+<img alt="_images/boards_manager.png" class="align-center" src="_images/boards_manager.png" />
+<ol class="arabic simple" start="2">
+<li><p>Search for <strong>Pico</strong> and click <strong>install</strong> button.</p></li>
+</ol>
+<img alt="_images/install_pico.png" class="align-center" src="_images/install_pico.png" />
+<ol class="arabic simple" start="3">
+<li><p>Once the installation is complete, you can select the board as <strong>Raspberry Pi Pico</strong>.</p></li>
+</ol>
+<img alt="_images/pico_board.png" class="align-center" src="_images/pico_board.png" />
+<ol class="arabic simple" start="4">
+<li><p>Now open a example - blink.</p></li>
+</ol>
+<img alt="_images/test_blink.png" class="align-center" src="_images/test_blink.png" />
+<ol class="arabic simple" start="5">
+<li><p>Click on the upload icon to run the code</p></li>
+</ol>
+<img alt="_images/upload_blink.png" class="align-center" src="_images/upload_blink.png" />
+<ol class="arabic simple" start="6">
+<li><p>When the compiling message shown in the figure below appears, press <strong>BOOTSEL</strong> immediately and connect Pico to the computer with a Micro USB cable.</p></li>
+</ol>
+<img alt="_images/upload_process.png" class="align-center" src="_images/upload_process.png" />
+<a class="reference internal image-reference" href="_images/bootsel_onboard.png"><img alt="_images/bootsel_onboard.png" class="align-center" src="_images/bootsel_onboard.png" style="width: 300px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is very important and only necessary for the first use on the Arduino IDE, otherwise your code will upload unsuccessfully.</p>
+<p>After the upload is successful this time, Pico will be recognized by the computer as COMxx (Raspberry Pi Pico).</p>
+<p>You only need to plug it into the computer the next time you use it.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>After the  <strong>Done Uploading</strong> appear, you will see the LED on the Pico blinking.</p></li>
+</ol>
+<img alt="_images/done_uploading.png" class="align-center" src="_images/done_uploading.png" />
+</div>
+<div class="section" id="introduction-the-arduino-software-ide">
+<h2>Introduction the Arduino Software (IDE)<a class="headerlink" href="#introduction-the-arduino-software-ide" title="Permalink to this headline">¶</a></h2>
+<p>Double-click the Arduino icon (arduino.exe) created by the installation process. Then the Arduino IDE will appear. Let’s check details of the software.</p>
+<a class="reference internal image-reference" href="_images/arduino_ide.png"><img alt="_images/arduino_ide.png" class="align-center" src="_images/arduino_ide.png" style="width: 500px;" /></a>
+<ol class="arabic simple">
+<li><p>Verify: Compile your code. Any syntax problem will be prompted with errors.</p></li>
+<li><p>Upload: Upload the code to your board. When you click the button, the RX and TX LEDs on the board will flicker fast and won’t stop until the upload is done.</p></li>
+<li><p>New: Create a new code editing window.</p></li>
+<li><p>Open: Open an .ino sketch.</p></li>
+<li><p>Save: Save the sketch.</p></li>
+<li><p>Serial Monitor: Click the button and a window will appear. It receives the data sent from your control board. It is very useful for debugging.</p></li>
+<li><p>File: Click the menu and a drop-down list will appear, including file creating, opening, saving, closing, some parameter configuring, etc.</p></li>
+<li><p>Edit: Click the menu. On the drop-down list, there are some editing operations like Cut, Copy, Paste, Find, and so on, with their corresponding shortcuts.</p></li>
+<li><p>Sketch: Includes operations like Verify, Upload, Add files, etc. More important function is Include Library – where you can add libraries.</p></li>
+<li><p>Tool: Includes some tools – the most frequently used Board (the board you use) and Port (the port your board is at). Every time you want to upload the code, you need to select or check them.</p></li>
+<li><p>Help: If you’re a beginner, you may check the options under the menu and get the help you need, including operations in IDE, introduction information, troubleshooting, code explanation, etc.</p></li>
+<li><p>In this message area, no matter when you compile or upload, the summary message will always appear.</p></li>
+<li><p>Detailed messages during compile and upload. For example, the file used lies in which path, the details of error prompts.</p></li>
+<li><p>Board and Port: Here you can preview the board and port selected for code upload. You can select them again by Tools -&gt; Board / Port if any is incorrect.</p></li>
+<li><p>The editing area of the IDE. You can write code here.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="projects_arduino.html" class="btn btn-neutral float-right" title="Projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="for_arduino_user.html" class="btn btn-neutral float-left" title="For Arduino User" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
