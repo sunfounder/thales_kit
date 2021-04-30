@@ -46,13 +46,13 @@ Here, we connect the LED to the GPIO15, so we define a variable ``ledPin`` to re
 You could also just replace all the ``ledPin`` pins in the code with 15, but if you were to replace 15 with other pins you would have to modify 15 one by one, which would add a lot of work.
 
 
-.. code-block:: c
+.. code-block:: arduino
 
     #define ledPin 15
     
 Now, you need to set the pin to OUTPUT mode in the ``setup()`` function.
 
-.. code-block:: c
+.. code-block:: arduino
 
     pinMode(ledPin, OUTPUT);
 
@@ -60,7 +60,7 @@ Now, you need to set the pin to OUTPUT mode in the ``setup()`` function.
 
 The above code has "set" the pin, but it will not light up the LED. Here, we use the `digitalWrite() <https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/>`_ function to assign a high level signal to ``ledpin``, which will cause a voltage difference between the LED pins, causing the LED to light up.
 
-.. code-block:: c
+.. code-block:: arduino
 
     digitalWrite(ledPin, HIGH);
 
@@ -72,6 +72,6 @@ If the level signal is changed to LOW, the ledPin's signal will be returned to 0
 
 An interval between on and off is required to allow people to see the change, so we use a ``delay(1000)`` code to let the controller do nothing for 1000 ms.
 
-.. code-block:: c
+.. code-block:: arduino
 
     delay(1000);

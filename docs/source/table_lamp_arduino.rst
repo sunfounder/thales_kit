@@ -52,7 +52,7 @@ How it works?
 
 To enable Serial Monitor, you need to start serial communication in ``setup()`` and set the datarate to 9600.
 
-.. code-block:: c
+.. code-block:: arduino
     :emphasize-lines: 3
 
     void setup() {
@@ -65,36 +65,36 @@ To enable Serial Monitor, you need to start serial communication in ``setup()`` 
 
 In the loop function, the value of the potentiometer is read, then the value is mapped from 0-1023 to 0-255 and finally the value after the mapping is used to control the brightness of the LED.
 
-.. code-block:: c
+.. code-block:: arduino
 
     void loop() {
         int sensorValue = analogRead(sensorPin);
         Serial.println(sensorValue);
-        int brightness = map(sensorValue, 0, 1024, 0, 255);
+        int brightness = map(sensorValue, 0, 1023, 0, 255);
         analogWrite(ledPin, brightness);
     }
 
 * `analogRead() <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ is used to read the value of the sensorPin (potentiometer) and assigns it to the variable ``sensorValue``.
 
-.. code-block:: c
+.. code-block:: arduino
 
     int sensorValue = analogRead(sensorPin);
 
 * Print the value of SensorValue in Serial Monitor.
 
-.. code-block:: c
+.. code-block:: arduino
 
     Serial.println(sensorValue);
 
 * Here, the `map(value, fromLow, fromHigh, toLow, toHigh) <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ function is required as the potentiometer value read is in the range 0-1023 and the value of a PWM pin is in the range 0-255. It is used to Re-maps a number from one range to another. That is, a value of fromLow would get mapped to toLow, a value of fromHigh to toHigh, values in-between to values in-between, etc.
 
-.. code-block:: c
+.. code-block:: arduino
 
-    int brightness = map(sensorValue, 0, 1024, 0, 255);
+    int brightness = map(sensorValue, 0, 1023, 0, 255);
 
 * Now we can use this value to control the brightness of the LED.
 
-.. code-block:: c
+.. code-block:: arduino
 
     analogWrite(ledPin,brightness);
 

@@ -62,7 +62,7 @@ How it works?
 As in the previous lesson, when using a pin, its input/output mode needs to be defined first. 
 Then we can write values to it, a function `analogWrite() <https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>`_ in ``loop()`` assigns ledPin a PWM wave (brightness)，which will add or decrease 5 for each cycle.
 
-.. code-block:: c
+.. code-block:: arduino
 
     analogWrite(ledPin, brightness);
 
@@ -71,7 +71,7 @@ Then we can write values to it, a function `analogWrite() <https://www.arduino.c
 
 Use an if statement to limit the range of ``brightness`` to 0-255, the ``brightness`` will accumulate from 0 to 255 and then decrement from 255 to 0, alternating repeatedly.
 
-.. code-block:: c
+.. code-block:: arduino
 
     if (brightness <= 0 || brightness >= 255) {
         fadeAmount = -fadeAmount;

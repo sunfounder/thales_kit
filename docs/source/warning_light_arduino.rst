@@ -42,7 +42,7 @@ How it works?
 
 For switchs, we need to set their mode to ``INPUT`` in order to be able to get their values.
 
-.. code-block:: c
+.. code-block:: arduino
     :emphasize-lines: 5
 
     void setup() {
@@ -54,7 +54,7 @@ For switchs, we need to set their mode to ``INPUT`` in order to be able to get t
     
 Read the status of the ``switchPin`` in loop() and assign it to the variable ``switchState``.
 
-.. code-block:: c
+.. code-block:: arduino
 
     switchState = digitalRead(switchPin);
     
@@ -62,7 +62,7 @@ Read the status of the ``switchPin`` in loop() and assign it to the variable ``s
 
 If the ``switchState`` is HIGH, the LED will flash.
 
-.. code-block:: c
+.. code-block:: arduino
 
     if (switchState == HIGH) 
     {
@@ -75,7 +75,7 @@ If the ``switchState`` is HIGH, the LED will flash.
 
 Otherwise, turn off the LED.
 
-.. code-block:: c
+.. code-block:: arduino
 
     else 
     {
