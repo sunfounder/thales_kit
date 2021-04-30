@@ -1,12 +1,10 @@
-What is Included in This Kit
+What is included in this Kit
 =============================
 
-The following is a list of this kit, after you receive the goods, you can check the contents of the list first. 
+The following is the complete list of components in this kit, and a link to each components wiki. 
 
-Some of the components on the kit are very small and look the same, the worker may omit or send it wrong when packing. 
-Please do not hesitate to send us the picture of the kit and the names of the missing or wrong components via email.
-
-Here is the Email: cs@sunfounder.com.
+Some of the components on the kit are can appear very similar. It is recommended to compare the entire list with the contents of your kit as soon as you receive the shipment.
+If there are any missing parts, please do not hesitate to send us the picture of the kit and the names of the missing or wrong components via email to: cs@sunfounder.com.
 
 
 Components List
@@ -15,7 +13,7 @@ Components List
 .. image:: img/compoents_list2.jpg
 
 
-Components Introduction
+Component Introduction
 -------------------------
 
 .. toctree::
