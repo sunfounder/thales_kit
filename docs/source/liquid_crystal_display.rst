@@ -43,7 +43,7 @@ You need to save it in Pico, name it **lcd1602.py** and use it as a library.
     import time
 
     class LCD():
-        def __init__(self, addr=63, blen=1):
+        def __init__(self, addr=0x27, blen=1):
             sda = machine.Pin(0)
             scl = machine.Pin(1)
             self.bus = machine.I2C(0,sda=sda, scl=scl, freq=400000)
