@@ -1,7 +1,7 @@
 Transistor
 ============
 
-.. image:: img/transistor.png
+.. image:: img/npn_pnp.png
     :width: 300
 
 Transistor is a semiconductor device that controls current by current. It functions by amplifying weak signal to larger amplitude signal and is also used for non-contact switch. 
@@ -16,10 +16,16 @@ Based on the semiconductor type, transistors can be divided into two groups, the
 .. note::
     s8550 is PNP transistor and the s8050 is the NPN one, They look very similar, and we need to check carefully to see their labels.
 
+
 .. image:: img/transistor_symbol.png
     :width: 600
 
 When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+
+Put the label side facing us and the pins facing down. The pins from left to right are emitter(e), base(b), and collector(c).
+
+.. image:: img/ebc.png
+    :width: 300
 
 
 * `S8050 Transistor Datasheet <https://components101.com/asset/sites/default/files/component_datasheet/S8050%20Transistor%20Datasheet.pdf>`_

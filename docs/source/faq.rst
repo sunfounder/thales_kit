@@ -30,6 +30,7 @@ NO, you need to do some different operations.
 
 Q4: Code upload failed in Arduino IDE?
 -----------------------------------------
-* Check that your Pico is correctly recognised by the Arduino IDE, the port should be COMXX (Raspberry Pi Pico), for instructions please refer to :ref:`Setup the Raspberry Pi Pico`.
-* Check that the Board(Raspberry Pi Pico) or port（COMXX (Raspberry Pi Pico)）is selected correctly.
-* If your code is OK and you have selected the correct board and port, but the upload is still not successful. At this point you can click on the **Upload** icon again, when the progress below shows "Upload...", unplug the USB cable, then press and hold the **BOOTSEL** button to plug it in and the code will be uploaded successfully.
+* Make sure you have installed the Pico board in the Arduino IDE.
+* Check that the Board(Raspberry Pi Pico) or port（COMxx (Raspberry Pi Pico)）is selected correctly.
+* Make sure you have plugged the Pico into your computer.
+* If only COMxx (The complete one should be COMxx (Raspberry Pi Pico)) is displayed, it means that Pico is not correctly recognized by the computer. You need to refer to steps 5, 6, and 7 in :ref:`Setup the Raspberry Pi Pico`.

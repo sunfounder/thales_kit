@@ -12,7 +12,8 @@ In this way, high-current components can be driven and the microcontroller can b
 This kit is equipped with two types of transistors, S8550 and S8050, the former is PNP and the latter is NPN. They look very similar, and we need to check carefully to see their labels.
 When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
 
-.. image:: img/NPN&PNP.png
+.. image:: img/npn_pnp.png
+    :width: 300
 
 
 Let's use LED and button to understand how to use transistor!

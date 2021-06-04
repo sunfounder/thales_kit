@@ -10,7 +10,7 @@ In addition, it avoids duplication and makes the code reusable.
 Create a Function
 ------------------
 
-.. code-block:: python
+.. code-block::
 
     def function_name（parameters)：
         """docstring"""
@@ -44,7 +44,7 @@ To call a function, add parentheses after the function name.
 
 
 
-.. code-block:: python
+.. code-block::
 
     def my_function():
         print("Your first function")
@@ -61,7 +61,7 @@ The return statement is used to exit a function and return to the place where it
 
 **Syntax of return**
 
-.. code-block:: python
+.. code-block::
 
     return [expression_list]
 
@@ -69,7 +69,7 @@ The statement can contain an expression that is evaluated and returns a value. I
 
 
 
-.. code-block:: python
+.. code-block::
 
     def my_function():
             print("Your first function")
@@ -91,7 +91,7 @@ Specify arguments in parentheses after the function name. You can add as many ar
 
 
 
-.. code-block:: python
+.. code-block::
 
     def welcome(name, msg):
         """This is a welcome function for
@@ -111,7 +111,7 @@ By default, a function must be called with the correct number of arguments. Mean
 
 
 
-.. code-block:: python
+.. code-block::
 
     def welcome(name, msg):
         """This is a welcome function for
@@ -128,7 +128,7 @@ If it is called with a different number of arguments, the interpreter will displ
 
 The following is the call to this function, which contains one and one no arguments and their respective error messages.
 
-.. code-block:: python
+.. code-block::
 
     welcome("Lily")＃Only one argument
 
@@ -137,7 +137,7 @@ Traceback (most recent call last):
   File "<stdin>", line 6, in <module>
 TypeError: function takes 2 positional arguments but 1 were given
 
-.. code-block:: python
+.. code-block::
 
     welcome()＃No arguments
 
@@ -156,7 +156,7 @@ If we call the function without argument, it uses the default value.
 
 
 
-.. code-block:: python
+.. code-block::
 
     def welcome(name, msg = "Welcome to China!"):
         """This is a welcome function for
