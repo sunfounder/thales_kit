@@ -28,6 +28,10 @@ What we need to pay attention to is to avoid setting the same PWM channel for di
 
 After understanding this knowledge, let us try to achieve the effect of Fading LED.
 
+Schematic
+-----------
+
+.. image:: img/Hello_LED.png
 
 Wiring
 -------------------------

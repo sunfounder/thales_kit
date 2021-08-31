@@ -10,6 +10,11 @@ The LED Segment Display is essentially a device packaged by 8 LEDs, of which 7 s
 
 This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.
 
+Schematic
+------------------------
+
+.. image:: img/sh_74HC595.png
+
 Wiring
 ---------------------
 

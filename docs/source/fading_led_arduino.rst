@@ -30,6 +30,10 @@ What we need to pay attention to is to avoid setting the same PWM channel for di
 
 After understanding this knowledge, let us try to achieve the effect of Fading LED.
 
+Schematic
+-----------
+
+.. image:: img/Hello_LED.png
 
 Wiring
 ---------------------
@@ -59,7 +63,7 @@ When the program is running, the LED will alternate between gradually brightenin
 
 How it works?
 -----------------
-As in the previous lesson, when using a pin, its input/output mode needs to be defined first. 
+As in the previous project, when using a pin, its input/output mode needs to be defined first. 
 Then we can write values to it, a function `analogWrite() <https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>`_ in ``loop()`` assigns ledPin a PWM wave (brightness)，which will add or decrease 5 for each cycle.
 
 .. code-block:: arduino

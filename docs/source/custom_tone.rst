@@ -2,12 +2,17 @@ Custom Tone
 ==========================================
 
 
-We have used active buzzer in the previous lesson, this time we will use passive buzzer.
+We have used active buzzer in the previous project, this time we will use passive buzzer.
 
 Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
 But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
 
 Let the passive buzzer emit a melody!
+
+Schematic
+-----------
+.. image:: img/10_custom_tone.png
+  :width: 450
 
 Wiring
 -------------------------

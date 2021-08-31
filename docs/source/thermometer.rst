@@ -5,6 +5,12 @@ A thermistor is a type of resistor whose resistance is strongly dependent on tem
 
 In this experiment we use an NTC thermistor to make a thermometer.
 
+Schematic
+-----------
+
+.. image:: img/13_thermometer.png
+  :width: 500
+
 Wiring
 -------------------
 

@@ -11,6 +11,12 @@ More specifically, it tells the main control board that someone has entered your
 
 Now, let's use PIR and active buzzer to build an Intruder Alarm.
 
+Schematic
+-----------
+
+.. image:: img/7_intruder_alarm.png
+  :width: 450
+
 Wiring
 -------------------------------------------
 

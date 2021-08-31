@@ -1,8 +1,12 @@
 Warning Light
 ===============
 
-From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. In the previous two lessons we used the output function, 
+From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. In the previous two projects we used the output function, 
 in this project, we will use the input function to input the Slide value, and then control the LED to blink, like a warning light.
+
+Schematic
+----------------
+.. image:: img/sche_warning_light.png
 
 Wiring
 -------------------------

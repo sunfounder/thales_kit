@@ -32,6 +32,9 @@ Put the label side facing us and the pins facing down. The pins from left to rig
 
 1. Way to connect NPN (S8050) transistor.
 
+    .. image:: img/tow_kinds_of_transistors.png
+	  :width: 450
+	
     .. image:: img/wiring_transistor_s8050.png
 
     1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
@@ -47,6 +50,9 @@ Put the label side facing us and the pins facing down. The pins from left to rig
     * The color ring of the 10kΩ resistor is brown, black, black, red and brown.
 
 #. Way to connect PNP(S8550) transistor.
+
+    .. image:: img/tow_kinds_of_transistors2.png
+	  :width: 450
 
     .. image:: img/wiring_transistor_s8550.png
 

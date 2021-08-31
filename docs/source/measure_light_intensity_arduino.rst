@@ -4,6 +4,11 @@ A photoresistor or photocell is a light-controlled variable resistor. The resist
 
 Therefore, we can use a photoresistor to measure light intensity, and then show it through 5 LEDs.
 
+Schematic
+-----------
+
+.. image:: img/Measure_Light_Intensity.png
+
 Wiring
 -------------------------
 

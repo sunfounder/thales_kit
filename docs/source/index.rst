@@ -14,13 +14,14 @@ If you want to learn another projects which we don’t have, please feel free to
 Here is the Email: cs@sunfounder.com.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    introduction_to_raspberry_pi_pico
    what_is_included_in_this_kit
    for_micropython_user
    for_arduino_user
    faq
+   thank-learning
 
 
 Copyright Notice

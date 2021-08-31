@@ -16,6 +16,11 @@ Specifically, it can replace 8 pins for digital signal output by writing an 8-bi
 
 Let's use it.
 
+Schematic
+-----------
+
+.. image:: img/15_microchip_74hc595.png
+
 Wiring
 -------------------
 
@@ -78,3 +83,8 @@ Code
 
 When the program is running, ``num`` will be written into the 74HC595 chip as an eight-bit binary number to control the on and off of the 8 LEDs.
 We can see the current value of ``num`` in the shell.
+
+How it works?
+----------------
+
+``hc595_shift()`` will make 74HC595 output 8 digital signals. It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number “00000001” will make Q0 output high level and Q1~Q7 output low level.

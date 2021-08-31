@@ -13,6 +13,10 @@ In this chapter, we will use RGB LED to explore the mystery of additive color mi
 RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin.
 Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
 
+Schematic
+-----------
+.. image:: img/9_colorful_light.png
+
 Wiring
 -----------------------------------------------
 

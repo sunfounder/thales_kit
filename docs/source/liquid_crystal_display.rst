@@ -19,6 +19,11 @@ These two pins must be connected to specific pins of the microcontroller. There 
 
 Here we will use the I2C0 interface to control the LCD1602 and display text.
 
+Schematic
+-----------
+.. image:: img/Lcd1602.png
+  :width: 600
+
 Wiring
 ----------------------------
 

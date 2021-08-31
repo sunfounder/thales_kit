@@ -1,7 +1,7 @@
 Turn the Knob
-============================
+===========================
 
-In the previous lessons, we have used the digital input on the Pico.
+In the previous projects, we have used the digital input on the Pico.
 For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.
 
 However, Pico can receive another type of input signal: analog input.
@@ -16,7 +16,13 @@ But Pico itself has a built-in ADC for us to use directly.
 Pico has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
 In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
 
-In this lesson, we try to read the analog value of potentiometer.
+In this project, we try to read the analog value of potentiometer.
+
+Schematic
+-----------
+
+.. image:: img/Table_Lamp.png
+  :width: 500
 
 Wiring
 ----------------------------
@@ -54,6 +60,9 @@ At the same time, the brightness of the LED will increase as the analog value in
 What more?
 ------------------------
 Let's use the potentiometer to swing the servo from left to right!
+
+.. image:: img/12_turn_the_knob2.png
+  :width: 450
 
 .. image:: img/wiring_turn_the_knob_2.png
 

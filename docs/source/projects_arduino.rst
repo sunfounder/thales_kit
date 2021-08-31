@@ -18,7 +18,14 @@ Projects
     table_lamp_arduino
     measure_light_intensity_arduino
     doorbell_arduino
-
-
+    rgb_led_arduino
+    light_theremin_arduino
+    74hc595_arduino
+    digital_dice_arduino
+    ws2812_flow_arduino
+    ws2812_mode2_arduino
+    lumi_piano_arduino
+	
+	
 
 The new projects for Arduino are still being updated continuously.

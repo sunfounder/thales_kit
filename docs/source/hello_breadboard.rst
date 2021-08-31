@@ -22,6 +22,11 @@ For breadboards, what you need to know clearly is:
 
 Now we should have a general impression of the breadboard circuit, why not try to build a "Hello, LED!" expansion circuit?
 
+Schematic
+-----------
+
+.. image:: img/Hello_LED.png
+
 Wiring
 -------------------------
 

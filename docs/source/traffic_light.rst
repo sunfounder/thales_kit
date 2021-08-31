@@ -7,6 +7,12 @@ Building a huge traffic management system is a fairly advanced project, but usin
 
 Let's make a mini pedestrian crossing system with a few LEDs and a button!
 
+Schematic
+-----------
+
+.. image:: img/5_traffic_light.png
+  :width: 500
+
 Wiring
 ------------------------------------------------
 
@@ -78,11 +84,11 @@ If we (pedestrians) press the button, the red LED will be extended to 15 seconds
 How it works?
 -----------------------------------------------
 
-In the previous lessons, we have successfully made the LED blink. In other words, it is very simple for us to write a code that makes the traffic light cycle color. What we need to do is to add a judgment on the state of the button.
+In the previous projects, we have successfully made the LED blink. In other words, it is very simple for us to write a code that makes the traffic light cycle color. What we need to do is to add a judgment on the state of the button.
 But if we directly write the statement that reads the button value into the main program, we will find that it doesn't fit anywhere. Even if it is written in, it is difficult for us to read this value.
 This is because the program is stuck when executing ``utime.sleep()``, and the statement to read the button value is not executed at this time.
 
-Of course, we can read the button value through the IRQ in the previous lesson. But this time we take another approach-multithreading.
+Of course, we can read the button value through the IRQ in the previous project. But this time we take another approach-multithreading.
 
 Multi-threading can be simply understood as dividing a thing into multiple parts, which are executed by different people (or processors).
 Just like when the chef is frying the steak, the assistant chef makes the sauce so that the newly prepared sauce can be poured on the properly prepared steak to make the best cooking.

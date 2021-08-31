@@ -1,8 +1,12 @@
 Reading Button Value
 ==============================================
 
-From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. In the previous two lessons, we used the output function, in this chapter we will use the input function to input read the button value.
+From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. In the previous two projects, we used the output function, in this chapter we will use the input function to input read the button value.
 
+Schematic
+-----------
+
+.. image:: img/3_reading_button_value.png
 
 Wiring
 ------------------------
@@ -51,6 +55,8 @@ Pull-up Working Mode
 
 Next is the wiring and code when the button in the pull-up working mode, please try it.
 
+.. image:: img/3_reading_button_value2.png
+
 .. image:: img/wiring_read_button_value_2.png
 
 1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
@@ -82,6 +88,8 @@ There are two components in this kit that work on the same principle as buttons,
 
 **Tilt switch**
 
+.. image:: img/3_reading_button_value3.png
+  :width: 500
 
 .. image:: img/wiring_read_button_value_4.png
 
@@ -98,6 +106,7 @@ When you put a flat breadboard, the circuit will be closed. When you tilt the br
 
 **Slide switch**
 
+.. image:: img/3_reading_button_value4.png
 
 .. image:: img/wiring_read_button_value_3.png
 

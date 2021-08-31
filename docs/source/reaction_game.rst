@@ -8,12 +8,17 @@ The study of reaction time is called mental chronometry, it is a hard science, a
 Reaction time is the time that elapses between a person being presented with a stimulus and the person initiating a motor response to the stimulus, in milliseconds, the average reaction time of a person is about 200-250 milliseconds. 
 People with quick reaction time have a huge advantage in the game!
 
+Schematic
+-----------
+
+.. image:: img/4_reaction_game.png
+
 Wiring
 -------------------------------
 
 .. image:: img/wiring_reaction_game.png
 
-1. In general, this circuit is a combination of the circuits in the previous two lessons.
+1. In general, this circuit is a combination of the circuits in the previous two projects.
 #. Confirm again that the breadboard power bus is not connected wrongly or short-circuited!
 
 
@@ -46,7 +51,7 @@ When the program starts, the LED will turn off within 5 to 10 seconds. You need 
 How it works?
 -----------------------------------------------
 
-In the previous lesson, we simply read the button value. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.
+In the previous project, we simply read the button value. This time, we tried a flexible way of using buttons: interrupt requests, or IRQs.
 
 For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.
 
@@ -187,6 +192,8 @@ What more?
 Playing with your friends will be more fun, why not add buttons and see who can press the buttons the fastest?
 
 Please try it.
+
+.. image:: img/4_reaction_game2.png
 
 .. image:: img/wiring_reaction_game_2.png
 

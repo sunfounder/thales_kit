@@ -3,7 +3,16 @@
 Hello LED
 ===============
 
-The `digitalWrite() <https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/>`_ statement here is used to write high level or low level to pins and to let LED and active buzzer 「work 」or 「stop」. In this lesson, we will take LED as an example to introduce the experiment phenomenon.
+Just as printing “Hello, world!” is the first step in learning programming, letting the LED light up is the traditional entry to learning physical programming.
+
+To use extended electronic components, a solderless breadboard will be the most powerful partner for novice users.
+
+The breadboard is a rectangular plastic plate with a bunch of small holes in it. These holes allow us to easily insert electronic components and build electronic circuits. The breadboard does not permanently fix the electronic components, which makes it easy for us to repair the circuit and start over when we make a mistake.
+
+Schematic
+-----------
+
+.. image:: img/Hello_LED.png
 
 Wiring
 ----------------
@@ -69,6 +78,8 @@ If the level signal is changed to LOW, the ledPin's signal will be returned to 0
 .. code-block:: arduino
 
     digitalWrite(ledPin, LOW);
+
+* `digitalWrite() <https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/>`_
 
 An interval between on and off is required to allow people to see the change, so we use a ``delay(1000)`` code to let the controller do nothing for 1000 ms.
 

@@ -7,6 +7,12 @@ Servo is a position (angle) servo device, which is suitable for those control sy
 
 Now, try to make the servo sway!
 
+Schematic
+-----------
+
+.. image:: img/11_swinging_servo.png
+  :width: 500
+
 Wiring
 -------------------------
 

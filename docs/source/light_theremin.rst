@@ -9,6 +9,12 @@ We cannot reproduce the same instrument through Pico, but we can use photoresist
 
 * `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
+Schematic
+-----------
+
+.. image:: img/14_light_theremin.png
+  :width: 500
+
 Wiring
 --------------------
 

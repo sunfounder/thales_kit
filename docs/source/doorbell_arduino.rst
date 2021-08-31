@@ -1,7 +1,7 @@
 Doorbell
 ================
 
-A buzzer is a great tool in your experiments whenever you want to make some sounds. In this lesson, we will learn how to drive a passive buzzer to build a simple doorbell.
+A buzzer is a great tool in your experiments whenever you want to make some sounds. In this project, we will learn how to drive a passive buzzer to build a simple doorbell.
 
 Two types of buzzers are included in the kit. We need to use passive buzzer. Turn them around, the one with exposed PCB is we want.
 
@@ -14,6 +14,11 @@ The buzzer needs to use a transistor when working, here we use S8050.
 
 * :ref:`Transistor`
 * :ref:`Button`
+
+Schematic
+-----------
+
+.. image:: img/Door_Bell.png
 
 Wiring
 -------------------------
