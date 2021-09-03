@@ -21,7 +21,8 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
 
 .. image:: img/segment_code.png
 
-Example
--------------------
+**Example**
 
-:ref:`LED Segment Display`
+* :ref:`LED Segment Display` (For MicroPython User）
+* :ref:`Digital Dice` (For C/C++(Arduino) User）
+* :ref:`74hc595_arduino` (For C/C++(Arduino) User）

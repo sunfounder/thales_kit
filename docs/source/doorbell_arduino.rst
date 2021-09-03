@@ -1,3 +1,5 @@
+.. _doorbell_arduino:
+
 Doorbell
 ================
 

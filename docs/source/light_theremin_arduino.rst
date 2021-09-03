@@ -1,3 +1,5 @@
+.. _light_theremin_arduino:
+
 Light Theremin
 ================
 

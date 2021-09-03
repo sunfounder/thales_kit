@@ -21,9 +21,9 @@ You can check the pins of the buzzer, the longer one is the anode and the shorte
 
 `Buzzer - Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
 
-Example
--------------------
+**Example**
 
-:ref:`Intruder Alarm`
-
-:ref:`Custom Tone`
+* :ref:`Intruder Alarm` (For MicroPython User）
+* :ref:`Custom Tone` (For MicroPython User）
+* :ref:`doorbell_arduino` (For C/C++(Arduino) User）
+* :ref:`LUMI Piano` (For C/C++(Arduino) User）

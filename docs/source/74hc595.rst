@@ -23,7 +23,7 @@ Pins of 74HC595 and their functions:
 * **VCC**: Positive supply voltage.
 * **GND**: Ground.
 
-Example
--------------------
+**Example**
 
-:ref:`Microchip - 74HC595`
+* :ref:`Microchip - 74HC595` (For MicroPython User）
+* :ref:`74HC595` (For C/C++(Arduino) User）

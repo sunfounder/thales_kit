@@ -34,8 +34,7 @@ The functions of the potentiometer in the circuit are as follows:
 
 If you want to know more about potentiometer, refer to: `Potentiometer - Wikipedia <https://en.wikipedia.org/wiki/Potentiometer.>`_
 
-Example
--------------------
+**Example**
 
 * :ref:`Turn the Knob` (For MicroPython User）
 * :ref:`Table Lamp` (For C/C++(Arduino) User）

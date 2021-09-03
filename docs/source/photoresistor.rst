@@ -15,7 +15,8 @@ Here is the electronic symbol of photoresistor.
 
 * `Photoresistor - Wikipedia <https://en.wikipedia.org/wiki/Photoresistor#:~:text=A%20photoresistor%20(also%20known%20as,on%20the%20component's%20sensitive%20surface>`_
 
-Example
--------------------
+**Example**
 
-:ref:`Light Theremin`
+* :ref:`Light Theremin` (For MicroPython User）
+* :ref:`Measure Light Intensity` (For C/C++(Arduino) User）
+* :ref:`light_theremin_arduino` (For C/C++(Arduino) User）

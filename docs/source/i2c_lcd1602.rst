@@ -11,7 +11,6 @@ As we all know, though LCD and some other displays greatly enrich the man-machin
 I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for communication between a master device (or master devices) and a single or multiple slave devices.
 I2C main controller can be used to control IO expander, various sensors, EEPROM, ADC/DAC and so on. All of these are controlled only by the two pins of host, the serial data (SDA1) line and the serial clock line(SCL1). 
 
-Example
--------------------
+**Example**
 
-:ref:`liquid_crystal_display`
+* :ref:`liquid_crystal_display` (For MicroPython User）

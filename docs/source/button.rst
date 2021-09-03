@@ -17,7 +17,8 @@ Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pr
 .. image:: img/button2.jpg
     :width: 600
 
-Examples
--------------------
+**Examples**
 
-:ref:`Reading Button Value`
+* :ref:`Reading Button Value` (For MicroPython User）
+* :ref:`doorbell_arduino` (For C/C++(Arduino) User）
+* :ref:`LUMI Piano` (For C/C++(Arduino) User）

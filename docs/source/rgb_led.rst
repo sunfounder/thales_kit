@@ -21,7 +21,10 @@ An RGB LED has 4 pins: the longest one is GND; the others are Red, Green and Blu
 .. image:: img/rgb_pin.jpg
     :width: 200
 
-Example
--------------------
 
-:ref:`Colorful Light`
+**Example**
+
+
+* :ref:`Colorful Light` (For MicroPython User）
+
+* :ref:`rgb_led_arduino` (For C/C++(Arduino) User）

@@ -31,7 +31,8 @@ Put the label side facing us and the pins facing down. The pins from left to rig
 * `S8050 Transistor Datasheet <https://components101.com/asset/sites/default/files/component_datasheet/S8050%20Transistor%20Datasheet.pdf>`_
 * `S8550 Transistor Datasheet <https://www.mouser.com/datasheet/2/149/SS8550-118608.pdf>`_
 
-Example
--------------------
+**Example**
 
-:ref:`Two Kinds of Transistors`
+* :ref:`Two Kinds of Transistors`  (For MicroPython User）
+* :ref:`light_theremin_arduino` (For C/C++(Arduino) User）
+* :ref:`doorbell_arduino` (For C/C++(Arduino) User）

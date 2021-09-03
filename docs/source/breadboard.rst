@@ -18,9 +18,9 @@ Although these holes on the breadboard appear to be independent of each other, t
 
 If you want to know more about breadboard, refer to: `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-Example
--------------------
-:ref:`Hello, Breadboard!`
+**Example**
+
+:ref:`Hello, Breadboard!` (For MicroPython User）
 
 
 

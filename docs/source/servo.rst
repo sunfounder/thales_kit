@@ -16,7 +16,6 @@ When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a
     :width: 600
 
 
-Example
--------------------
+**Example**
 
 :ref:`Swinging Servo`

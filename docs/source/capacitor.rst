@@ -20,3 +20,9 @@ In this kit, ceramic capacitors are used. There are 103 or 104 label on the cera
 
 .. image:: img/103_capacitor.png
 
+**Example**
+
+* :ref:`Reading Button Value` (For MicroPython User）
+
+* :ref:`Warning Light` (For C/C++(Arduino) User）
+

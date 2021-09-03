@@ -1,3 +1,5 @@
+.. _digital_dice_arduino:
+
 Digital Dice
 ==============
 
@@ -8,7 +10,7 @@ Here, we will add a button to the previous project to make a digital dice. When 
 Schematic
 ------------------------
 
-.. image:: img/digital_dice.png
+.. image:: img/Digital_Dice.png
 
 Wiring
 ----------
