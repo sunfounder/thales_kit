@@ -20,6 +20,7 @@ Here is the Email: cs@sunfounder.com.
    what_is_included_in_this_kit
    for_micropython_user
    for_arduino_user
+   piper/for_piper
    faq
    thank-learning
 
