@@ -3,35 +3,29 @@ Button
 
 In this project, we will learn how to turn on or off the LED by using a button.
 
-Wiring
----------
+**Wiring**
 
 .. image:: img/button0.png
 
-1. Connect the 3V3 pin of the Pico to the positive power bus of the breadboard.
-#. Connect the anode lead of the LED to the GP15 through a jumper wire, and connect the cathode lead to the same row through the middle gap of the breadboard.
-#. Connect the LED cathode to the negative power bus of the breadboard through a 220Ω resistor.
-#. Insert the button into the breadboard.
-#. Use a jumper to connect one end of the button pin to the positive bus.
-#. Use a jumper to connect the other pin of the button to GP14.
-#. Use a 10k resistor to connect the pin of the button connected to GP14 to the negative bus.
-#. Connect the negative power bus of the breadboard to the GND of Pico.
-#. When you press or release the button, the circuit will switch between closed and open.
 
-Code
---------
+* We can think of the four-legged button as an H-shaped button. Its left (right) two feet are connected, which means that after it straddles the central dividing line, it will connect the two half rows of the same row number together. (For example, in my circuit, E23 and F23 have been connected, as are E25 and F25). Before the button is pressed, the left and right sides are independent of each other, and current cannot flow from one side to the other.
 
-After clicking Start in the upper left corner, the code starts to run. When the switch is pressed, the LED will be lit. When the switch is released, the LED will go out.
+* Buttons require pull-up resistors or pull-down resistors. If there is no pull-up or pull-down resistor, the main controller may receive a ‘noisy’ signal which can trigger even when you’re not pushing the button.
+
+* The color ring of the 10kΩ resistor is brown, black, black, red, brown.
+
+**Code**
+
+After connecting Pico, click the **Start** button and the code starts to run. When the button is pressed, the LED will be lit. When the button is released, the LED will go out.
 
 .. image:: img/slide_switch.png
     :width: 300
 
 
-Code explanation
--------------------
+**Code Explanation**
 
-In the loop, judge the level of GP14. When it is low, it means that the button is not pressed. At this time, turn off GP15 (low level), and the led will not light up.
-When GP14 is at high level, it means that the button is pressed. At this time, turn on GP15 (high level), and the led will light up.
+When the button is pressed, pin14 is high. So if the read pin14 is high, turn the pin15 on (LED is lit); else, turn off the pin15 (LED is off).
 
-* [if ... do ... else ...] this code blocks represent conditional judgments.
-* [is pin(14) HIGH] read the level of pin14 and judge it to be high. If it is judged to be true, it returns 1, and if it is judged to be false, it returns 0. It is often used in conjunction with the condition judgment code block.
+* [if () do () else ()]: This is a judgment block, depending on the condition after the [if] block to determine whether to run the blocks inside the [do] block, or the blocks inside the [else] block.
+* [is pin () HIGH]: This is used to read the level of a specific pin, if the level read is the same as the set HIGH/LOW, then execute the blocks inside [do] block, otherwise execute the blocks inside [else].
+

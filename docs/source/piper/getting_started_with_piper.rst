@@ -1,83 +1,102 @@
-Geting Started with Piper Make
+Quick Guide on Piper Make
 ======================================
 
 Piper Make is a super easy and fun way to make projects using Raspberry Pi Pico. It uses blocks like Scratch, so you don't need any programming experience to use it.
 The underlying principle is to use CircuitPython with auxiliary libraries.
 
+Set up the Pico
+---------------------
 
-Configure Raspberry Pi Pico on Piper Make
----------------------------------------------
+First, visit Piper Make through the following link：
 
-First, you need to visit the Piper Make website, https://make.playpiper.com/
+https://make.playpiper.com/
 
-You will see this screen. Unless you want to subscribe to access more tutorials, just click "Get started!" or the "x" button in the pop-up window.
+In the pop-up page, if you don't need to subscribe for more tutorials, you can just click **Let's Go!** or the **x** button.
 
 .. image:: img/media1.png
+    :width: 800
 
-If you see a different pop-up window stating that your browser version is not supported, please update your browser version and try again.
+.. note::
+    If you see a different pop-up window, your browser version is not supported, please update your browser and try again. 
 
-You should now click on the box labeled "Set up my Pico" under the "Tools" section and they will guide you through the setup. You only need to do this the first time you use Piper Make, but you might still want to do this frequently to keep the firmware up to date.
-This part requires the use of a micro USB cable to plug Pi Pico into the computer. Make sure your cable can handle power and data, as many micro USB cables are only used for power supply.
+Scroll to the bottom of this page and click on the **Set up my Pico** under the **Tools** section and follow the prompts to configure it.
 
 .. image:: img/media2.png
 
-It should show you this screen first. Click Next to start setting up your Pico. Even if you have set it up before, these steps are the same steps you use to update the Pico firmware.
+Click **Next** to start configuring your Pico, even if you have set it up before, these are the same steps you will use to update your Pico firmware.
 
 .. image:: img/media3.png
 
-If your Pico is plugged into your computer, please unplug it immediately and press Next.
+In this step, you need to make sure that your Pico is unplugged from your computer, as it needs to be plugged in in a specific way in the next step. Make sure your cable can handle power and data, as many micro USB cables only have power.
 
 .. image:: img/media4.png
 
-Now, plug in your Pico, making sure to hold down the white BOOTSEL button during this process. After inserting, you can release the button.
+Now, press and hold the RST (white) button on the Pico and plug the Pico into your computer. Once plugged in, you can release the button.
 
 .. image:: img/media5.png
 
-Your Pico should appear like a USB drive. After clicking Next, select RPI-RP2 drive.
+Your Pico will appear as a USB drive, click **Next** after that select **RPI-RP2** drive.
+
+.. note::
+    After select **RPI-RP2** drive, there will be a pop up window at the top that you need to allow the web page to view files.
 
 .. image:: img/media6.png
 
-
-
-
-Now Piper Make will load the firmware to your Pico.
+Now Piper Make will load the firmware to your Pico, again you need to allow save changes to the hard drive where the Pico is located.
 
 .. image:: img/media7.png
 
-Finally, if you see this screen, your device is set up and you should be able to start using it.
+When this prompt appears, it means your Pico is set up and you can start using it.
+
 
 .. image:: img/media8.png
 
-Now that you have set up Pico, it is time to learn how to program it. If you have an LED and a resistor, a good start is the Blink program.
+How to use Piper Make
+-------------------------------
+
+Now that you have set up Pico, it is time to learn how to program it. Now let's light up the onboard LED.
+
+Click on the **New Project** button, and a new project will appear in the **MY PROJECTS** section and will be assigned a random name that can be changed from the programming page.
 
 .. image:: img/media9.png
-
-Now let's light up the onboard LED lights.
-
-Click to create a new project.
-
-.. image:: img/media10.png
 
 Then open the new project just created.
 
 .. image:: img/media11.png
 
-Click **Chip** and drag the **start** block to the programming area on the right.
+Now go to the Piper Make programming page.
+
+.. image:: img/piper_intro1.png
+
+* **START**: Used to run the code, if it's gray, it's not connected to Pico at this time.
+* **Block palette**: contains different types of blocks.
+* **CONNECT**: Used to connect to Pico, it is green when not connected to Pico, when connected it will become **DISCONNECT(red)**.
+* **Programming Area**: Drag blocks here to finish programming by stacking them.
+* **Tools Area**: You can click **DIGITAL VIEW** to see the pin distribution of Pico; you can view the print information in **CONSOLE**; you can read data from **DATA**, and you can click **Python** to view the Python source code.
+* **Project name and description**: You can change the project name and description.
+* **DOWNLOAD**: You can click the **DOWNLOAD** button to save it locally, usually in **.png** format. Next time you can import it via the **Import Project** button on the home page.
+
+Click on the **Chip** palette and drag the [start] block to the **Programming Area**.
 
 .. image:: img/media12.png
 
-Drag the loop block in **loops** to the bottom of the **start** block, and set the loop interval to 1 second.
+Then drag the [loop] block in **loops** palette to the bottom of the [start] block, and set the loop interval to 1 second.
 
 .. image:: img/media14.png
 
-The pin port of the onboard led is pin25. There is a code block in the **chip** to control the level of the pin port and drag it into the loop.
+The Raspberry Pi Pico's onboard LED is at pin25, so we use the [turn pin () ON/OFF] block on the **Chip** palette to control it.
 
 .. image:: img/media15.png
 
-Click CONNECT on the bottom left to connect to pico, and then click START on the top left to run the code, so you can see the onboard LED lights up.
+Now click on the **CONNECT** button to connect to pico, after clicking on it a new popup will appear, select the recognized **CircuitPython CDC control (COMXX)** port, then click on **Connect**. When the connection is successful, the green **CONNECT** in the bottom left corner will change to a red **DISCONNECT**.
 
 .. image:: img/media16.png
 
-Then turn off pin25 every second in the cycle, and click START on the upper left again, so that you can see the onboard LED lights flashing.
+Now click on the **START** button to run this code and you will see the LED on the Pico lit up. If yours is gray, it means that the Pico is not connected, please reconnect it.
+
+.. image:: img/media166.png
+
+Then turn off pin25 every second in the cycle, and click **START** on the upper left again, so that you can see the onboard LED lights flashing.
+
 
 .. image:: img/media17.png

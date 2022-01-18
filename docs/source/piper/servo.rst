@@ -5,25 +5,20 @@ Servo is a position (angle) servo device, which is suitable for those control sy
 
 Now, try to make the servo sway!
 
-Wring
----------
+**Wiring**
 
 .. image:: ../img/wiring_swing_servo.png
 
-1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-#. Connect **VBUS** (not 3V3) and GND of Pico to the power bus of the breadboard.
-#. Connect the red lead of the servo to the positive power bus with a jumper.
-#. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-#. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
+
+* The brown wire of the servo is GND, the red wire is VCC and the yellow wire is signal.
+* Connect **VBUS** (not 3V3) to the power bus of the breadboard.
 
 
-Code
--------
+**Code**
 
-After clicking Start in the upper left corner, the code starts to run. we can see the Servo Arm swinging back and forth from 0° to 180°.
+After connecting Pico, click the **Start** button and the code starts to run. If necessary, press the Servo Arm into the Servo output shaft, then you can see the Servo Arm swinging back and forth from 0° to 180°.
 
 .. image:: img/servo.png
     :width: 300
 
-* [servo pin (15) set angle to (180)] Rotate the servo connected to the current ping port (ping 15) by 180 degrees.
-* [servo pin (15) set angle to (0)] Let the servo connected to the current ping port (ping 15) rotate back to the initial position.   
+* [servo pin () set angle to ()]: This block is used to set the rotation angle of the servo, the range is 0~180 degrees. 

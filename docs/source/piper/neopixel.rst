@@ -1,52 +1,53 @@
 Neopixel
 =============
 
-The kit is equipped with a WS2812 RGB 8 LED light bar, which can display colorful colors, and each LED can be independently controlled. Here we try to use the tilt switch to control the flow direction of the LEDs on the WS2812 light bar.
+The kit is equipped with a WS2812 RGB LED Strip, which can display colorful colors, and each LED can be independently controlled. 
 
-Wring
-----------
+Here we try to use the tilt switch to control the flow direction of the LEDs on the WS2812 RGB LED Strip.
+
+**Wiring**
 
 .. image:: ../img/WS2812_Flow_friz.png
 
+**Programming**
 
-**Step 1**
 
-Use the [setup neopixel pin(0) pixels(8)] code block to initialize the neopixel connected to pin0 and declare that it has eight led lights.
+**Step 1**: Use the [setup neopixel pin() pixels()] block in the **Actions** palette to initialize the WS2812 RGB LED Strip. **0** means the connected pin is GP0 and **8** means there are 8 RGB LEDs on the WS2812 RGB LED Strip.
 
-**Step 2**
+.. image:: img/neo1.png
 
-Set a variable **i** to determine the serial number of the led light to be lit on neopixel.
+**Step 2**: In the **Variables** palette, click the **Create variable** button to create a variable called **i** to represent the LEDs on the WS2812 RGB LED Strip. 
 
-* [set (i) to (1)] Initialize this variable to 1, which means that neopixel's first led will be lit first.
+.. image:: img/neo2.png
 
-**Step 3**
+**Step 3**: Set the initial value of variable **i** to 1 (the LED near the wires), then in [repeat forever] block, use [() mod ()] to set the value of i from 0 to 7. e.g. 1 mod 8 = 1... 8 mod 8 =0, 9 mod 8 =1, etc.
 
-Set a range of 0 to 7 for the variable i. We can divide the natural number by 8 and then assign the remainder to i, so that i can be equal to any number from 0 to 7.
+* [() mod ()]: This is the modulo operator block, from the **Loops** palette, drop down [() = ()] to select **mod**.
 
-* [i mod 8] means dividing i by 8 and then taking the remainder.
+.. image:: img/neo3.png
 
-.. image:: img/step3.png
+**Step 4**: Set all neopixels to black to make all LEDs go off, then use [updates neopixels] to make this effect update to the WS2812 RGB LED Strip.
 
-**Step 4**
+.. image:: img/neo4.png
 
-Use the [set all neopixel to...] code block to preset the color effects of all led lights, black means to turn off the lights, usually used in conjunction with the [update neopixels] code block to apply the preset effect.
+* [set all neopixels to ()]: Use to set a color for all LEDs, there are 13*9 colors, the top right color is black to make LEDs to go off.
+* [updates neopixels]: Update the effect to the WS2812 RGB LED Strip.
 
-**Step 5**
+**Step 5**: If pin14 is read high, let the LEDs on the WS2812 RGB LED Strip light up one by one in green, otherwise light up green one by one in the opposite direction.
 
-Use the if code block to set the judgment condition. When pin 14 is high, the LED lamp with the serial number i is lit, and the serial number is increased by one to achieve the effect of the water lamp.
-Perform the same operation when pin14 is low, but subtract one from the serial number to reverse the direction of light flow.
+.. image:: img/neo5.png
 
-* [chang i by (1)/(-1)] increase or decrease i by one
+* [change () by ()]: Used to increase (positive) or decrease (negative) the value of a variable by a specific step.
 
-.. note::
-    The operations of step3, step4, and setp5 need to be executed in the same loop.
 
-Code
----------
+**Code**
 
-After clicking Start in the upper left corner, the code starts to run. When the tilt switch is placed vertically, the LED on the WS2812 Strip will light up from one side, and when placed horizontally, the WS2812 will light up from the other side.
+After connecting Pico, click the **Start** button and the code starts to run.
+
+When the tilt switch is placed vertically, it makes the LEDs on the WS2812 RGB LED Strip light up one by one in green, and when the tilt switch is placed horizontally, the LEDs light up one by one in the opposite direction in green.
 
 .. image:: img/neopixel.png
-    :width: 300
+    :width: 400
+
 
 
