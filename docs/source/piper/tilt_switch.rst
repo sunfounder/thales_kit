@@ -14,7 +14,7 @@ This is a ball tilt-switch with a metal ball inside. It is used to detect inclin
 
 **Code**
 
-After connecting Pico, click the **Start** button and the code starts to run. When the tilt switch is placed horizontally, the LED will turn off; and when placed vertically, the LED will light up.
+After connecting Pico, click the **Start** button and the code starts to run. When the tilt switch is placed horizontally, the LED will turn on; and when placed vertically, the LED will turn off.
 
 .. image:: img/slide_switch.png
     :width: 300
