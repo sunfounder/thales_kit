@@ -8,8 +8,8 @@ Q1: NO MicroPython(Raspberry Pi Pico) Interpreter Option on Thonny IDE?
 
 
 * Check that your Pico is plugged into your computer via a USB cable.
-* Check that you have installed MicroPython for Pico (:ref:`Installing MicroPython`).
-* The Raspberry Pi Pico interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update (:ref:`Thonny Python IDE`).
+* Check that you have installed MicroPython for Pico (:ref:`install_micropython_on_pico`).
+* The Raspberry Pi Pico interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update (:ref:`thonny_ide`).
 * Plug in/out the micro USB cable sveral times.
 
 Q2: Cannot open Pico code or save code to Pico via Thonny IDE?
@@ -25,15 +25,15 @@ Q3: Can Raspberry Pi Pico be used on Thonny and Arduino at the same time?
 
 NO, you need to do some different operations.
 
-* If you used it on Arduino first, and now you want to use it on Thonny IDE, you need to :ref:`Installing MicroPython` on it.
-* If you used it on Thonny first， and now you want to use it on Arduino IDE, you need to :ref:`Setup the Raspberry Pi Pico`.
+* If you used it on Arduino first, and now you want to use it on Thonny IDE, you need to :ref:`install_micropython_on_pico`.
+* If you used it on Thonny first， and now you want to use it on Arduino IDE, you need to :ref:`setup_pico_arduino`.
 
 Q4: Code upload failed in Arduino IDE?
 -----------------------------------------
 * Make sure you have installed the Pico board in the Arduino IDE.
 * Check that the Board(Raspberry Pi Pico) or port（COMxx (Raspberry Pi Pico)）is selected correctly.
 * Make sure you have plugged the Pico into your computer.
-* If only COMxx (The complete one should be COMxx (Raspberry Pi Pico)) is displayed, it means that Pico is not correctly recognized by the computer. You need to refer to steps 5, 6, and 7 in :ref:`Setup the Raspberry Pi Pico`.
+* If only COMxx (The complete one should be COMxx (Raspberry Pi Pico)) is displayed, it means that Pico is not correctly recognized by the computer. You need to refer to steps 5, 6, and 7 in :ref:`setup_pico_arduino`.
 
 Q5: If your computer is win7 and pico cannot be detected.
 ----------------------------------------------------------

@@ -7,7 +7,7 @@ Here we try to use the tilt switch to control the flow direction of the LEDs on 
 
 **Wiring**
 
-.. image:: ../img/WS2812_Flow_friz.png
+.. image:: img/WS2812_Flow_friz.png
 
 **Programming**
 

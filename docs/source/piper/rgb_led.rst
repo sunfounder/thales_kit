@@ -13,7 +13,7 @@ RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one la
 
 * First find the longest pin (GND), there is only one pin (Red) on the left side of the longest pin, and two pins on the right side are Green and Blue.
 
-.. image:: ../img/rgb_pin.jpg
+.. image:: img/rgb_pin.jpg
     :width: 200
     :align: center
 

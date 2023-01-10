@@ -5,7 +5,7 @@ In this project, we will learn how to use a button to control the active buzzer.
 
 **Wring**
 
-.. image:: ../img/doorbell.png
+.. image:: img/doorbell.png
 
 * An active buzzer is a device that makes a sound by directly giving high and low levels. Since the current coming out of the Pico pin is small, an NPN transistor is used here to amplify the current to make the buzzer sound louder.
 

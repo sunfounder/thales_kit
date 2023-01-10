@@ -5,7 +5,7 @@ In this project, we will learn how to use a slide switch. Usually,the slide swit
 
 **Wiring**
 
-.. image:: ../img/warning_light.png
+.. image:: img/warning_light.png
 
 * If the switch is toggled to the left, the 2 pins on the left are connected together; if it is toggled to the right, the 2 pins on the right are connected together.
 

@@ -8,7 +8,7 @@ The breadboard is a rectangular plastic plate with a bunch of small holes in it.
 
 **Wiring**
 
-.. image:: ../img/wiring_hello_breadboard.png
+.. image:: img/wiring_hello_breadboard.png
 
 * The color ring of the 220 ohm resistor is red, red, black, black and brown.
 

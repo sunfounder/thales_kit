@@ -7,7 +7,7 @@ Now, try to make the servo sway!
 
 **Wiring**
 
-.. image:: ../img/wiring_swing_servo.png
+.. image:: img/wiring_swing_servo.png
 
 
 * The brown wire of the servo is GND, the red wire is VCC and the yellow wire is signal.
