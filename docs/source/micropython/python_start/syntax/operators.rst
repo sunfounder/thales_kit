@@ -245,13 +245,13 @@ Identity operators are used to compare the objects, not if they are equal, but i
     c = a
 
     print(a is c)
-    # returns True because z is the same object as x
+    # returns True because a is the same object as c
 
     print(a is b)
-    # returns False because x is not the same object as y, even if they have the same content
+    # returns False because a is not the same object as b, even if they have the same content
 
     print(a == b)
-    # returns True because x is equal to y
+    # returns True because a is equal to b
 
 >>> %Run -c $EDITOR_CONTENT
 True
